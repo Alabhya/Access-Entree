@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public GameObject player; 
+
     // TODO make Inventory class
     static Dictionary<string, int> inventory = new Dictionary<string, int>(); 
 
@@ -73,6 +75,8 @@ public class Building : MonoBehaviour
         removeRequirementsFromInventory(buildItemName); 
         return buildItemName; 
     } 
+    string buildItemName = "bridge"; // tmp for testing
+
     // Start is called before the first frame update
     void Start()
     {   // add test data into inventory 
@@ -80,7 +84,6 @@ public class Building : MonoBehaviour
         inventory.Add("steel",6); 
         inventory.Add("mana",2); 
 
-        string buildItemName = "bridge"; // tmp for testing
         string builtItem = build(buildItemName); 
         Debug.Log("remianing wood: " + inventory["wood"]);
         Debug.Log("remianing steel: " + inventory["steel"]);
@@ -92,6 +95,8 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(player.transform.position == this.transform.position){
+            build(buildItemName); 
+        }
     }
 }
