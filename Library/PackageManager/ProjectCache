@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637620756360002956
-    m_Hash: 2243863418
+      ticks: 637620760882992033
+    m_Hash: 2332331668
   m_LockFileStatus:
     m_FilePath: D:/FDAAF/Access Score/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637620756360824143
-    m_Hash: 1052619742
+      ticks: 637620760883001999
+    m_Hash: 2305158905
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -210,6 +210,7 @@ m_PackageAssets:
         compatible:
         - 1.5.7
         - 1.6.0
+        - 1.7.1
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -913,6 +914,7 @@ m_PackageAssets:
         compatible:
         - 10.5.0
         - 10.5.1
+        - 10.6.0
         verified: 10.5.1
       dependencies:
       - name: com.unity.mathematics
@@ -1014,8 +1016,6 @@ m_PackageAssets:
         - 1.1.26
         - 1.1.27
         compatible:
-        - 1.1.24
-        - 1.1.26
         - 1.1.27
         verified: 1.1.27
       dependencies:
@@ -3421,6 +3421,7 @@ m_PackageAssets:
         compatible:
         - 10.5.0
         - 10.5.1
+        - 10.6.0
         verified: 10.5.1
       dependencies:
       - name: com.unity.ugui
@@ -3570,6 +3571,7 @@ m_PackageAssets:
         compatible:
         - 10.5.0
         - 10.5.1
+        - 10.6.0
         verified: 10.5.1
       dependencies:
       - name: com.unity.render-pipelines.core
@@ -3819,4 +3821,4 @@ m_PackageAssets:
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: D:/FDAAF/Access Score/Packages
-m_EditorVersion: 2020.3.12f1 (b3b2c6512326)
+m_EditorVersion: 2020.3.14f1 (d0d1bb862f9d)
