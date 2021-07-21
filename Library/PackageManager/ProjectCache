@@ -5,21 +5,154 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637624964457012103
-    m_Hash: 1359592585
+      ticks: 637620760882992033
+    m_Hash: 2332331668
   m_LockFileStatus:
     m_FilePath: D:/FDAAF/Access Score/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637624964673918882
-    m_Hash: 2839857035
+      ticks: 637620760883001999
+    m_Hash: 2305158905
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
+    - packageId: com.unity.cinemachine@2.6.5
+      testable: 0
+      isDirectDependency: 1
+      version: 2.6.5
+      source: 1
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.cinemachine@2.6.5
+      assetPath: Packages/com.unity.cinemachine
+      name: com.unity.cinemachine
+      displayName: Cinemachine
+      author:
+        name: 
+        email: 
+        url: 
+      category: cinematography
+      type: 
+      description: "Smart camera tools for passionate creators. \n\nIMPORTANT NOTE:
+        If you are upgrading from the Asset Store version of Cinemachine, delete
+        the Cinemachine asset from your project BEFORE installing this version from
+        the Package Manager."
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 2.1.11-beta.1
+        - 2.1.12
+        - 2.1.13
+        - 2.2.0
+        - 2.2.7
+        - 2.2.8
+        - 2.2.9
+        - 2.2.10-preview.3
+        - 2.2.10-preview.4
+        - 2.3.1
+        - 2.3.3
+        - 2.3.4
+        - 2.3.5-preview.3
+        - 2.4.0-preview.3
+        - 2.4.0-preview.4
+        - 2.4.0-preview.6
+        - 2.4.0-preview.7
+        - 2.4.0-preview.8
+        - 2.4.0-preview.9
+        - 2.4.0-preview.10
+        - 2.4.0
+        - 2.5.0
+        - 2.6.0-preview.2
+        - 2.6.0-preview.3
+        - 2.6.0-preview.5
+        - 2.6.0-preview.8
+        - 2.6.0
+        - 2.6.1-preview.6
+        - 2.6.1
+        - 2.6.2-preview.1
+        - 2.6.2
+        - 2.6.3-preview.2
+        - 2.6.3
+        - 2.6.4
+        - 2.6.5
+        - 2.7.1
+        - 2.7.2
+        - 2.7.3
+        - 2.7.4
+        - 2.8.0-exp.1
+        - 2.8.0-exp.2
+        - 2.8.0-pre.1
+        compatible:
+        - 2.5.0
+        - 2.6.0-preview.2
+        - 2.6.0-preview.3
+        - 2.6.0-preview.5
+        - 2.6.0-preview.8
+        - 2.6.0
+        - 2.6.1-preview.6
+        - 2.6.1
+        - 2.6.2-preview.1
+        - 2.6.2
+        - 2.6.3-preview.2
+        - 2.6.3
+        - 2.6.4
+        - 2.6.5
+        - 2.7.1
+        - 2.7.2
+        - 2.7.3
+        - 2.7.4
+        - 2.8.0-exp.1
+        - 2.8.0-exp.2
+        - 2.8.0-pre.1
+        verified: 2.6.5
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - camera
+      - follow
+      - rig
+      - fps
+      - cinematography
+      - aim
+      - orbit
+      - cutscene
+      - cinematic
+      - collision
+      - freelook
+      - cinemachine
+      - compose
+      - composition
+      - dolly
+      - track
+      - clearshot
+      - noise
+      - framing
+      - handheld
+      - lens
+      - impulse
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637578244570000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/com.unity.cinemachine.git
+        revision: c12b97ec35ab5091c685e729b76980a69a6d39a1
+        path: 
     - packageId: com.unity.collab-proxy@1.5.7
       testable: 0
       isDirectDependency: 1
@@ -233,12 +366,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
         revision: abb44f053e9a41d2e00e149e32a19bcec76e98b4
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.9
+    - packageId: com.unity.ide.visualstudio@2.0.11
       testable: 0
       isDirectDependency: 1
-      version: 2.0.9
+      version: 2.0.11
       source: 1
-      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.ide.visualstudio@2.0.9
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.ide.visualstudio@2.0.11
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -312,13 +445,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637580705480000000
+      datePublishedTicks: 637613656180000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: c7cd4c6319806423b3d918b3e9599244e3993d41
+        revision: 680e06d94ffca728223ae2cb14bb919cd354e2c1
         path: 
     - packageId: com.unity.ide.vscode@1.2.3
       testable: 0
@@ -389,12 +522,340 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
         revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
         path: 
-    - packageId: com.unity.render-pipelines.universal@10.5.0
+    - packageId: com.unity.inputsystem@1.0.2
       testable: 0
       isDirectDependency: 1
-      version: 10.5.0
+      version: 1.0.2
       source: 1
-      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.render-pipelines.universal@10.5.0
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.inputsystem@1.0.2
+      assetPath: Packages/com.unity.inputsystem
+      name: com.unity.inputsystem
+      displayName: Input System
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: A new input system which can be used as a more extensible and
+        customizable alternative to Unity's classic input system in UnityEngine.Input.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.2-preview
+        - 0.2.0-preview
+        - 0.2.1-preview
+        - 0.2.6-preview
+        - 0.2.8-preview
+        - 0.2.10-preview
+        - 0.9.0-preview
+        - 0.9.1-preview
+        - 0.9.2-preview
+        - 0.9.3-preview
+        - 0.9.4-preview
+        - 0.9.5-preview
+        - 0.9.6-preview
+        - 1.0.0-preview
+        - 1.0.0-preview.1
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.0-preview.5
+        - 1.0.0-preview.6
+        - 1.0.0-preview.7
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.1.0-pre.5
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.1.0-preview.3
+        compatible:
+        - 0.1.2-preview
+        - 0.2.0-preview
+        - 0.2.1-preview
+        - 0.2.6-preview
+        - 0.2.8-preview
+        - 0.2.10-preview
+        - 0.9.0-preview
+        - 0.9.1-preview
+        - 0.9.2-preview
+        - 0.9.3-preview
+        - 0.9.4-preview
+        - 0.9.5-preview
+        - 0.9.6-preview
+        - 1.0.0-preview
+        - 1.0.0-preview.1
+        - 1.0.0-preview.2
+        - 1.0.0-preview.3
+        - 1.0.0-preview.4
+        - 1.0.0-preview.5
+        - 1.0.0-preview.6
+        - 1.0.0-preview.7
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.1.0-pre.5
+        - 1.1.0-preview.1
+        - 1.1.0-preview.2
+        - 1.1.0-preview.3
+        verified: 1.0.2
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - input
+      - events
+      - keyboard
+      - mouse
+      - gamepad
+      - touch
+      - vr
+      - xr
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637468486210000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/InputSystem.git
+        revision: 041def76515febb36a83d1f928cfb7aefb85176c
+        path: 
+    - packageId: com.unity.polybrush@1.0.2
+      testable: 0
+      isDirectDependency: 1
+      version: 1.0.2
+      source: 1
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.polybrush@1.0.2
+      assetPath: Packages/com.unity.polybrush
+      name: com.unity.polybrush
+      displayName: Polybrush
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: Mesh painting, sculpting, and geo-scattering tool for Unity.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.0-preview.13
+        - 1.0.0-preview.16
+        - 1.0.0-preview.17
+        - 1.0.0
+        - 1.0.1-preview.1
+        - 1.0.1-preview.2
+        - 1.0.1
+        - 1.0.2-preview.1
+        - 1.0.2-preview.4
+        - 1.0.2
+        - 1.1.0-pre.1
+        - 1.1.2
+        compatible:
+        - 1.0.0-preview.13
+        - 1.0.0-preview.16
+        - 1.0.0-preview.17
+        - 1.0.0
+        - 1.0.1-preview.1
+        - 1.0.1-preview.2
+        - 1.0.1
+        - 1.0.2-preview.1
+        - 1.0.2-preview.4
+        - 1.0.2
+        - 1.1.0-pre.1
+        - 1.1.2
+        verified: 1.0.2
+      dependencies:
+      - name: com.unity.settings-manager
+        version: 1.0.3
+      resolvedDependencies:
+      - name: com.unity.settings-manager
+        version: 1.0.3
+      keywords:
+      - modeling
+      - sculpting
+      - push
+      - clay
+      - terrain
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637327822110000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/polybrush.git
+        revision: 55f0abdbad1d1c08e999a55237499f00b0ce91b9
+        path: 
+    - packageId: com.unity.probuilder@4.5.2
+      testable: 0
+      isDirectDependency: 1
+      version: 4.5.2
+      source: 1
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.probuilder@4.5.2
+      assetPath: Packages/com.unity.probuilder
+      name: com.unity.probuilder
+      displayName: ProBuilder
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: 'Build, edit, and texture custom geometry in Unity. Use ProBuilder
+        for in-scene level design, prototyping, collision meshes, all with on-the-fly
+        play-testing.
+
+
+        Advanced features include UV editing, vertex colors,
+        parametric shapes, and texture blending. With ProBuilder''s model export
+        feature it''s easy to tweak your levels in any external 3D modelling suite.'
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 3.0.0
+        - 3.0.1
+        - 3.0.2
+        - 3.0.3
+        - 3.0.6
+        - 3.0.8
+        - 3.0.9
+        - 3.10.1
+        - 4.0.2
+        - 4.0.3
+        - 4.0.4
+        - 4.0.5
+        - 4.1.0
+        - 4.1.2
+        - 4.2.1
+        - 4.2.2-preview.1
+        - 4.2.2-preview.2
+        - 4.2.3
+        - 4.2.4-preview.0
+        - 4.3.0-preview.0
+        - 4.3.0-preview.1
+        - 4.3.0-preview.2
+        - 4.3.0-preview.4
+        - 4.3.0-preview.6
+        - 4.3.0-preview.7
+        - 4.3.0-preview.8
+        - 4.3.0-preview.9
+        - 4.3.1
+        - 4.4.0-preview.1
+        - 4.4.0
+        - 4.5.0
+        - 4.5.2
+        - 5.0.0-pre.7
+        - 5.0.0-pre.10
+        - 5.0.1
+        - 5.0.3
+        compatible:
+        - 4.0.2
+        - 4.0.3
+        - 4.0.4
+        - 4.0.5
+        - 4.1.0
+        - 4.1.2
+        - 4.2.1
+        - 4.2.2-preview.1
+        - 4.2.2-preview.2
+        - 4.2.3
+        - 4.2.4-preview.0
+        - 4.3.0-preview.0
+        - 4.3.0-preview.1
+        - 4.3.0-preview.2
+        - 4.3.0-preview.4
+        - 4.3.0-preview.6
+        - 4.3.0-preview.7
+        - 4.3.0-preview.8
+        - 4.3.0-preview.9
+        - 4.3.1
+        - 4.4.0-preview.1
+        - 4.4.0
+        - 4.5.0
+        - 4.5.2
+        - 5.0.0-pre.7
+        - 5.0.0-pre.10
+        - 5.0.1
+        - 5.0.3
+        verified: 4.5.2
+      dependencies:
+      - name: com.unity.settings-manager
+        version: 1.0.3
+      resolvedDependencies:
+      - name: com.unity.settings-manager
+        version: 1.0.3
+      keywords:
+      - 3d
+      - model
+      - mesh
+      - modeling
+      - geometry
+      - shape
+      - cube
+      - blender
+      - max
+      - maya
+      - fbx
+      - obj
+      - level
+      - design
+      - block
+      - greybox
+      - graybox
+      - whitebox
+      - prototype
+      - probuilder
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637613656650000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Unity-Technologies/com.unity.probuilder.git
+        revision: 27f52072e5f94638d1f81bc53df38e59d5bac785
+        path: 
+    - packageId: com.unity.render-pipelines.universal@10.5.1
+      testable: 0
+      isDirectDependency: 1
+      version: 10.5.1
+      source: 1
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.render-pipelines.universal@10.5.1
       assetPath: Packages/com.unity.render-pipelines.universal
       name: com.unity.render-pipelines.universal
       displayName: Universal RP
@@ -459,14 +920,14 @@ m_PackageAssets:
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.render-pipelines.core
-        version: 10.5.0
+        version: 10.5.1
       - name: com.unity.shadergraph
-        version: 10.5.0
+        version: 10.5.1
       resolvedDependencies:
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.render-pipelines.core
-        version: 10.5.0
+        version: 10.5.1
       - name: com.unity.ugui
         version: 1.0.0
       - name: com.unity.modules.ui
@@ -474,7 +935,7 @@ m_PackageAssets:
       - name: com.unity.modules.imgui
         version: 1.0.0
       - name: com.unity.shadergraph
-        version: 10.5.0
+        version: 10.5.1
       - name: com.unity.searcher
         version: 4.3.2
       keywords:
@@ -496,13 +957,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637550685770000000
+      datePublishedTicks: 637605794350000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/Graphics.git
-        revision: 7ff8fd444c179fd9bb380d61f4865be6935b47dd
+        revision: 73f32e8fcc2d0cbf3b73a16a5e30eb5cede41576
         path: 
     - packageId: com.unity.test-framework@1.1.27
       testable: 0
@@ -3068,12 +3529,12 @@ m_PackageAssets:
         url: git@github.com:Unity-Technologies/Unity.Mathematics.git
         revision: 0a3dfafaf606098ea681de4c4be60f3aac63b773
         path: 
-    - packageId: com.unity.render-pipelines.core@10.5.0
+    - packageId: com.unity.render-pipelines.core@10.5.1
       testable: 0
       isDirectDependency: 0
-      version: 10.5.0
+      version: 10.5.1
       source: 1
-      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.render-pipelines.core@10.5.0
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.render-pipelines.core@10.5.1
       assetPath: Packages/com.unity.render-pipelines.core
       name: com.unity.render-pipelines.core
       displayName: Core RP Library
@@ -3213,20 +3674,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637550675510000000
+      datePublishedTicks: 637605791650000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/Graphics.git
-        revision: 7ff8fd444c179fd9bb380d61f4865be6935b47dd
+        revision: 73f32e8fcc2d0cbf3b73a16a5e30eb5cede41576
         path: 
-    - packageId: com.unity.shadergraph@10.5.0
+    - packageId: com.unity.shadergraph@10.5.1
       testable: 0
       isDirectDependency: 0
-      version: 10.5.0
+      version: 10.5.1
       source: 1
-      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.shadergraph@10.5.0
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.shadergraph@10.5.1
       assetPath: Packages/com.unity.shadergraph
       name: com.unity.shadergraph
       displayName: Shader Graph
@@ -3342,12 +3803,12 @@ m_PackageAssets:
         verified: 10.5.1
       dependencies:
       - name: com.unity.render-pipelines.core
-        version: 10.5.0
+        version: 10.5.1
       - name: com.unity.searcher
         version: 4.3.2
       resolvedDependencies:
       - name: com.unity.render-pipelines.core
-        version: 10.5.0
+        version: 10.5.1
       - name: com.unity.ugui
         version: 1.0.0
       - name: com.unity.modules.ui
@@ -3369,13 +3830,71 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637550676160000000
+      datePublishedTicks: 637605793850000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/Graphics.git
-        revision: 7ff8fd444c179fd9bb380d61f4865be6935b47dd
+        revision: 73f32e8fcc2d0cbf3b73a16a5e30eb5cede41576
+        path: 
+    - packageId: com.unity.settings-manager@1.0.3
+      testable: 0
+      isDirectDependency: 0
+      version: 1.0.3
+      source: 1
+      resolvedPath: D:\FDAAF\Access Score\Library\PackageCache\com.unity.settings-manager@1.0.3
+      assetPath: Packages/com.unity.settings-manager
+      name: com.unity.settings-manager
+      displayName: Settings Manager
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: A framework for making any serializable field a setting, complete
+        with a pre-built settings interface.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.0-preview.4
+        - 0.1.0-preview.8
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.0.3
+        compatible:
+        - 0.1.0-preview.4
+        - 0.1.0-preview.8
+        - 1.0.0
+        - 1.0.1
+        - 1.0.2
+        - 1.0.3
+        verified: 1.0.3
+      dependencies: []
+      resolvedDependencies: []
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637300096300000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/com.unity.settings-manager.git
+        revision: 473664ccba1496294b741cf169740a5d54b3d0b6
         path: 
     - packageId: com.unity.nuget.newtonsoft-json@2.0.0
       testable: 0

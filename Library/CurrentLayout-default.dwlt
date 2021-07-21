@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1920
     height: 991
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 21
+  controlID: 79
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 115
+  controlID: 80
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 116
+  controlID: 81
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,10 +355,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 148.2843}
-    m_SelectedIDs: 86a30000
-    m_LastClickedID: 41862
-    m_ExpandedIDs: 000000003c94000040940000a2a3000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: f0560000
+    m_LastClickedID: 22256
+    m_ExpandedIDs: 0000000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: Textures
@@ -386,7 +386,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003c9400003e9400004094000042940000
+    m_ExpandedIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -441,7 +441,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 194
+  m_DirectoriesAreaWidth: 226
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -507,9 +507,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b2fbfaff
-      m_LastClickedID: -328782
-      m_ExpandedIDs: bccdfaffb4fbfaff466ffcff9ea1fdff9cd6feff2862ffffc463ffff10a0ffff30c7ffffe2f60100
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: f8faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -622,9 +622,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.34681058, y: 0.6294009, z: -0.37113476, w: 0.58807814}
   m_Size:
-    m_Target: 7.0821466
+    m_Target: 3.7174995
     speed: 2
-    m_Value: 7.41586
+    m_Value: 4.0174994
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -670,9 +670,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 379
-    y: 119
+    y: 73
     width: 1150
-    height: 548
+    height: 576
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1150, y: 527}
+  m_TargetSize: {x: 1150, y: 555}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -697,8 +697,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -575
     m_HBaseRangeMax: 575
-    m_VBaseRangeMin: -263.5
-    m_VBaseRangeMax: 263.5
+    m_VBaseRangeMin: -277.5
+    m_VBaseRangeMax: 277.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -717,9 +717,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1150
-      height: 527
+      height: 555
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 575, y: 263.5}
+    m_Translation: {x: 575, y: 277.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -727,12 +727,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -575
-      y: -263.5
+      y: -277.5
       width: 1150
-      height: 527
+      height: 555
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1150, y: 548}
+  m_LastWindowPixelSize: {x: 1150, y: 576}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
