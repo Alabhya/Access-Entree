@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Building : MonoBehaviour
 {
     public GameObject player; 
+    Inventory Inventory = GameObject.Find("Inventory_Object").GetComponent<Inventory>();
 
     // TODO make Inventory class
     static Dictionary<string, int> inventory = new Dictionary<string, int>(); 
-
+    
     static Dictionary<string, int> bridge = new Dictionary<string, int> 
     {     
         {"wood", 2 },
@@ -40,7 +42,8 @@ public class Building : MonoBehaviour
             if(!requirements.ContainsKey(buildItemName)) return false; 
             foreach (var requiredItemName in requirements[buildItemName].Keys) {
                 // item has been used to build, so remove from inventory
-                if(!inventory.ContainsKey(requiredItemName)) {
+                
+                if( Inventory.GetItemCount(requiredItemName)) {
                     Debug.Log("need: " + requiredItemName); 
                     return  false;
                 }
@@ -80,9 +83,9 @@ public class Building : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   // add test data into inventory 
-        inventory.Add("wood",4); 
-        inventory.Add("steel",6); 
-        inventory.Add("mana",2); 
+        Inventory.Add("wood",4); 
+        Inventory.Add("steel",6); 
+        Inventory.Add("mana",2); 
 
         string builtItem = build(buildItemName); 
         Debug.Log("remianing wood: " + inventory["wood"]);
