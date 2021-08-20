@@ -14,20 +14,9 @@ public class SceneTransition : MonoBehaviour
 {
 	public Animator transition; //The animation to play when the scene changes
 	public float transitionTime = 1f; //How long the transition animation should last
-	public int levelIndex; //Which scene to load
-	
-    // Update is called once per frame
-    void Update()
-    {
-			//For testing. Need to get rid of for final project.
-			if(Input.GetMouseButtonDown(0))
-			{
-				StartCoroutine(LoadLevel());
-			}
-    }
-	
+
 	//Load the provided scene
-	IEnumerator LoadLevel()
+	public IEnumerator LoadLevel(int newScene)
 	{
 		//Play animation
 		transition.SetTrigger("Start");
@@ -36,6 +25,6 @@ public class SceneTransition : MonoBehaviour
 		yield return new WaitForSeconds(transitionTime);
 		
 		//Load new scene
-		SceneManager.LoadScene(levelIndex);
+		SceneManager.LoadScene(newScene);
 	}
 }
