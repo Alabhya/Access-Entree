@@ -9,7 +9,6 @@ public class Building : MonoBehaviour
     Inventory Inventory = GameObject.Find("Inventory_Object").GetComponent<Inventory>();
 
     // TODO make Inventory class
-    static Dictionary<string, int> inventory = new Dictionary<string, int>(); 
     
     static Dictionary<string, int> bridge = new Dictionary<string, int> 
     {     
@@ -43,7 +42,7 @@ public class Building : MonoBehaviour
             foreach (var requiredItemName in requirements[buildItemName].Keys) {
                 // item has been used to build, so remove from inventory
                 
-                if( Inventory.GetItemCount(requiredItemName)) {
+                if( Inventory.GetUnitCountForItem(buildItemName) )  {
                     Debug.Log("need: " + requiredItemName); 
                     return  false;
                 }
@@ -83,14 +82,15 @@ public class Building : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   // add test data into inventory 
+        
         Inventory.Add("wood",4); 
         Inventory.Add("steel",6); 
         Inventory.Add("mana",2); 
 
         string builtItem = build(buildItemName); 
-        Debug.Log("remianing wood: " + inventory["wood"]);
-        Debug.Log("remianing steel: " + inventory["steel"]);
-        Debug.Log("remianing mana: " + inventory["mana"]);
+        Debug.Log("remianing wood: " + Inventory.Items["wood"]);
+        Debug.Log("remianing steel: " + Inventory.Items["steel"]);
+        Debug.Log("remianing mana: " + Inventory.Items["mana"]);
 
         Debug.Log("Item built: " + builtItem);
     }

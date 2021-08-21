@@ -16,28 +16,16 @@ public class Item
 
 public class Inventory
 {
-    public static List<Item> items;
-    public static List<Item> Items
-    {
-        get
-        {
-            if (items.Count == 0)
-            {
-                Load();
-            }
-
-            return items;
-        }
-        set { items = value; }
-
-    }
+    int currentIdCount = 0; // this increments for each new item
+    //public static List<Item> items;
+    public static Dictionary<string, Item[]> Items;  
 
     static Inventory()
     {
-        Items = new List<Item>();
+        Items = new Dictionary<string, Item[]>(); 
     }
 
-    private static void Load()
+    private static void LoadFromDb()
     {
         Items = DataManager.LoadItems();
     }
@@ -52,29 +40,35 @@ public class Inventory
         Inventory.Items.RemoveAll(x => x.Id == ItemId);
     }
 
-    public static void Add(Item Item)
+    public static void Add(String itemName, int num)
     {
-        Items.Add(Item);
+        Item item = new Item(); 
+        item.Name = itemName; 
+        item.Quantity = num;
+        Items.add(item);
     }
 
-    public static int GetNewId()
+    /*public static int GetNewId(String itemName)
     {
         int id;
-        if (Inventory.Items.Count == 0)
+        if (GetUnitCount() == 0)
             id = 1;
         else
         {
-            id = Inventory.Items.Last().Id + 1;
+            id = currentIdCount + 1;
         }
 
         return id;
-    }
+    }*/
 
     public static int GetItemCount()
     {
         return Inventory.Items.Count();
     }
-
+    public static int GetUnitCountForItem(String itemName)
+    {
+        return Inventory.Items[itemName].Quantity;
+    }
     public static int GetUnitCount()
     {
         return Inventory.Items.Select(x => x.Quantity).Sum();
