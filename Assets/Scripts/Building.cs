@@ -6,7 +6,7 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     public GameObject player; 
-    Inventory Inventory = GameObject.Find("Inventory_Object").GetComponent<Inventory>();
+    //Inventory Inventory = GameObject.Find("Inventory_Object").GetComponent<Inventory>();
     
     static Dictionary<string, int> bridge = new Dictionary<string, int> 
     {     
@@ -37,18 +37,21 @@ public class Building : MonoBehaviour
 
         public static bool checkRequirements(string buildItemName) {
             if(!requirements.ContainsKey(buildItemName)) return false; 
+            
             foreach (var requiredItemName in requirements[buildItemName].Keys) {
                 // item has been used to build, so remove from inventory
                 
-                if( Inventory.GetItemQuantity(buildItemName) == 0 )  {
+                if( Inventory.GetItemQuantity(requiredItemName) == 0 )  {
                     Debug.Log("need: " + requiredItemName); 
                     return  false;
                 }
+                
                 else if(requirements[buildItemName][requiredItemName] > Inventory.GetItemQuantity(requiredItemName)) {
                     int howMuchNeeded = requirements[buildItemName][requiredItemName] - Inventory.GetItemQuantity(requiredItemName); 
                     Debug.Log("need " + howMuchNeeded + " more " + requiredItemName); 
                     return false; 
                 }
+                
             }
             return true;
         }
@@ -72,10 +75,9 @@ public class Building : MonoBehaviour
         if(!BuildSchemas.checkRequirements(buildItemName)) {
             return "cannot build anything with selected items: ";
         }
-        removeRequirementsFromInventory(buildItemName); 
+        //removeRequirementsFromInventory(buildItemName); 
         return buildItemName; 
     } 
-    string buildItemName = "bridge"; // tmp for testing
 
     // Start is called before the first frame update
     void Start()
@@ -84,20 +86,24 @@ public class Building : MonoBehaviour
         Inventory.Add("wood",4); 
         Inventory.Add("steel",6); 
         Inventory.Add("mana",2); 
-
-        string builtItem = build(buildItemName); 
-        Debug.Log("remianing wood: " + Inventory.Items["wood"]);
-        Debug.Log("remianing steel: " + Inventory.Items["steel"]);
-        Debug.Log("remianing mana: " + Inventory.Items["mana"]);
-
+        string buildItemName = "bridge"; // tmp for testing
+        string builtItem = build(buildItemName);
+        
+        Debug.Log("remianing wood: " + Inventory.GetItemQuantity("wood"));
+        Debug.Log("remianing steel: " + Inventory.GetItemQuantity("steel"));
+        Debug.Log("remianing mana: " + Inventory.GetItemQuantity("mana"));
         Debug.Log("Item built: " + builtItem);
+        
+        Inventory.Save(); 
+        Debug.Log("Inventory saved");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position == this.transform.position){
+        /*if(player.transform.position == this.transform.position){
             build(buildItemName); 
-        }
+        }*/
     }
 }

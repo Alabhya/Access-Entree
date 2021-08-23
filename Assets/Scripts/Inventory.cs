@@ -13,8 +13,8 @@ public class Item
     public decimal Price { get; set; }
     public int Quantity { get; set; }
 }
-
-public class Inventory {
+[CreateAssetMenu(fileName = "New Inventory", menuName="Inventory")]
+public class Inventory : ScriptableObject {
     int currentIdCount = 0; // this increments for each new item
     //public static List<Item> items;
     public static Dictionary<string, Item> Items;  
@@ -24,12 +24,12 @@ public class Inventory {
         Items = new Dictionary<string, Item>(); 
     }
 
-    private static void LoadFromDb()
+    public static void LoadFromDb()
     {
         Items = DataManager.LoadItems();
     }
 
-    private static void Save()
+    public static void Save()
     {
         DataManager.SaveItems(Items);
     }
@@ -60,6 +60,7 @@ public class Inventory {
     }
     public static int GetItemQuantity(String itemName)
     {
+        if(!Items.ContainsKey(itemName)) return 0; 
         return Items[itemName].Quantity;
     }
     public static int GetTotalInventoryQuantity()
