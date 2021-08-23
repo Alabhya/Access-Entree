@@ -42,12 +42,12 @@ public class Building : MonoBehaviour
             foreach (var requiredItemName in requirements[buildItemName].Keys) {
                 // item has been used to build, so remove from inventory
                 
-                if( Inventory.GetUnitCountForItem(buildItemName) )  {
+                if( Inventory.GetItemQuantity(buildItemName) == 0 )  {
                     Debug.Log("need: " + requiredItemName); 
                     return  false;
                 }
-                else if(requirements[buildItemName][requiredItemName] > inventory[requiredItemName]) {
-                    int howMuchNeeded = requirements[buildItemName][requiredItemName] - inventory[requiredItemName]; 
+                else if(requirements[buildItemName][requiredItemName] > Inventory.GetItemQuantity(requiredItemName)) {
+                    int howMuchNeeded = requirements[buildItemName][requiredItemName] - Inventory.GetItemQuantity(requiredItemName); 
                     Debug.Log("need " + howMuchNeeded + " more " + requiredItemName); 
                     return false; 
                 }
@@ -59,13 +59,13 @@ public class Building : MonoBehaviour
     void removeRequirementsFromInventory(string buildItemName) { 
         foreach (var itemName in requirements[buildItemName].Keys) {
             // item has been used to build, so remove from inventory
-            if(inventory[itemName] >= requirements[buildItemName][itemName]) {
-                inventory[itemName] -= requirements[buildItemName][itemName];
+            if(Inventory.GetItemQuantity(itemName) >= requirements[buildItemName][itemName]) {
+                Inventory.ReduceItemCount(itemName, requirements[buildItemName][itemName]);
             }
             else { // this should never happen because checkRequirements method should be called first
                 Debug.Log("ERROR: Item was built without correct materials");
             }   
-            if(inventory[itemName] == 0) inventory.Remove(itemName);
+            if(Inventory.GetItemQuantity(itemName) == 0) Inventory.RemoveItem(itemName);
         }
     }
 

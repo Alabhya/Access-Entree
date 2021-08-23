@@ -18,11 +18,11 @@ public class Inventory
 {
     int currentIdCount = 0; // this increments for each new item
     //public static List<Item> items;
-    public static Dictionary<string, Item[]> Items;  
+    public static Dictionary<string, Item> Items;  
 
     static Inventory()
     {
-        Items = new Dictionary<string, Item[]>(); 
+        Items = new Dictionary<string, Item>(); 
     }
 
     private static void LoadFromDb()
@@ -34,10 +34,16 @@ public class Inventory
     {
         DataManager.SaveItems(Items);
     }
-
-    public static void RemoveItem(int ItemId)
+    public static void RemoveItem(String itemName)
     {
-        Inventory.Items.RemoveAll(x => x.Id == ItemId);
+        Items.Remove(itemName); 
+    }
+
+    public static void RemoveAllItems()
+    {
+        foreach(var item in Inventory.Items){
+            RemoveItem(item.Key);
+        }
     }
 
     public static void Add(String itemName, int num)
@@ -45,7 +51,7 @@ public class Inventory
         Item item = new Item(); 
         item.Name = itemName; 
         item.Quantity = num;
-        Items.add(item);
+        Items[itemName] = item;
     }
 
     /*public static int GetNewId(String itemName)
@@ -61,49 +67,66 @@ public class Inventory
         return id;
     }*/
 
-    public static int GetItemCount()
+    public static int GetTotalItems() // how many types of items (keys)
     {
-        return Inventory.Items.Count();
+        return Items.Count();
     }
-    public static int GetUnitCountForItem(String itemName)
+    public static int GetItemQuantity(String itemName)
     {
-        return Inventory.Items[itemName].Quantity;
+        return Items[itemName].Quantity;
     }
-    public static int GetUnitCount()
+    public static int GetTotalInventoryQuantity()
+    {   
+        int count = 0; 
+        foreach(var item in Items){
+            count += GetItemQuantity(item.Key);
+        }
+        return count; 
+    }
+    public static int ReduceItemCount(String itemName, int reduce) {
+        if(Items[itemName].Quantity < reduce) return -1; 
+        Items[itemName].Quantity -= reduce; 
+        return Items[itemName].Quantity; 
+    }
+    public static decimal GetItemValue(String itemName)
     {
-        return Inventory.Items.Select(x => x.Quantity).Sum();
+        decimal value = Items[itemName].Price * Inventory.Items[itemName].Quantity; 
+        return value; 
     }
-
     public static decimal GetInventoryValue()
     {
-        return Inventory.Items.Select(x => (x.Price * x.Quantity)).Sum();
+        decimal value = 0; 
+        foreach(var item in Inventory.Items){
+            value += GetItemValue(item.Key);
+        }
+        return value;
     }
     public static void ClearInventory()
     {
-        Inventory.Items.Clear();
+        Items.Clear();
     }
 }
 static class DataManager
 {
     private static string dataPath = "test.json"; //tmp db
 
-    public static List<Item> LoadItems()
+    public static Dictionary<string, Item> LoadItems()
     {
-        List<Item> listOfItems = new List<Item>();
+        Dictionary<string, Item> listOfItems = new Dictionary<string, Item>();
 
         if (File.Exists(dataPath))
         {
             string json = File.ReadAllText("test.json");
             if (!string.IsNullOrWhiteSpace(json))
             {
-                listOfItems = JsonConvert.DeserializeObject<List<Item>>(json);
+                listOfItems = JsonConvert.DeserializeObject<Dictionary<string, Item>>(json);
             }
         };           
 
         return listOfItems;
     }        
 
-    public static void SaveItems(List<Item> ItemsToSave)
+    public static void SaveItems(Dictionary<string, Item> ItemsToSave)
     {
         if (!File.Exists(dataPath))
             File.Create(dataPath);
