@@ -1,0 +1,12 @@
+{
+    "item1" : {
+        "Id": 1,
+        "Quantity": 3,
+        "Name": "item1"
+    },
+    "item2" : {
+        "Id": 2,
+        "Quantity": 1,
+        "Name": "item2"
+    }
+}

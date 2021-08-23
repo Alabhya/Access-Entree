@@ -7,8 +7,6 @@ public class Building : MonoBehaviour
 {
     public GameObject player; 
     Inventory Inventory = GameObject.Find("Inventory_Object").GetComponent<Inventory>();
-
-    // TODO make Inventory class
     
     static Dictionary<string, int> bridge = new Dictionary<string, int> 
     {     

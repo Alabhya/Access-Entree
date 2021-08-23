@@ -14,8 +14,7 @@ public class Item
     public int Quantity { get; set; }
 }
 
-public class Inventory
-{
+public class Inventory {
     int currentIdCount = 0; // this increments for each new item
     //public static List<Item> items;
     public static Dictionary<string, Item> Items;  
@@ -49,23 +48,11 @@ public class Inventory
     public static void Add(String itemName, int num)
     {
         Item item = new Item(); 
+        item.Id = GetNewId(itemName); 
         item.Name = itemName; 
         item.Quantity = num;
         Items[itemName] = item;
     }
-
-    /*public static int GetNewId(String itemName)
-    {
-        int id;
-        if (GetUnitCount() == 0)
-            id = 1;
-        else
-        {
-            id = currentIdCount + 1;
-        }
-
-        return id;
-    }*/
 
     public static int GetTotalItems() // how many types of items (keys)
     {
@@ -82,6 +69,19 @@ public class Inventory
             count += GetItemQuantity(item.Key);
         }
         return count; 
+    }
+    public static int GetNewId(String itemName)
+    {
+        int id;
+        int currentIdCount = GetTotalItems();
+        if (currentIdCount == 0)
+            id = 1;
+        else
+        {
+            id = currentIdCount + 1;
+        }
+
+        return id;
     }
     public static int ReduceItemCount(String itemName, int reduce) {
         if(Items[itemName].Quantity < reduce) return -1; 
@@ -108,22 +108,22 @@ public class Inventory
 }
 static class DataManager
 {
-    private static string dataPath = "test.json"; //tmp db
+    private static string dataPath = "testDb.json"; //tmp db
 
     public static Dictionary<string, Item> LoadItems()
     {
-        Dictionary<string, Item> listOfItems = new Dictionary<string, Item>();
+        Dictionary<string, Item> dictOfItems = new Dictionary<string, Item>();
 
         if (File.Exists(dataPath))
         {
-            string json = File.ReadAllText("test.json");
+            string json = File.ReadAllText("testDb.json");
             if (!string.IsNullOrWhiteSpace(json))
             {
-                listOfItems = JsonConvert.DeserializeObject<Dictionary<string, Item>>(json);
+                dictOfItems = JsonConvert.DeserializeObject<Dictionary<string, Item>>(json);
             }
         };           
 
-        return listOfItems;
+        return dictOfItems;
     }        
 
     public static void SaveItems(Dictionary<string, Item> ItemsToSave)
