@@ -12,6 +12,9 @@ public class Item
     public string Name { get; set; }
     public decimal Price { get; set; }
     public int Quantity { get; set; }
+
+    // Possible Constructor Usage. Ask Logan
+
 }
 [CreateAssetMenu(fileName = "New Inventory", menuName="Inventory")]
 public class Inventory : ScriptableObject {
@@ -33,6 +36,9 @@ public class Inventory : ScriptableObject {
     {
         DataManager.SaveItems(Items);
     }
+
+    // What happens if itemName is not in Item Dictionary TryGetKey?
+
     public static void RemoveItem(String itemName)
     {
         Items.Remove(itemName); 
@@ -47,7 +53,8 @@ public class Inventory : ScriptableObject {
 
     public static void Add(String itemName, int num)
     {
-        Item item = new Item(); 
+        // Possible Constructor Usuage. Ask Logan
+        Item item = new Item();
         item.Id = GetNewId(itemName); 
         item.Name = itemName; 
         item.Quantity = num;
