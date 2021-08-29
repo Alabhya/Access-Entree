@@ -47,4 +47,21 @@ public class ItemHandler : MonoBehaviour
         }
         return null;
     }
+
+    public string GetEquippedItemName()
+    {
+        if (IsEquippedCount() >= 2)
+        {
+            Debug.LogError("MORE THAN 2 EQUIPPED ITEMS!");
+            return null;
+        }
+        foreach (ItemInformationParent IIP in AllItems)
+        {
+            if (IIP.IsEquipped)
+            {
+                return IIP.ItemEnumName.ToString();
+            }
+        }
+        return null;
+    }
 }
