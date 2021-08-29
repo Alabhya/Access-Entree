@@ -45,6 +45,6 @@ public class SampleInteract : MonoBehaviour, Interactable
     }
     private void DoAction()
     {
-        // Add your code here...
+        // Add your code here....
     }
 }
