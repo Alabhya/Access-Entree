@@ -40,10 +40,7 @@ public class ItemInformationParent : MonoBehaviour
             }
             #endregion
             #region Sets item name equal to item enum
-            if (ItemReference.ItemNames != ItemInformationChild.ItemName.None)
-            {
                 ItemEnumName = ItemReference.ItemNames.ToString();
-            }
             #endregion
         }
     }
