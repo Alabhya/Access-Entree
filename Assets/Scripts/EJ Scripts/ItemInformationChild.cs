@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class ItemInformationChild : MonoBehaviour
 {
     public Image MyImage;
-    public enum ItemName {None, Axe, Sword };
+
+    public enum ItemName {None, Axe, Sword};
+
+
     public ItemName ItemNames;
     // Start is called before the first frame update
     void Start()
