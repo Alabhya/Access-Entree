@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseInteractionTemplate : MonoBehaviour
 {
+    #region This is just a copy of the TestAxe in case it gets accidently deleted
     public ItemHandler MyItemHandler;
     public void InteractTools(ItemHandler ItemHandle, Interactable.ItemName ItemName_)
     {
@@ -57,4 +58,5 @@ public class BaseInteractionTemplate : MonoBehaviour
         // Add your code here....
         Debug.Log("Sword");
     }
+    #endregion
 }

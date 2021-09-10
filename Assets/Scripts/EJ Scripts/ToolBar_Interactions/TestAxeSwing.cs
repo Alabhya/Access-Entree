@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TestAxeSwing : MonoBehaviour, Interactable
 {
-    public ItemHandler MyItemHandler;
+    private ItemHandler MyItemHandler;
     public void InteractTools(ItemHandler ItemHandle, Interactable.ItemName ItemName_)
     {
-        // In Item Handler, is their 1 equipped bool checked?
+        // In Item Handler, is their 1 equipped bool checked among list<ItemInformationParent>?
         if (ItemHandle.GetEquippedItem() != null)
         {
-            // Does said item have the same name as passed interact() enum variable?
+            // Does said itemInformationParent have the same name as passed interact() enum variable?
             if (ItemName_.ToString() == ItemHandle.GetEquippedItem().ItemEnumName)
             {
                 switch (ItemName_)
@@ -28,15 +28,13 @@ public class TestAxeSwing : MonoBehaviour, Interactable
             }
             else
             {
+                Debug.Log("Wrong object equipped, Name isn't a match");
                 Debug.Log("Current Item Equipped " + ItemHandle.GetEquippedItem().ItemEnumName);
                 Debug.Log("Current Item required " + ItemName_.ToString());
-                Debug.Log("Wrong object equipped, Name isn't a match");
                 //Debug.Log("Is your Interact() enum correct? ItemInformationChild Line 10, Interactable Line 7, Do these enums match? exact wording is key)");
             }
         }
     }
-
-    // How to call void ScheduleInteraction(Interactable.ItemName.Axe);
     public void ScheduleInteraction(Interactable.ItemName ItemName_)
     {
         InteractTools(MyItemHandler, ItemName_);
@@ -45,6 +43,7 @@ public class TestAxeSwing : MonoBehaviour, Interactable
     // Start is called before the first frame update
     void Start()
     {
+        MyItemHandler = ItemHandler.Instance;
         StartCoroutine(TestAxe());
     }
     
@@ -60,6 +59,7 @@ public class TestAxeSwing : MonoBehaviour, Interactable
         ScheduleInteraction(Interactable.ItemName.Axe);
     }
 
+    #region Action Voids
     public void DoNone()
     {
         // Add your code here....
@@ -76,4 +76,5 @@ public class TestAxeSwing : MonoBehaviour, Interactable
         Debug.Log("Sword");
     }
 
+    #endregion
 }

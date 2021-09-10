@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class ItemInformationParent : MonoBehaviour
 {
     public ItemInformationChild ItemReference;
-    private Image MyImage;
     [Space]
     public string ItemEnumName;
     public bool IsEquipped;
+    private Image MyImage;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,8 @@ public class ItemInformationParent : MonoBehaviour
         
     }
 
+    // Whenever a item is to be added to the toolbar, the item is a instantiated as a child of this scripts gameobject
+    // this SetItemsValue() gets the values of its child and sets its values equal to the childs
     public void SetItemValues()
     {
         if(this.transform.childCount == 1)
@@ -43,12 +45,6 @@ public class ItemInformationParent : MonoBehaviour
                 ItemEnumName = ItemReference.ItemNames.ToString();
             #endregion
         }
-    }
-
-    public void ResetValues()
-    {
-        MyImage.sprite = null;
-        ItemEnumName = "";
     }
 
 }
