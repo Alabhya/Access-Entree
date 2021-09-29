@@ -6,7 +6,7 @@ using VIDE_Data;
 
 public class PlayerDialouge : MonoBehaviour
 {	
-	public VIDEUIManager1 dialogUI;
+	public DialogueUIManager dialogUI;
 	
 	//Stored current VA when inside a trigger
     public VIDE_Assign inTrigger;
@@ -63,7 +63,6 @@ public class PlayerDialouge : MonoBehaviour
             if (rHit.collider.GetComponent<VIDE_Assign>() != null)
                 assigned = rHit.collider.GetComponent<VIDE_Assign>();
             else return;
-
             dialogUI.Interact(assigned); //Begins interaction
         }
     }
