@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private Player playerInput;
+    private PlayerInput playerInput;
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        playerInput = new Player();
+        playerInput = new PlayerInput();
         controller = GetComponent<CharacterController>();
     }
 

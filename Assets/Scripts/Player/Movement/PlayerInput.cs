@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Player/Movement/Player.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/Player/Movement/PlayerInput.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @Player : IInputActionCollection, IDisposable
+public class @PlayerInput : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @Player()
+    public @PlayerInput()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""Player"",
+    ""name"": ""PlayerInput"",
     ""maps"": [
         {
             ""name"": ""Player_Test"",
@@ -207,8 +207,8 @@ public class @Player : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Test_Look;
     public struct Player_TestActions
     {
-        private @Player m_Wrapper;
-        public Player_TestActions(@Player wrapper) { m_Wrapper = wrapper; }
+        private @PlayerInput m_Wrapper;
+        public Player_TestActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Test_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Test_Jump;
         public InputAction @Look => m_Wrapper.m_Player_Test_Look;
