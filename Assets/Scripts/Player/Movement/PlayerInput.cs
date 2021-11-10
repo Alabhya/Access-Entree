@@ -41,6 +41,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7e048cd-fe32-4a51-ae9a-36298db39ff2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)""
                 }
             ],
             ""bindings"": [
@@ -142,6 +150,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4714c542-a88a-4b22-a94b-9c53a37c7b84"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -153,6 +172,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_Player_Test_Move = m_Player_Test.FindAction("Move", throwIfNotFound: true);
         m_Player_Test_Jump = m_Player_Test.FindAction("Jump", throwIfNotFound: true);
         m_Player_Test_Look = m_Player_Test.FindAction("Look", throwIfNotFound: true);
+        m_Player_Test_Interact = m_Player_Test.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -205,6 +225,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Test_Move;
     private readonly InputAction m_Player_Test_Jump;
     private readonly InputAction m_Player_Test_Look;
+    private readonly InputAction m_Player_Test_Interact;
     public struct Player_TestActions
     {
         private @PlayerInput m_Wrapper;
@@ -212,6 +233,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Test_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Test_Jump;
         public InputAction @Look => m_Wrapper.m_Player_Test_Look;
+        public InputAction @Interact => m_Wrapper.m_Player_Test_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player_Test; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,6 +252,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnLook;
+                @Interact.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_Player_TestActionsCallbackInterface = instance;
             if (instance != null)
@@ -243,6 +268,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -252,5 +280,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea76015847553cc4f829edab8ab136cc, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - text:
+    - Here is an example of regular text.
+    - As you can see, I can have as many text boxes as I like.
+    - I also pause depending on punctuation. You just saw a full pause, and now you've
+      seen a half pause.
+    charTemplate: {fileID: 0}
+    charPortrait: {fileID: 0}
+    voice: {fileID: 8300000, guid: a0667680e0fcc1b4fa50f992cfce9900, type: 3}
+    textSpeed: 25
+    pauseTime: 0.6
+  - text:
+    - You can put many dialgoue object types into one list.
+    - You can use this to have conversations between characters, or even just one
+      with different intonations.
+    - For example, I speak incredibly quickly.
+    charTemplate: {fileID: 11400000, guid: 1d88b50a0f0741b468b1ed1df8f2bf5c, type: 2}
+    charPortrait: {fileID: 21300000, guid: 5ee779b09803b5a48acfc09d97b266f4, type: 3}
+    voice: {fileID: 8300000, guid: b3b20874af3ba894fb3b26cf86e7b5e2, type: 3}
+    textSpeed: 40
+    pauseTime: 0
+  - text:
+    - Whereas I speak very slowly.
+    - You'll also notice that there is no sound affect when I talk. You can choose
+      whether or not to play a sound effect with the text effect.
+    - For long dialogue like this you can also press the skip button to skip ahead....
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 0}
+    textSpeed: 15
+    pauseTime: 1.2
+  - text:
+    - That's it for the basic tutorial. Would you like to hear it again?
+    charTemplate: {fileID: 0}
+    charPortrait: {fileID: 0}
+    voice: {fileID: 0}
+    textSpeed: 25
+    pauseTime: 0.6
+  responses:
+  - responseText: Yes
+    dialogueObject: {fileID: 11400000}
+  - responseText: No
+    dialogueObject: {fileID: 0}
