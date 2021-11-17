@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+	//Dialogue Stuff
+	[SerializeField] private DialogueUI dialogueUI;
 
     private PlayerInput playerInput;
     private CharacterController controller;
@@ -39,6 +41,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+		//Don't do other actions if dialogue windo is open
+		if(dialogueUI.IsOpen)
+		{return;}
+		
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {

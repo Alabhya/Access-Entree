@@ -15,5 +15,5 @@ MonoBehaviour:
   charName: Slowpoke
   charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
   voice: {fileID: 0}
-  textSpeed: 15
+  textSpeed: 7
   pauseTime: 1.2
