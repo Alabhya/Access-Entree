@@ -5,24 +5,19 @@ using UnityEngine;
 public class TriggerCraft : MonoBehaviour
 {
     public float buildObjectDistance;
-    public float TimeTillPickupable;
-    public float GravityStrength;
     public GameObject Prefab;
     public Transform spawn;
 
     public GameObject Player;
     private Vector3 ItemsPosition;
-    //private PlayerInteractor PlayerInteractorScript;
-    private Building Building;
+    private Crafting Craft;
     private Vector3 PlayersPosition;
     private Vector3 ReturnPosition;
     private bool built = false;
     // Start is called before the first frame update
     void Awake()
     {
-        //Player = PlayerInteractor.Instance.gameObject;
-        //Building = Building.Instance;
-        Building = this.GetComponent<Building>();
+        Craft = this.GetComponent<Crafting>();
     }
     void Start() {
         this.transform.rotation = Quaternion.Euler(0,4,0);
@@ -37,7 +32,7 @@ public class TriggerCraft : MonoBehaviour
         //Debug.Log(CalculatePositionZ());
         if(CalculatePositionX() < buildObjectDistance && CalculatePositionZ() < buildObjectDistance && !built)
         {
-            //Building.build("bridge",1);
+            //Crafting.build("bridge",1);
             built = true; 
         }
         if(CalculatePositionX() > buildObjectDistance && CalculatePositionZ() > buildObjectDistance && built) {
@@ -66,6 +61,7 @@ public class TriggerCraft : MonoBehaviour
         scale.y = 0.01F;
         scale.z = 0.01F;
         craft.transform.localScale = scale;
+        Inventory.Add("cool item", 1, 10); 
         //craft.GetComponent<Rigidbody>().AddForce(new Vector3(RandomX,0,RandomZ));
     }
 }
