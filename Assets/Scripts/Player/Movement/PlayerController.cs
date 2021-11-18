@@ -42,8 +42,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 		//Don't do other actions if dialogue windo is open
-		if(dialogueUI.IsOpen)
-		{return;}
+        if(dialogueUI != null)
+        {
+            if (dialogueUI.IsOpen)
+            { return; }
+        }
 		
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
