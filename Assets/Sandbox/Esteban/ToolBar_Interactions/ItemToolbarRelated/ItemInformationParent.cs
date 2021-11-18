@@ -38,7 +38,7 @@ public class ItemInformationParent : MonoBehaviour
                 
             } else
             {
-                Debug.LogError("This Object Does Not Have Image");
+                Debug.Log("This Object Does Not Have Image");
             }
             #endregion
             #region Sets item name equal to item enum
