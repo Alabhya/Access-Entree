@@ -6,6 +6,9 @@ public class CharacterDialogue : MonoBehaviour
 
 {
     public string ObjectToAttachTo = "Character";
+    [SerializeField] DialogueObject _bioObject;
+    [SerializeField] DialogueUI _bioUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,9 @@ public class CharacterDialogue : MonoBehaviour
     public void Talk()
     {
         Debug.Log("IS TALKING");
+        // Turn on journal dialogue object
+        // FindObjectOfType<DialogueUI>().ShowDialogue(_bioObject);
+        _bioUI.ShowDialogue(_bioObject);
     }
 
 }
