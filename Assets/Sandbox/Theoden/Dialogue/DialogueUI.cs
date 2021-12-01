@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class DialogueUI : MonoBehaviour
 {
 	//Keeps the object this script is attached to from being deleted when a new scene is loaded
-	/*private static DialogueUI original;
+	private static DialogueUI original;
 	private void Awake()
 	{		
 		if (original != this) 
@@ -19,7 +19,7 @@ public class DialogueUI : MonoBehaviour
 			DontDestroyOnLoad(gameObject);
 			original = this;
 		}
-	}*/
+	}
 	
 	//Tracks the different UI elements to update
 	[SerializeField] private GameObject dialogueBox;
@@ -88,7 +88,8 @@ public class DialogueUI : MonoBehaviour
 			{
 				//Update text
 				string dialogue = dialogueObject.DialogueList[j].text[i];
-				yield return RunTypingEffect(dialogue, sfx, txtSpd, pTime);
+				//Check if this dialouge runs the typing effect
+				if(dialogueObject.DialogueList[j].typeText){yield return RunTypingEffect(dialogue, sfx, txtSpd, pTime);}
 				textLabel.text = dialogue;
 				
 				//Set up responses if any exist
