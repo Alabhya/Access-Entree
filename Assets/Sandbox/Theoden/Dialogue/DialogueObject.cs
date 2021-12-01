@@ -33,7 +33,8 @@ public class Dialogue : ISerializationCallbackReceiver
 	public AudioClip voice; //The sound that plays when text is typed
 	public float textSpeed = 25f; //How quickly text is typed out
 	public float pauseTime = 0.6f; //How long text pauses at punctuation.
-	
+	public bool typeText = true; //Whether or not to type out text
+
 	private CharacterTemplateObject lastCharTemplate; //Tracks the last charTemplate added
 	
 	//Checks if anything is updated in the inspector
