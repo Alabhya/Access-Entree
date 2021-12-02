@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
+//[RequireComponent(typeof(Image))]
 public class ItemInformationChild : MonoBehaviour
 {
-    public Image MyImage;
+    public Sprite MyImage;
 
-    public enum ItemName {None, Axe, Sword};
+   // public enum ItemName {None, Axe, Sword};
 
-
-    public ItemName ItemNames;
+    //public ItemName ItemNames;
     // Start is called before the first frame update
     void Start()
     {
-        MyImage = this.GetComponent<Image>();
+        //MyImage = this.GetComponent<Image>();
     }
 
     // Update is called once per frame
