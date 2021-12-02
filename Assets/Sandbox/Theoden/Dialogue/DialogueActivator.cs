@@ -17,8 +17,10 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 	//When player enters the trigger area, allow them to open the dialogue
 	private void OnTriggerEnter(Collider other)
 	{
+		Debug.Log("here");
 		if(other.CompareTag("Player") && other.TryGetComponent(out DialogueController player))
-		{
+		{	
+			Debug.Log(player);
 			player.Interactable = this;
 		}
 	}
@@ -37,7 +39,8 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 	
 	//Allows player to open the dialogue when interact button is pressed
 	public void Interact(DialogueController player)
-	{
+	{	
+		Debug.Log("here2");
 		foreach(DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
 		{
 			if(responseEvents.DialogueObject == dialogueObject)

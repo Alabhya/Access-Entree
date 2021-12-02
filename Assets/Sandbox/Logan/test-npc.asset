@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea76015847553cc4f829edab8ab136cc, type: 3}
+  m_Name: test-npc
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - text:
+    - Hello Theoden is pretty cool. He makes cool pictures
+    - Yo who asked?
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 8300000, guid: a0667680e0fcc1b4fa50f992cfce9900, type: 3}
+    textSpeed: 15
+    pauseTime: 1.2
+  responses: []

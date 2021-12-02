@@ -17,6 +17,10 @@ public class Crafting : MonoBehaviour
         {"steel", 1 }, 
         {"mana", 1},      
     }; 
+    static Dictionary<string, int> woodenSwordRequirements = new Dictionary<string, int> 
+    {     
+        {"stone", 1 }, 
+    }; 
     // these should eventually be scriptable objects accessible to other scripts
     public static Dictionary<string, Dictionary<string,int>> requirements = new Dictionary<string, Dictionary<string,int>>
     {
@@ -24,9 +28,13 @@ public class Crafting : MonoBehaviour
             "bridge", // key 
             bridgeRequirements
         },
-                    {   
+        {   
             "bench", // key 
             benchRequirements
+        },
+        {   
+            "wooden sword", // key 
+            woodenSwordRequirements
         }
     };
     public static class BuildSchemas { // static class doesnt currently serve a point, but may build off of it

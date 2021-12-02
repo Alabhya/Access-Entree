@@ -32,7 +32,7 @@ public class TriggerCraft : MonoBehaviour
         //Debug.Log(CalculatePositionZ());
         if(CalculatePositionX() < buildObjectDistance && CalculatePositionZ() < buildObjectDistance && !built)
         {
-            //Crafting.build("bridge",1);
+            Craft.build("wooden sword",1);
             built = true; 
         }
         if(CalculatePositionX() > buildObjectDistance && CalculatePositionZ() > buildObjectDistance && built) {
