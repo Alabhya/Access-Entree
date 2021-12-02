@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea76015847553cc4f829edab8ab136cc, type: 3}
+  m_Name: New Dialogue Object
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - text:
+    - Sample
+    - Whatever
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 0}
+    textSpeed: 0
+    pauseTime: 1.2
+    typeText: 1
+  - text: []
+    charTemplate: {fileID: 11400000, guid: 1d88b50a0f0741b468b1ed1df8f2bf5c, type: 2}
+    charPortrait: {fileID: 21300000, guid: 5ee779b09803b5a48acfc09d97b266f4, type: 3}
+    voice: {fileID: 8300000, guid: b3b20874af3ba894fb3b26cf86e7b5e2, type: 3}
+    textSpeed: 40
+    pauseTime: 0
+    typeText: 1
+  responses:
+  - responseText: Ok
+    dialogueObject: {fileID: 0}
