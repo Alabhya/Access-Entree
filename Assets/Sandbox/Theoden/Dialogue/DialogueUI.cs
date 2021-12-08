@@ -8,13 +8,15 @@ public class DialogueUI : MonoBehaviour
 {
 	//Keeps the object this script is attached to from being deleted when a new scene is loaded
 	private static DialogueUI original;
+    private GameObject speaker; 
+    private string[] dialogueItems;
 	private void Awake()
 	{		
 		if (original != this) 
 		{
 			if(original != null)
 			{
-				Destroy(original.gameObject);
+				//Destroy(original.gameObject);
 			}
 			DontDestroyOnLoad(gameObject);
 			original = this;
@@ -54,14 +56,16 @@ public class DialogueUI : MonoBehaviour
 	}
 	
 	//Starts the dialogue process
-	public void ShowDialogue(DialogueObject dialogueObject)
+	public void ShowDialogue(DialogueObject dialogueObject, GameObject speaker_ = null, string[] items = null)
 	{
 		//Let system know the dialogue box is open
 		IsOpen = true;
 		dialogueBox.SetActive(true);
-		
-		//Start stepping through dialogue
-		StartCoroutine(StepThroughDialouge(dialogueObject));
+        speaker = speaker_; 
+        dialogueItems = items;
+
+        //Start stepping through dialogue
+        StartCoroutine(StepThroughDialouge(dialogueObject));
 	}
 	
 	//Adds response events
@@ -134,5 +138,22 @@ public class DialogueUI : MonoBehaviour
 		dialogueBox.SetActive(false);
 		textLabel.text = string.Empty; 
 		IsOpen = false;
-	}
+        //Inventory inventory = ScriptableObject.Instantiate(Inventory); 
+        if(speaker != null)
+        {
+            Vector3 spawnPosition = (Vector3)speaker.transform.position;
+            spawnPosition = spawnPosition + new Vector3(5, 0, 5); // move spawned object over
+            Quaternion spawnRotation = (Quaternion)speaker.transform.rotation;
+            Debug.Log(spawnPosition);
+            foreach (string itemName in dialogueItems)
+            {
+                GameObject item = Items.Instance.getPrefab("sword");
+                Debug.Log(item);
+                GameObject spawnedItem = Instantiate(item, spawnPosition, spawnRotation);
+
+            }
+        }
+
+
+    }
 }

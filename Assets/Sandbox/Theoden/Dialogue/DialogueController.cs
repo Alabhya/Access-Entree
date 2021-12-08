@@ -15,7 +15,7 @@ public class DialogueController : MonoBehaviour
 	//Opens dialogue when player presses the interact button
 	public void GetInteract(InputAction.CallbackContext context)
 	{
-		Debug.Log("get interact");
+		//Debug.Log("get interact");
 		if(Interactable != null && !dialogueUI.IsOpen)
 		{
 			Interactable.Interact(this);

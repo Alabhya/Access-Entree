@@ -19,13 +19,14 @@ public class Item
 [CreateAssetMenu(fileName = "New Inventory", menuName="Inventory")]
 public class Inventory : ScriptableObject {
     int currentIdCount = 0; // this increments for each new item
-    //public static List<Item> items;
-    public static Dictionary<string, Item> Items;  
-
+    public static Dictionary<string, Item> Items;
+    //public static Inventory inventoryObject = Resources.Load<Inventory>("Inventory");
     static Inventory()
     {
         Items = new Dictionary<string, Item>(); 
     }
+
+
 
     public static void LoadFromDb()
     {
@@ -65,7 +66,7 @@ public class Inventory : ScriptableObject {
             else item.Price = 0; 
             Items[itemName] = item;
         }
-        Debug.Log("item added");
+        //Debug.Log("item added");
     }
 
     public static int GetTotalItems() // how many types of items (keys)

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Crafting : MonoBehaviour
 {
+    static Inventory inventory;
     // Add any requirements here as a dictionary, please use format below
     static Dictionary<string, int> bridgeRequirements = new Dictionary<string, int> 
     {     
@@ -19,7 +20,7 @@ public class Crafting : MonoBehaviour
     }; 
     static Dictionary<string, int> woodenSwordRequirements = new Dictionary<string, int> 
     {     
-        {"stone", 1 }, 
+        {"stone", 2 }, 
     }; 
     // these should eventually be scriptable objects accessible to other scripts
     public static Dictionary<string, Dictionary<string,int>> requirements = new Dictionary<string, Dictionary<string,int>>
@@ -46,7 +47,7 @@ public class Crafting : MonoBehaviour
 
                 if( Inventory.GetItemQuantity(requiredItemName) == 0 )  {
                     Debug.Log("need: " + requiredItemName); 
-                    return  false;
+                    return false;
                 }
                 
                 else if(requirements[craftName][requiredItemName] > Inventory.GetItemQuantity(requiredItemName)) {
@@ -84,7 +85,9 @@ public class Crafting : MonoBehaviour
             return "cannot build anything with selected items: ";
         }
         removeRequirementsFromInventory(craftName); 
-        addCraftAsItem(craftName, craftPrice); 
+        addCraftAsItem(craftName, craftPrice);
+        TriggerCraft triggerCraft = this.GetComponent<TriggerCraft>();
+        triggerCraft.spawnCraft(); 
         Inventory.Save();
         return "success"; 
     } 

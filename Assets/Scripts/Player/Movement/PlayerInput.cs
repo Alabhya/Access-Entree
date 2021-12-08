@@ -62,6 +62,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""01fb4e6d-9fdc-4cff-9384-3bdf0eae3754"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8551abc-b3e3-4d81-a8de-d9523bc06337"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +192,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea1267a9-3f89-4ff0-9206-3f4564b28445"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3161bccb-ac0e-436a-b89f-c59cc1531bfa"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +226,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_Test_Jump = m_Player_Test.FindAction("Jump", throwIfNotFound: true);
         m_Player_Test_Look = m_Player_Test.FindAction("Look", throwIfNotFound: true);
         m_Player_Test_Interact = m_Player_Test.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Test_Skip = m_Player_Test.FindAction("Skip", throwIfNotFound: true);
+        m_Player_Test_Confirm = m_Player_Test.FindAction("Confirm", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +291,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Test_Jump;
     private readonly InputAction m_Player_Test_Look;
     private readonly InputAction m_Player_Test_Interact;
+    private readonly InputAction m_Player_Test_Skip;
+    private readonly InputAction m_Player_Test_Confirm;
     public struct Player_TestActions
     {
         private @PlayerInput m_Wrapper;
@@ -257,6 +301,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Test_Jump;
         public InputAction @Look => m_Wrapper.m_Player_Test_Look;
         public InputAction @Interact => m_Wrapper.m_Player_Test_Interact;
+        public InputAction @Skip => m_Wrapper.m_Player_Test_Skip;
+        public InputAction @Confirm => m_Wrapper.m_Player_Test_Confirm;
         public InputActionMap Get() { return m_Wrapper.m_Player_Test; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +324,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnInteract;
+                @Skip.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSkip;
+                @Skip.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSkip;
+                @Skip.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSkip;
+                @Confirm.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnConfirm;
+                @Confirm.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnConfirm;
+                @Confirm.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnConfirm;
             }
             m_Wrapper.m_Player_TestActionsCallbackInterface = instance;
             if (instance != null)
@@ -294,6 +346,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Skip.started += instance.OnSkip;
+                @Skip.performed += instance.OnSkip;
+                @Skip.canceled += instance.OnSkip;
+                @Confirm.started += instance.OnConfirm;
+                @Confirm.performed += instance.OnConfirm;
+                @Confirm.canceled += instance.OnConfirm;
             }
         }
     }
@@ -304,5 +362,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
     }
 }

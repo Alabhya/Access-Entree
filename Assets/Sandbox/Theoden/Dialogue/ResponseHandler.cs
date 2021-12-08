@@ -52,9 +52,9 @@ public class ResponseHandler : MonoBehaviour
 		responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
 		responseBox.gameObject.SetActive(true);
 	}
-	
-	//Add button functionality for when it is clicked and clear out responses
-	private void OnPickedResponse(Response response, int responseIndex)
+
+    //Add button functionality for when it is clicked and clear out responses
+    private void OnPickedResponse(Response response, int responseIndex, string[] dialogueItems = null)
 	{
 		//Clear out buttons first
 		responseBox.gameObject.SetActive(false);

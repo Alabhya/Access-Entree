@@ -33,7 +33,8 @@ public class TriggerCraft : MonoBehaviour
         if(CalculatePositionX() < buildObjectDistance && CalculatePositionZ() < buildObjectDistance && !built)
         {
             Craft.build("wooden sword",1);
-            built = true; 
+            built = true;
+            
         }
         if(CalculatePositionX() > buildObjectDistance && CalculatePositionZ() > buildObjectDistance && built) {
             built = false; 
@@ -57,9 +58,9 @@ public class TriggerCraft : MonoBehaviour
     {
         GameObject craft = Instantiate(Prefab, spawn.position, this.transform.rotation);
         Vector3 scale = transform.localScale;
-        scale.x = 0.01F;
-        scale.y = 0.01F;
-        scale.z = 0.01F;
+        //scale.x = 0.01F;
+        //scale.y = 0.01F;
+        //scale.z = 0.01F;
         craft.transform.localScale = scale;
         Inventory.Add("cool item", 1, 10); 
         //craft.GetComponent<Rigidbody>().AddForce(new Vector3(RandomX,0,RandomZ));
