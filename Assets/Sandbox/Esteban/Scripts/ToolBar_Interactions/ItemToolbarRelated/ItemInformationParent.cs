@@ -32,9 +32,9 @@ public class ItemInformationParent : MonoBehaviour
         {
             this.ItemReference = this.transform.GetChild(0).GetComponent<ItemInformationChild>();
             #region Sets this UI image equal to item image
-            if (ItemReference.MyImage.sprite != null)
+            if (ItemReference.MyImage != null)
             {
-                MyImage.sprite = ItemReference.MyImage.sprite;
+                MyImage.sprite = ItemReference.MyImage;
                 
             } else
             {
@@ -42,7 +42,7 @@ public class ItemInformationParent : MonoBehaviour
             }
             #endregion
             #region Sets item name equal to item enum
-                ItemEnumName = ItemReference.ItemNames.ToString();
+               // ItemEnumName = ItemReference.ItemNames.ToString();
             #endregion
         }
     }
