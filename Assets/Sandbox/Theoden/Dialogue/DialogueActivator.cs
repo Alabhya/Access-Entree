@@ -34,6 +34,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 			if(player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
 			{
 				player.Interactable = null;
+				gameObject.GetComponent<agentcontroller>().dialogue = false;
 			}
 		}
 	}
