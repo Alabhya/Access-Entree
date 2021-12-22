@@ -13,7 +13,8 @@ public class agentcontroller : MonoBehaviour
     public boundingstuff bs;
     public bool flag = false;
     public bool stop = false;
-    private int stopcum = 0;
+    public bool dialogue;
+    private int stopCount = 0;
     //private bool start = false;
     // Start is called before the first frame update
     public void Start()
@@ -41,13 +42,17 @@ public class agentcontroller : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if(dialogue == true) {
+            anima.SetBool("walking", false);
+            return;
+        }
         if (agent != null)
             if (stop)
             {
                 bs.Update(transform, transform.position);
-                stopcum += 1;
-                if (stopcum > 500) {
-                    stopcum = 0;
+                stopCount += 1;
+                if (stopCount > 500) {
+                    stopCount = 0;
                     Revert();
                 }
             }
@@ -58,10 +63,10 @@ public class agentcontroller : MonoBehaviour
         if (Vector3.Distance(agent.destination, transform.position) <= float.Epsilon || stop)
         {
             agent.SetDestination(transform.position);
-            //Debug.Log("1");
+            Debug.Log(dialogue);
             anima.SetBool("walking", false);
             stop = true;
-            stopcum += 1;
+            stopCount += 1;
             Stop();
         }
     }
@@ -69,7 +74,7 @@ public class agentcontroller : MonoBehaviour
     public void Stop()
     {
         //bs.front = 1;
-        //Debug.Log("2");
+        Debug.Log("2");
         anima.SetBool("walking", false);
         stop = true;
     }

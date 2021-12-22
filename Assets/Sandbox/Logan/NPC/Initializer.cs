@@ -10,7 +10,6 @@ public class Initializer : MonoBehaviour
     //public GameObject NPC1;
     //public GameObject NPC2;
     public GameObject NPC;
-    //private float[] heights = new float[3] { 0.66667f, 10.66667f, 20.66667f };
     private GameObject[] agents;
     private Vector3[] forces;
 

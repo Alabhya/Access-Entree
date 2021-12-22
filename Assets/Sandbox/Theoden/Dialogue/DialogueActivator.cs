@@ -22,6 +22,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 		{	
 			Debug.Log(player);
 			player.Interactable = this;
+			gameObject.GetComponent<agentcontroller>().dialogue = true;
 		}
 	}
 	
