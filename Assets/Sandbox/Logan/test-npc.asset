@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - text:
-    - Hello Theoden is pretty cool. He makes cool pictures
-    - Yo who asked?
+    - 'Hey there! '
+    - 'Would you like a rock? '
     charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
     charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
-    voice: {fileID: 8300000, guid: a0667680e0fcc1b4fa50f992cfce9900, type: 3}
-    textSpeed: 15
-    pauseTime: 1.2
+    voice: {fileID: 0}
+    textSpeed: 30
+    pauseTime: 0.5
+    typeText: 1
   responses: []
