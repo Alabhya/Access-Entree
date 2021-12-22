@@ -75,17 +75,14 @@ public class PlayerInteractorResources : MonoBehaviour
                     {
                         MyInteractorController.DisableNonEssentialInteractors(ThisScriptsName);
                     }
-                    TimeTillDestroy = hit.transform.GetComponent<DropResource>().TimeTillDestroy;
-                    if (MyOutline != null)
-                    {
-                        MyOutline.enabled = false;
-                    }
+                    if (MyOutline != null) MyOutline.enabled = false; // disable old outline
 
                     MyOutline = hit.transform.GetComponent<Outline>();
-                    MyOutline.enabled = true;
+                    MyOutline.enabled = true; // add new outline
 
                     if (hit.transform.GetComponent<DropResource>() != null)
                     {
+                        TimeTillDestroy = hit.transform.GetComponent<DropResource>().TimeTillDestroy;
                         IsHarvestingResource = true;
                     }
                 }
