@@ -138,20 +138,9 @@ public class DialogueUI : MonoBehaviour
 		dialogueBox.SetActive(false);
 		textLabel.text = string.Empty; 
 		IsOpen = false;
-        //Inventory inventory = ScriptableObject.Instantiate(Inventory); 
         if(speaker != null)
         {
-            Vector3 spawnPosition = (Vector3)speaker.transform.position;
-            spawnPosition = spawnPosition + new Vector3(5, 0, 5); // move spawned object over
-            Quaternion spawnRotation = (Quaternion)speaker.transform.rotation;
-            Debug.Log(spawnPosition);
-            foreach (string itemName in dialogueItems)
-            {
-                GameObject item = Items.Instance.getPrefab("sword");
-                Debug.Log(item);
-                GameObject spawnedItem = Instantiate(item, spawnPosition, spawnRotation);
-
-            }
+			Items.Instance.spawnItems(dialogueItems,(Vector3)speaker.transform.position);
         }
 
 

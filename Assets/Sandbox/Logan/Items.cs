@@ -22,7 +22,17 @@ public class Items : MonoBehaviour
     }
     public GameObject getPrefab(string itemName)
     {
-        Debug.Log("I'm doing awesome stuff");
         return ItemPrefabs[itemName];
+    }
+    public void spawnItems(string[] itemNames,Vector3 spawnPosition)
+    {
+        
+        spawnPosition = spawnPosition + new Vector3(5, 0, 5); // move spawned object over
+        Quaternion spawnRotation = Quaternion.identity; // default rotation
+        foreach (string itemName in itemNames)
+        {
+            GameObject item = Items.Instance.getPrefab(itemName);
+            GameObject spawnedItem = Instantiate(item, spawnPosition, spawnRotation);
+        }
     }
 }

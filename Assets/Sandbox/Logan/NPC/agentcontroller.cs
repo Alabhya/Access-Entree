@@ -44,9 +44,9 @@ public class agentcontroller : MonoBehaviour
     {
         if(dialogue == true) {
             anima.SetBool("walking", false);
-            return;
+            stop = true;
         }
-        if (agent != null)
+        else if (agent != null)
             if (stop)
             {
                 bs.Update(transform, transform.position);
