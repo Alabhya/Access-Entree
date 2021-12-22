@@ -9,6 +9,10 @@ public class ItemHandler : MonoBehaviour
     public List<ItemInformationParent> AllItems;
     // Not Used Yet
     public List<GameObject> AllItemGameObjects;
+    public static Dictionary<string, GameObject> ItemPrefabs = new Dictionary<string, GameObject>(); 
+    public GameObject sword;
+    public GameObject wood;
+    public GameObject stone;
 
     #region Singleton
     private static ItemHandler _instance;
@@ -25,6 +29,9 @@ public class ItemHandler : MonoBehaviour
         else
         {
             _instance = this;
+            for(int i = 0; i < AllItemGameObjects.Count; i++) {
+                ItemPrefabs.Add(AllItemGameObjects[i].name, AllItemGameObjects[i]);
+            }
         }
         #endregion
     }
@@ -93,6 +100,21 @@ public class ItemHandler : MonoBehaviour
                 Debug.Log(AllItemGameObjects[i].name);
                 return;
             }
+        }
+    }
+    public GameObject getPrefab(string itemName)
+    {
+        return ItemPrefabs[itemName];
+    }
+    public void spawnItems(string[] itemNames,Vector3 spawnPosition)
+    {
+        
+        spawnPosition = spawnPosition + new Vector3(5, 0, 5); // move spawned object over
+        Quaternion spawnRotation = Quaternion.identity; // default rotation
+        foreach (string itemName in itemNames)
+        {
+            GameObject item = getPrefab(itemName);
+            GameObject spawnedItem = Instantiate(item, spawnPosition, spawnRotation);
         }
     }
 }

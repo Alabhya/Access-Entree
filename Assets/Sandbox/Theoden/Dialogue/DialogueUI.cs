@@ -140,7 +140,7 @@ public class DialogueUI : MonoBehaviour
 		IsOpen = false;
         if(speaker != null)
         {
-			Items.Instance.spawnItems(dialogueItems,(Vector3)speaker.transform.position);
+			ItemHandler.Instance.spawnItems(dialogueItems,(Vector3)speaker.transform.position);
         }
 
 

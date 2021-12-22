@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 680eeeac5360d5ca0a6e16809c55a4ee, type: 2}
   dialogueItems:
-  - sword
+  - StonePrefab
 --- !u!114 &8725856118979529152
 MonoBehaviour:
   m_ObjectHideFlags: 0
