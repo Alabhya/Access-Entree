@@ -1050,7 +1050,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316015298}
-  m_LocalRotation: {x: 0.14521313, y: 0.000000032966827, z: -0.0000000048385016, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: 0.000000032966824, z: -0.000000004838501, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1758,6 +1758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sword: {fileID: 393917442}
+  wood: {fileID: 0}
+  stone: {fileID: 0}
 --- !u!1 &716411024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,34 +1926,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6803730730222544221, guid: 7768275924863cb468059cfd45d0cc89, type: 3}
   m_PrefabInstance: {fileID: 996911300}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &733299614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1721613116840042995, guid: c34daa620b23abe4789e314fd772ffeb, type: 3}
-  m_PrefabInstance: {fileID: 1937381716}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &733299615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1721613116840043002, guid: c34daa620b23abe4789e314fd772ffeb, type: 3}
   m_PrefabInstance: {fileID: 1937381716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &733299622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733299614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3d27013ccbb37408b4bd4f60b9287f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 3.01
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!224 &772050852 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6803730730812753386, guid: 7768275924863cb468059cfd45d0cc89, type: 3}
@@ -2972,7 +2951,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: Item Handler
   AllItems: []
-  AllItemGameObjects: []
+  AllItemGameObjects:
+  - {fileID: 393917442}
+  - {fileID: 1678927679}
+  - {fileID: 4660331416868142330, guid: f5df5e09d6babdc4ab33ded5a6e1a35c, type: 3}
+  sword: {fileID: 0}
+  wood: {fileID: 0}
+  stone: {fileID: 0}
 --- !u!114 &1279082071 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6803730731341807362, guid: 7768275924863cb468059cfd45d0cc89, type: 3}
@@ -3785,6 +3770,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b7e048cd-fe32-4a51-ae9a-36298db39ff2
     m_ActionName: Player_Test/Interact[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01fb4e6d-9fdc-4cff-9384-3bdf0eae3754
+    m_ActionName: Player_Test/Skip[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f8551abc-b3e3-4d81-a8de-d9523bc06337
+    m_ActionName: Player_Test/Confirm[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player_Test
@@ -4458,6 +4451,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1678927679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5589725540935117964, guid: b2a25048ee2cb4e4caf5aba288370cf8, type: 3}
+  m_PrefabInstance: {fileID: 1393753140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1759330321
 GameObject:
   m_ObjectHideFlags: 0
@@ -5027,12 +5025,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1721613116840043007, guid: c34daa620b23abe4789e314fd772ffeb, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1540718353728251848, guid: 847136e1c1e3dba489cfacdca20a9c2f, type: 3}
-    m_RemovedComponents:
-    - {fileID: 1721613116840043004, guid: c34daa620b23abe4789e314fd772ffeb, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34daa620b23abe4789e314fd772ffeb, type: 3}
 --- !u!1 &2017153446
 GameObject:

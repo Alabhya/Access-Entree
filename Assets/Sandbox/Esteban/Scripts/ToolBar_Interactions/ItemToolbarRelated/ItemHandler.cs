@@ -6,13 +6,9 @@ public class ItemHandler : MonoBehaviour
 {
     public string ObjectToAttachTo = "Item Handler";
     [Space]
-    public List<ItemInformationParent> AllItems;
-    // Not Used Yet
+    public List<ItemInformationParent> AllItems; // consider combining this with AllItemGameObjects so there isn't 2 seperate lists referring to items
     public List<GameObject> AllItemGameObjects;
     public static Dictionary<string, GameObject> ItemPrefabs = new Dictionary<string, GameObject>(); 
-    public GameObject sword;
-    public GameObject wood;
-    public GameObject stone;
 
     #region Singleton
     private static ItemHandler _instance;
