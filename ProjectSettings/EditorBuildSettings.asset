@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sandbox/Esteban/EJTestingScene.unity
     guid: 326780726317c8d428555e9337b72f95
+  - enabled: 1
+    path: Assets/Sandbox/Logan/test_scene.unity
+    guid: 8218181308b3332b2bfe4ecb026613df
   m_configObjects: {}
