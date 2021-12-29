@@ -7,6 +7,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 {
 	//The DialogueObject that is opened
 	[SerializeField] private DialogueObject dialogueObject;
+    public string[] dialogueItems; 
 	
 	//Changes the DialogueObject associated with this game object
 	public void UpdateDialogueObject(DialogueObject dialogueObject)
@@ -18,8 +19,10 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.CompareTag("Player") && other.TryGetComponent(out DialogueController player))
-		{
+		{	
+			Debug.Log(player);
 			player.Interactable = this;
+			gameObject.GetComponent<agentcontroller>().dialogue = true;
 		}
 	}
 	
@@ -31,13 +34,14 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 			if(player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
 			{
 				player.Interactable = null;
+				gameObject.GetComponent<agentcontroller>().dialogue = false;
 			}
 		}
 	}
 	
 	//Allows player to open the dialogue when interact button is pressed
 	public void Interact(DialogueController player)
-	{
+	{	
 		foreach(DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
 		{
 			if(responseEvents.DialogueObject == dialogueObject)
@@ -47,6 +51,6 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 			}
 		}
 		
-		player.DialogueUI.ShowDialogue(dialogueObject);
+		player.DialogueUI.ShowDialogue(dialogueObject, gameObject, dialogueItems);
 	}
 }

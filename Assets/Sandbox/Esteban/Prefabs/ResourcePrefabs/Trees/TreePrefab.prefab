@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c288ee7bebbc9c49af84576b5a0e4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectToAttachTo: Insert Resource Name Prefab
   MyResourceName: 1
 --- !u!114 &5589725540935117966
 MonoBehaviour:
@@ -126,9 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b65c073964b134dbb942a43d2db213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectToAttachTo: Insert Resource Name Prefab
   Prefab: {fileID: 3498996463135649630, guid: 55ca5eff6fde98e46836b7f2b6d5ff38, type: 3}
   SpawnPosition: {fileID: 5589725541065851440}
   TypeOfResource: 0
+  TimeTillDestroy: 0
 --- !u!114 &5589725540935117965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5589725540935117964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e185e1860e0350d4a89447b4e45e0aa3, type: 3}
+  m_Script: {fileID: 11500000, guid: bc3d27013ccbb37408b4bd4f60b9287f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
