@@ -6,6 +6,7 @@ public class CharacterDialogue : MonoBehaviour
 
 {
     public string ObjectToAttachTo = "Character";
+    public bool TempActivateMovement;
     // Start is called before the first frame update
     void Start()
     {
