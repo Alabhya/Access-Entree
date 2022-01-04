@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6acad840fbb86e3c0a4451452899a113, type: 3}
+  m_Script: {fileID: 11500000, guid: a40e79bb7bd0c2942b6da464427d4f95, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
+  sword: {fileID: 1721613116840042995, guid: c34daa620b23abe4789e314fd772ffeb, type: 3}
+  inventoryObject: {fileID: 11400000}

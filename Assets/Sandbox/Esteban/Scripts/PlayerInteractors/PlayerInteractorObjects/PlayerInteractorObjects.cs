@@ -58,6 +58,7 @@ public class PlayerInteractorObjects : MonoBehaviour
             RaycastHit hit;
             if (Physics.SphereCast(transform.position, 0.75f, transform.TransformDirection(Vector3.forward), out hit, 6, ResourceLayer))
             {
+                Debug.Log(hit.transform.GetComponent<Outline>());
                 if (hit.transform.GetComponent<Outline>() == null)
                     return;
                 if (hit.transform.GetComponent<Outline>().enabled == false)

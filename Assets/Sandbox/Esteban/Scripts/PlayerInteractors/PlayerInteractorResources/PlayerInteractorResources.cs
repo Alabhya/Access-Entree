@@ -12,9 +12,10 @@ public class PlayerInteractorResources : MonoBehaviour
     #endregion
     #region Private Variables
     private LayerMask ResourceLayer;
+    private LayerMask CraftingLayer;
     private Outline MyOutline;
     private InteractorController MyInteractorController;
-    private Building Building;
+    private Crafting CraftScript;
 
     private float TimeTillDestroy;
     private bool IsHarvestingResource;
@@ -35,6 +36,8 @@ public class PlayerInteractorResources : MonoBehaviour
         #region Settting Values
         ThisScriptsName = this.GetType().ToString();
         ResourceLayer = LayerMask.GetMask(LayerName);
+        CraftingLayer = LayerMask.GetMask("Crafter");
+
         MyInteractorController = this.GetComponent<InteractorController>();
         MyInteractorController.InteractorBoolActives.Add(ThisScriptsName, true);
         #endregion
@@ -62,7 +65,8 @@ public class PlayerInteractorResources : MonoBehaviour
             #region SphereCast
             RaycastHit hit;
             if (Physics.SphereCast(transform.position, 0.75f, transform.TransformDirection(Vector3.forward), out hit, 6, ResourceLayer))
-            {
+            {   
+                //Debug.Log("hit check" + hit.transform.GetComponent<TriggerCraft>());
                 if (hit.transform.GetComponent<Outline>() == null)
                     return;
                 if (hit.transform.GetComponent<Outline>().enabled == false)
@@ -71,20 +75,25 @@ public class PlayerInteractorResources : MonoBehaviour
                     {
                         MyInteractorController.DisableNonEssentialInteractors(ThisScriptsName);
                     }
-                    TimeTillDestroy = hit.transform.GetComponent<DropResource>().TimeTillDestroy;
-                    if (MyOutline != null)
-                    {
-                        MyOutline.enabled = false;
-                    }
+                    if (MyOutline != null) MyOutline.enabled = false; // disable old outline
 
                     MyOutline = hit.transform.GetComponent<Outline>();
-                    MyOutline.enabled = true;
+                    MyOutline.enabled = true; // add new outline
 
                     if (hit.transform.GetComponent<DropResource>() != null)
                     {
+                        TimeTillDestroy = hit.transform.GetComponent<DropResource>().TimeTillDestroy;
                         IsHarvestingResource = true;
                     }
-                    else if (hit.transform.GetComponent<TriggerCraft>() != null)
+                }
+            }
+            else if (Physics.SphereCast(transform.position, 0.75f, transform.TransformDirection(Vector3.forward), out hit, 6, CraftingLayer))
+            {   
+                Debug.Log("hit check" + hit.transform.GetComponent<TriggerCraft>());
+                if (hit.transform.GetComponent<Outline>() == null) return;
+                if (hit.transform.GetComponent<Outline>().enabled == false)
+                {
+                    if (hit.transform.GetComponent<TriggerCraft>() != null)
                     {
                         isCrafting = true;
                     }
@@ -93,6 +102,7 @@ public class PlayerInteractorResources : MonoBehaviour
             else
             {
                 IsHarvestingResource = false;
+                isCrafting = false;
                 if (MyOutline != null)
                 {
                     for (int i = 0; i < MyInteractorController.InteractorBoolActives.Count; i++)
@@ -126,15 +136,14 @@ public class PlayerInteractorResources : MonoBehaviour
                 TimeTillDestroy -= Time.deltaTime;
                 if (TimeTillDestroy <= 0)
                 {
-                    Building = this.GetComponent<Building>();
-                    string canCraft = Building.build("bridge", 1);
+                    CraftScript = this.GetComponent<Crafting>();
+                    string canCraft = CraftScript.build("bridge", 1);
                     if (canCraft == "success")
                     {
                         hit.transform.GetComponent<TriggerCraft>().spawnCraft();
                     }
                     else Debug.Log(canCraft);
                     isCrafting = false;
-
                 }
             }
             #endregion
