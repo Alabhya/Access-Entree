@@ -10,7 +10,7 @@ public class ItemDrawDistance : MonoBehaviour
     public float DeleteObjectDistance;
     public float TimeTillPickupable;
     public float GravityStrength;
-
+    #region Private Variables
     private GameObject Player;
     private Vector3 ItemsPosition;
     private PlayerInteractorResources PlayerInteractorScript;
@@ -20,6 +20,7 @@ public class ItemDrawDistance : MonoBehaviour
     private Vector3 ReturnPosition;
     private bool Pickup;
     private ResourceType MyResourceType;
+    #endregion
     // Start is called before the first frame update
     void Awake()
     {
