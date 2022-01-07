@@ -49,7 +49,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 		}
 		
 		//Set up Post Dialogue events (if necessary)
-		if(gameObject.GetComponents<PostDialogueEvents>() != null)
+		if(gameObject.GetComponent("PostDialogueEvents") != null)
 		{
 			player.DialogueUI.AddPostEvents(gameObject.GetComponent<PostDialogueEvents>().PostEvent, gameObject.GetComponent<PostDialogueEvents>().DialogueObject);
 		}
