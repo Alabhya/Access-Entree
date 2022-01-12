@@ -6,7 +6,7 @@ public class DialogueObject : ScriptableObject
 {
 	[SerializeField] private Dialogue[] dialogueList; //Allows user to add multiple dialogues per object. Can be used for different characters in a conversation.
 	[SerializeField] private Response[] responses; //Allows player to respond to dialogue with provided options
-	
+
 	public Dialogue[] DialogueList => dialogueList; //A "Getter" that returns a private variable
 	
 	//Responses
@@ -34,7 +34,7 @@ public class Dialogue : ISerializationCallbackReceiver
 	public float textSpeed = 25f; //How quickly text is typed out
 	public float pauseTime = 0.6f; //How long text pauses at punctuation.
 	public bool typeText = true; //Whether or not to type out text
-
+	
 	private CharacterTemplateObject lastCharTemplate; //Tracks the last charTemplate added
 	
 	//Checks if anything is updated in the inspector
