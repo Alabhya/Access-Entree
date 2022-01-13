@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterDialogue : MonoBehaviour
+//CharacterDialogue requires the GameObject to have a DialogueActivator script
+[RequireComponent(typeof(DialogueActivator))]
 
+public class CharacterDialogue : MonoBehaviour
 {
     public string ObjectToAttachTo = "Character";
     public bool TempActivateMovement;

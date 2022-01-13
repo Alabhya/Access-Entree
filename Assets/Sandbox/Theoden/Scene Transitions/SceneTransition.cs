@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/* This script plays a scene transition and changes the current scene when certain conditions are fulfilled.
+/* This script plays a scene transition and either changes the current scene or moves the player somewhere else in the scene when certain conditions are fulfilled.
    This script is  attached to the 'Level Loader' object and takes three variables.
    The transition variable is the animation controller or animation override controller that determines which transition animation is played.
    The transitionTime variable is how long the scene waits for the animation before changing. This should be set to the length of the transition animation.
-   The levelIndex is the is the index of the scene that is to be switched to. This value can be seen in the 'Scenes In Build' list in the Build Settings.
 */
 
 public class SceneTransition : MonoBehaviour
@@ -27,4 +26,35 @@ public class SceneTransition : MonoBehaviour
 		//Load new scene
 		SceneManager.LoadScene(newScene);
 	}
+	
+	//Transport player to provided location
+	public IEnumerator ChangeLocation(GameObject player, Transform newSpot, TransitionTrigger tTrigger)
+	{
+		//Prevent player movement
+		player.GetComponent<CharacterController>().enabled = false;
+		
+		//Play animation
+		transition.SetTrigger("Start");
+
+		//Wait for animation to finish
+		yield return new WaitForSeconds(transitionTime);
+		
+		//Move player
+		player.transform.localPosition = newSpot.localPosition;
+		
+		//Finish animation
+		transition.SetTrigger("End");
+		
+		//Wait for animation to finish
+		yield return new WaitForSeconds(transitionTime);
+		
+		//Allow player to move
+		player.GetComponent<CharacterController>().enabled = true;
+
+		
+		//Turn teleport point back on
+		tTrigger.canUse = true;
+		tTrigger.curCount = 0;
+	}
+	
 }

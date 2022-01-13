@@ -11,7 +11,7 @@ public class DialogueUI : MonoBehaviour
 	private static DialogueUI original;
     private GameObject speaker; 
     private string[] dialogueItems;
-	private void Awake()
+	/*private void Awake()
 	{		
 		if (original != this) 
 		{
@@ -22,7 +22,7 @@ public class DialogueUI : MonoBehaviour
 			DontDestroyOnLoad(gameObject);
 			original = this;
 		}
-	}
+	}*/
 	
 	//Tracks the different UI elements to update
 	[SerializeField] private GameObject dialogueBox;
