@@ -21,9 +21,11 @@ public class ResourceUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        WoodText.text = "Wood: " + Inventory.GetItemQuantity("wood");
+        StoneText.text = "Stone: " + Inventory.GetItemQuantity("stone");
     }
 
+    // these functions are no longer needed and do not update when removing items from the inventory
     public void AddWood()
     {
         NumberOfWood += 1;

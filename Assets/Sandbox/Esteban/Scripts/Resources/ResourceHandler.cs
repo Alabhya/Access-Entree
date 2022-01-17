@@ -35,12 +35,22 @@ public class ResourceHandler : MonoBehaviour
 
     public void AddResource(ResourceType.ResourceName ResourceName)
     {
-        if (ResourceName == ResourceType.ResourceName.Stone)
-            MyResourceUIController.AddStone();
-            Inventory.Add("stone",1,3);
-        if (ResourceName == ResourceType.ResourceName.Wood)
-            MyResourceUIController.AddWood();
-            Inventory.Add("wood",1,2);
+        switch (ResourceName)
+        {
+            case ResourceType.ResourceName.None:
+                break;
+            case ResourceType.ResourceName.Stone:
+                MyResourceUIController.AddStone();
+                Inventory.Add("stone", 1, 3);
+                break;
+            case ResourceType.ResourceName.Wood:
+                MyResourceUIController.AddWood();
+                Inventory.Add("wood", 1, 2);
+                break;
+            default:
+                break;
+        }
+        
     }
 
 }
