@@ -719,7 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeModified: 1
   upgradeMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  smokeParticles: {fileID: 6476137513949939145, guid: 5e61fb089c50d5a4dae1c9f2a18cbe8f, type: 3}
+  particlePrefab: {fileID: 6476137513949939145, guid: 5e61fb089c50d5a4dae1c9f2a18cbe8f, type: 3}
   triggerPoint: {fileID: 685348548}
   particleSpawnLocation: {fileID: 292151565}
   requiredItems:
@@ -922,7 +922,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514707538}
-  m_LocalRotation: {x: 0.12719245, y: -0.00000001707915, z: 0.0000000021869124, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719245, y: 0.000000017079184, z: -0.0000000021871958, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2639,7 +2639,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235020824}
-  m_LocalRotation: {x: 0.12719242, y: -0.000000017066634, z: 0.0000000021885216, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719242, y: 0.00000001706663, z: -0.0000000021885211, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3588,7 +3588,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755980456}
-  m_LocalRotation: {x: 0.14521313, y: 0.000000032966827, z: -0.0000000048385016, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: 0.00000003296683, z: -0.000000004838502, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
