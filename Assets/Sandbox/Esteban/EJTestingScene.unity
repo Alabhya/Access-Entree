@@ -476,7 +476,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88031084}
-  m_LocalRotation: {x: 0.12719245, y: -0.000000017080886, z: 0.000000002186698, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719245, y: 0.000000017080875, z: -0.0000000021866373, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -549,7 +549,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99181911}
-  m_LocalRotation: {x: 0.12719242, y: -0.000000017066634, z: 0.0000000021885216, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719242, y: 0.00000001706663, z: -0.0000000021885211, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -804,7 +804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &181073226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,7 +1116,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207323839}
-  m_LocalRotation: {x: 0.1091774, y: -0.000000019122318, z: 0.0000000021002804, w: 0.9940223}
+  m_LocalRotation: {x: 0.1091774, y: -0.000000019122316, z: 0.0000000021002802, w: 0.9940223}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4584,19 +4584,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &1098386973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098386971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83cce6cea3181f24dab5447e3690679a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 84df82702634ac945bd917c280807dd6, type: 2}
 --- !u!4 &1098386977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4943411809271777132, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
@@ -5112,6 +5099,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2043525877}
     m_Modifications:
+    - target: {fileID: -95777333244877865, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
+      propertyPath: dialogueObject
+      value: 
+      objectReference: {fileID: 11400000, guid: ac08b82513ca04240a2bb90edce44d2b, type: 2}
     - target: {fileID: 4943411809271777127, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
       propertyPath: m_Name
       value: Character (2)
@@ -5510,7 +5501,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543598092}
-  m_LocalRotation: {x: 0.14521314, y: -5.1799038e-15, z: 7.130392e-16, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: 0.000000032966824, z: -0.000000004838501, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5525,6 +5516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2043525877}
     m_Modifications:
+    - target: {fileID: -95777333244877865, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
+      propertyPath: dialogueObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 84df82702634ac945bd917c280807dd6, type: 2}
     - target: {fileID: 4943411809271777127, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
       propertyPath: m_Name
       value: Character (1)
@@ -5969,6 +5964,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2043525877}
     m_Modifications:
+    - target: {fileID: -95777333244877865, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
+      propertyPath: dialogueObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 680eeeac5360d5ca0a6e16809c55a4ee, type: 2}
     - target: {fileID: 4943411809271777127, guid: 18eb188fb0adaa74a99a7fed36f4e7c4, type: 3}
       propertyPath: m_Name
       value: Character (3)
@@ -7143,6 +7142,7 @@ GameObject:
   - component: {fileID: 6430257846205475695}
   - component: {fileID: 6430257846205475696}
   - component: {fileID: 6430257846205475697}
+  - component: {fileID: 6430257846205475698}
   m_Layer: 9
   m_Name: Character (4)
   m_TagString: Untagged
@@ -7231,3 +7231,16 @@ MonoBehaviour:
   StartMovement: 0
   waypoints: []
   MoveSpeed: 3
+--- !u!114 &6430257846205475698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430257846205475692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cce6cea3181f24dab5447e3690679a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 680eeeac5360d5ca0a6e16809c55a4ee, type: 2}
