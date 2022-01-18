@@ -41,8 +41,16 @@ public class BuildableObject : MonoBehaviour
     // This function will start the construction/upgrade of this object where the mesh will be swapped
     void BeginUpgrade()
     {
-        // will swap the mesh half way thought the animation
-        StartCoroutine(SwapMesh(EffectDuration / 2.0f));
+        // safety check conditional
+        int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
+        // Debug.Log("Amount of items to check: " + it);
+        for (int i = 0; i < it; ++i)
+        {
+            Inventory.ReduceItemCount(requiredItems[i], (int)requiredQuantities[i]);
+        }
+
+            // will swap the mesh half way thought the animation
+            StartCoroutine(SwapMesh(EffectDuration / 2.0f));
 
         if (particlePrefab == null || particleSpawnLocation == null) { return; }
 
@@ -97,7 +105,7 @@ public class BuildableObject : MonoBehaviour
                 int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
                 // checking the current item count requirement with the inventory amount, if not enought we will break the loop
                 // Debug.Log("Checking Item: " + requiredItems[i] + " Needed: " + requiredQuantities[i] + " Have: " + currItemCount);
-                if ( currItemCount < requiredQuantities[i]) {
+                if ( currItemCount < (int)requiredQuantities[i]) {
                     hasEnough = false;
                     break;
                 }

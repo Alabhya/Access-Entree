@@ -29,13 +29,13 @@ public class ResourceUIController : MonoBehaviour
     public void AddWood()
     {
         NumberOfWood += 1;
-        WoodText.text = "Wood: " + NumberOfWood;
+        // WoodText.text = "Wood: " + NumberOfWood;
     }
 
     public void AddStone()
     {
         NumberOfStone += 1;
-        StoneText.text = "Stone: " + NumberOfStone;
+        // StoneText.text = "Stone: " + NumberOfStone;
     }
 
 }
