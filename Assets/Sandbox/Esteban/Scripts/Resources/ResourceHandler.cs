@@ -38,17 +38,25 @@ public class ResourceHandler : MonoBehaviour
         switch (ResourceName)
         {
             case ResourceType.ResourceName.None:
-                break;
+                {
+                    break;
+                }
             case ResourceType.ResourceName.Stone:
-                MyResourceUIController.AddStone();
-                Inventory.Add("stone", 1, 3);
-                break;
+                {
+                    MyResourceUIController.AddStone();
+                    Inventory.Add("stone", 1, 3);
+                    break;
+                }
             case ResourceType.ResourceName.Wood:
-                MyResourceUIController.AddWood();
-                Inventory.Add("wood", 1, 2);
-                break;
+                {
+                    MyResourceUIController.AddWood();
+                    Inventory.Add("wood", 1, 2);
+                    break;
+                }
             default:
-                break;
+                {
+                    break;
+                }
         }
         
     }
