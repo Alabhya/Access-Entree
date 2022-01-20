@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,7 @@ public class DialogueUI : MonoBehaviour
 	private static DialogueUI original;
     private GameObject speaker; 
     private string[] dialogueItems;
-	private void Awake()
+	/*private void Awake()
 	{		
 		if (original != this) 
 		{
@@ -21,7 +22,7 @@ public class DialogueUI : MonoBehaviour
 			DontDestroyOnLoad(gameObject);
 			original = this;
 		}
-	}
+	}*/
 	
 	//Tracks the different UI elements to update
 	[SerializeField] private GameObject dialogueBox;
@@ -39,6 +40,9 @@ public class DialogueUI : MonoBehaviour
 	
 	private TypewriterEffect typewriterEffect; //Used to easilly access the typewriter effect	
 	private ResponseHandler responseHandler;   //Used to easilly access response handlers
+	
+	private UnityEvent postEvents; //Tracks whether or not the requested dialogue has a post event
+	private DialogueObject postDialogue; //Tracks which dialogue the post event should occur after
 	
 	private void Start()
 	{
@@ -72,6 +76,13 @@ public class DialogueUI : MonoBehaviour
 	public void AddResponseEvents(ResponseEvent[] responseEvents)
 	{
 		responseHandler.AddResponseEvents(responseEvents);
+	}
+	
+	//Adds post events
+	public void AddPostEvents(UnityEvent newPostEvents, DialogueObject newPostDialogue)
+	{
+		postEvents = newPostEvents;
+		postDialogue = newPostDialogue;
 	}
 	
 	//Display each dialouge in a given dialogueObject one at a time
@@ -112,6 +123,13 @@ public class DialogueUI : MonoBehaviour
 		else
 		{
 			CloseDialogueBox();
+			//Run closing events if necessary
+			if(postEvents != null && (postDialogue == dialogueObject))
+			{
+				postEvents?.Invoke();
+				postEvents = null;
+				postDialogue = null;
+			}
 		}
 	}
 	
