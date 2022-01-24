@@ -5,6 +5,8 @@ using UnityEngine;
 public class BuildableObject : MonoBehaviour
 {
     public bool canBeModified = false;
+    public bool isUpgrading = false;
+    public bool hasBeenUpgraded { get; private set; } = false;
 
     // this will be the trigger to start the event, this reference may not be needed
     [SerializeField] private Mesh upgradeMesh;
@@ -14,16 +16,15 @@ public class BuildableObject : MonoBehaviour
     [SerializeField] private List<string> requiredItems;
     [SerializeField] private List<uint> requiredQuantities;
     [SerializeField] private float EffectDuration = 0;
-    // this is the mesh we will use once we upgrade this object
-    
+
     private MeshFilter objectMesh;
 
-    public bool hasBeenUpgraded { get; private set; } = false;
+    
 
     void Start()
     {
         objectMesh = this.GetComponent<MeshFilter>();
-        if (EffectDuration == 0)
+        if (EffectDuration <= 0)
         {
             EffectDuration = 1.0f;
         }
@@ -38,12 +39,11 @@ public class BuildableObject : MonoBehaviour
         }
     }
 
-    // This function will start the construction/upgrade of this object where the mesh will be swapped
-    void BeginUpgrade()
+    // This function will start the construction/upgrade of this object where the mesh will be swapped and particles spawned
+    private void BeginUpgrade()
     {
-        // safety check conditional
+        // safety check conditional in case there are more elements in one of the list
         int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
-        // Debug.Log("Amount of items to check: " + it);
         for (int i = 0; i < it; ++i)
         {
             Inventory.ReduceItemCount(requiredItems[i], (int)requiredQuantities[i]);
@@ -54,19 +54,19 @@ public class BuildableObject : MonoBehaviour
 
         if (particlePrefab == null || particleSpawnLocation == null) { return; }
 
-        // we will spawn the particle effect prefab and retrive the ParticleSystem
+        // Spawning the particle effect prefab and retriving the ParticleSystem
         particlePrefab = Instantiate(particlePrefab, particleSpawnLocation.transform.position, particleSpawnLocation.transform.rotation);
         ParticleSystem particles = particlePrefab.GetComponent<ParticleSystem>();
 
-        if (particles != null)
-        {
-            // We will start playing the particles in case they are paused when spawned and start our coroutine to destroy them later
+        if (particles != null) {
+            // Start playing the particles in case they are paused and start our coroutine to destroy them later
             particles.Play();
             StartCoroutine(ShutDownParticles(EffectDuration, particles));
         }
     }
 
-    IEnumerator SwapMesh(float time)
+    // handles swapping of the mesh
+    private IEnumerator SwapMesh(float time)
     {
         yield return new WaitForSeconds(time);
         // BEWARE: that if upgradeMesh is null aka empty then your object will be mesh-less, will leave this behavior as it could be intended in certain scenarios
@@ -76,11 +76,14 @@ public class BuildableObject : MonoBehaviour
         }
     }
 
-    IEnumerator ShutDownParticles(float time, ParticleSystem particles)
+    // handles destroying the particles
+    private IEnumerator ShutDownParticles(float time, ParticleSystem particles)
     {
         yield return new WaitForSeconds(time);
         particles.Stop();
         Destroy(particlePrefab);
+        // we should stop any other upgrade events with this bool (ex: player animations, locked movement, camera cinematics, etc)
+        isUpgrading = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -90,7 +93,6 @@ public class BuildableObject : MonoBehaviour
         {
             // we will not proccess any logic until we have unlocked the ability to upgrade this item
             if (canBeModified == false){
-                // Debug.Log("The object cannot be upgraded/build at this time");
                 return; 
             }
 
@@ -99,12 +101,10 @@ public class BuildableObject : MonoBehaviour
 
             // safety check conditional
             int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
-            // Debug.Log("Amount of items to check: " + it);
             for (int i = 0; i < it; ++i)
             {
                 int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
                 // checking the current item count requirement with the inventory amount, if not enought we will break the loop
-                // Debug.Log("Checking Item: " + requiredItems[i] + " Needed: " + requiredQuantities[i] + " Have: " + currItemCount);
                 if ( currItemCount < (int)requiredQuantities[i]) {
                     hasEnough = false;
                     break;
@@ -115,17 +115,11 @@ public class BuildableObject : MonoBehaviour
             {
                 Debug.Log("Player has enought Items!");
                 canBeModified = false;
+                isUpgrading = true;
                 // start construction call
                 BeginUpgrade();
             } 
-            //else { // for debbuging purposes only, to be removed
-            //    for (int i = 0; i < it; ++i)
-            //    {
-            //        int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
-
-            //        Debug.Log("Not enought items. Index: " + i + " Item: " + requiredItems[i] + " Needed: " + requiredQuantities[i] + " Have: " + currItemCount);
-            //    }
-            //}
+           
         }
     }
 }
