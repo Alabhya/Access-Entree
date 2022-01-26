@@ -10,25 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea76015847553cc4f829edab8ab136cc, type: 3}
-  m_Name: New Dialogue Object
+  m_Name: Post Dialogue Test
   m_EditorClassIdentifier: 
   dialogueList:
   - text:
-    - Sample
-    - Whatever
+    - When I'm done talking, I'm going to do whatever is in my Post Dialogue Event.
+    - By default, this will destroy me, but you can set this to anything you'd like.
+    - Be creative! I can affect other objects as well.
+    - Just make sure the proper dialogue is being checked AND that the dialogue's
+      'Reponses' list is empty.
     charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
     charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
     voice: {fileID: 0}
-    textSpeed: 0
+    textSpeed: 7
     pauseTime: 1.2
     typeText: 1
-  - text: []
-    charTemplate: {fileID: 11400000, guid: 1d88b50a0f0741b468b1ed1df8f2bf5c, type: 2}
-    charPortrait: {fileID: 21300000, guid: 5ee779b09803b5a48acfc09d97b266f4, type: 3}
-    voice: {fileID: 8300000, guid: b3b20874af3ba894fb3b26cf86e7b5e2, type: 3}
-    textSpeed: 40
-    pauseTime: 0
-    typeText: 1
-  responses:
-  - responseText: Ok
-    dialogueObject: {fileID: 0}
+  responses: []

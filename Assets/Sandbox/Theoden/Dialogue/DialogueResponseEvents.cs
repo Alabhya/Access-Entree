@@ -1,31 +1,31 @@
 using UnityEngine;
 using System;
 
-//Used to allow functions to be called by dialogue system
+//Used to allow functions to be called by dialogue system response events
 public class DialogueResponseEvents : MonoBehaviour
 {
 	[SerializeField] private DialogueObject dialogueObject; //The dialogueObject that is linked to the event
-	[SerializeField] private ResponseEvent[] events; //Events attached to the given dialogueObject 
+	[SerializeField] private ResponseEvent[] rEvents; //Events attached to the given dialogueObject 
 	
 	//Getter functions
 	public DialogueObject DialogueObject => dialogueObject; 
-	public ResponseEvent[] Events => events;
+	public ResponseEvent[] R_Events => rEvents;
 	
-	//Adds events to the different resoponses
+	//Auto fills the response events
 	public void OnValidate()
 	{
 		//Check if dialouge object is valid
 		if (dialogueObject == null) return;
 		if (dialogueObject.Responses == null) return;
-		if (events != null && events.Length == dialogueObject.Responses.Length) return;
+		if (rEvents != null && rEvents.Length == dialogueObject.Responses.Length) return;
 		
-		if(events == null)
+		if(rEvents == null)
 		{
-			events = new ResponseEvent[dialogueObject.Responses.Length];
+			rEvents = new ResponseEvent[dialogueObject.Responses.Length];
 		}
 		else
 		{
-			Array.Resize(ref events, dialogueObject.Responses.Length);
+			Array.Resize(ref rEvents, dialogueObject.Responses.Length);
 		}
 		
 		//Go through responses
@@ -33,13 +33,13 @@ public class DialogueResponseEvents : MonoBehaviour
 		{
 			Response response = dialogueObject.Responses[i];
 			
-			if(events[i] != null)
+			if(rEvents[i] != null)
 			{
-				events[i].name = response.ResponseText;
+				rEvents[i].name = response.ResponseText;
 				continue;
 			}
 			
-			events[i] = new ResponseEvent() {name = response.ResponseText};
+			rEvents[i] = new ResponseEvent() {name = response.ResponseText};
 		}
 	}
 }

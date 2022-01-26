@@ -7,7 +7,6 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 {
 	//The DialogueObject that is opened
 	[SerializeField] private DialogueObject dialogueObject;
-    public string[] dialogueItems; 
 	
 	//Changes the DialogueObject associated with this game object
 	public void UpdateDialogueObject(DialogueObject dialogueObject)
@@ -19,10 +18,8 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.CompareTag("Player") && other.TryGetComponent(out DialogueController player))
-		{	
-			Debug.Log(player);
+		{
 			player.Interactable = this;
-			gameObject.GetComponent<agentcontroller>().dialogue = true;
 		}
 	}
 	
@@ -34,23 +31,29 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 			if(player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
 			{
 				player.Interactable = null;
-				gameObject.GetComponent<agentcontroller>().dialogue = false;
 			}
 		}
 	}
 	
 	//Allows player to open the dialogue when interact button is pressed
 	public void Interact(DialogueController player)
-	{	
+	{
+		//Set up Response events (if necessary)
 		foreach(DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
 		{
 			if(responseEvents.DialogueObject == dialogueObject)
 			{
-				player.DialogueUI.AddResponseEvents(responseEvents.Events);
+				player.DialogueUI.AddResponseEvents(responseEvents.R_Events);
 				break;
 			}
 		}
 		
-		player.DialogueUI.ShowDialogue(dialogueObject, gameObject, dialogueItems);
+		//Set up Post Dialogue events (if necessary)
+		if(gameObject.GetComponent("PostDialogueEvents") != null)
+		{
+			player.DialogueUI.AddPostEvents(gameObject.GetComponent<PostDialogueEvents>().PostEvent, gameObject.GetComponent<PostDialogueEvents>().DialogueObject);
+		}
+
+		player.DialogueUI.ShowDialogue(dialogueObject);
 	}
 }
