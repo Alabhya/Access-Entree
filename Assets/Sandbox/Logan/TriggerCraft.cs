@@ -10,14 +10,12 @@ public class TriggerCraft : MonoBehaviour
 
     public GameObject Player;
     private Vector3 ItemsPosition;
-    private Crafting Craft;
     private Vector3 PlayersPosition;
     private Vector3 ReturnPosition;
     private bool built = false;
     // Start is called before the first frame update
     void Awake()
     {
-        Craft = this.GetComponent<Crafting>();
     }
     void Start() {
         this.transform.rotation = Quaternion.Euler(0,4,0);
@@ -32,7 +30,7 @@ public class TriggerCraft : MonoBehaviour
         //Debug.Log(CalculatePositionZ());
         if(CalculatePositionX() < buildObjectDistance && CalculatePositionZ() < buildObjectDistance && !built)
         {
-            Craft.build("wooden sword",1);
+            Crafting.build("wooden sword",1);
             built = true;
             
         }
