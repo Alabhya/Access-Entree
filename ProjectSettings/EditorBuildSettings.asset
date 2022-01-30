@@ -12,18 +12,18 @@ EditorBuildSettings:
     path: Assets/Sandbox/Logan/test_scene.unity
     guid: 8218181308b3332b2bfe4ecb026613df
   - enabled: 1
-    path: Assets/Scenes/Levels/Area1/Area1.unity
+    path: Assets/Scenes/Levels/Area 1/Area 1.unity
     guid: cb5ad4e73fe985f47a921dc77f5f0255
   - enabled: 1
-    path: Assets/Scenes/Levels/Area2.unity
+    path: Assets/Scenes/Levels/Area 2/Area 2.unity
     guid: af65ccccff9817b4b8180646428f68ca
   - enabled: 1
-    path: Assets/Scenes/Levels/Area3.unity
+    path: Assets/Scenes/Levels/Area 3/Area 3.unity
     guid: 975f671bc661ea045b52c2660c7ab647
   - enabled: 1
     path: Assets/Sandbox/Esteban/EJTestingScene.unity
     guid: 326780726317c8d428555e9337b72f95
   - enabled: 0
-    path: Assets/Scenes/Levels/Prototype.unity
+    path: Assets/Scenes/Levels/Prototype/Prototype.unity
     guid: e3193e2c074078742b9fdb260ff40c5d
   m_configObjects: {}
