@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Crafting : MonoBehaviour
+public static class Crafting
 {
     static Inventory inventory;
+    static Dictionary<string, Item> Items = new Dictionary<string, Item>(); 
+    static Crafting()
+    {
+        Items = DB.LoadItems<Item>("craftableItems.json");   
+    }
+    
     // Add any requirements here as a dictionary, please use format below
     static Dictionary<string, int> bridgeRequirements = new Dictionary<string, int> 
     {     
@@ -38,32 +44,29 @@ public class Crafting : MonoBehaviour
             woodenSwordRequirements
         }
     };
-    public static class BuildSchemas { // static class doesnt currently serve a point, but may build off of it
+    public static bool checkRequirements(string craftName) {
+        if(!requirements.ContainsKey(craftName)) return false; 
+        
+        foreach (var requiredItemName in requirements[craftName].Keys) {
 
-        public static bool checkRequirements(string craftName) {
-            if(!requirements.ContainsKey(craftName)) return false; 
-            
-            foreach (var requiredItemName in requirements[craftName].Keys) {
-
-                if( Inventory.GetItemQuantity(requiredItemName) == 0 )  {
-                    Debug.Log("need: " + requiredItemName); 
-                    return false;
-                }
-                
-                else if(requirements[craftName][requiredItemName] > Inventory.GetItemQuantity(requiredItemName)) {
-                    int howMuchNeeded = requirements[craftName][requiredItemName] - Inventory.GetItemQuantity(requiredItemName); 
-                    Debug.Log("need " + howMuchNeeded + " more " + requiredItemName); 
-                    return false; 
-                }
-                
+            if( Inventory.GetItemQuantity(requiredItemName) == 0 )  {
+                Debug.Log("need: " + requiredItemName); 
+                return false;
             }
-            return true;
+            
+            else if(requirements[craftName][requiredItemName] > Inventory.GetItemQuantity(requiredItemName)) {
+                int howMuchNeeded = requirements[craftName][requiredItemName] - Inventory.GetItemQuantity(requiredItemName); 
+                Debug.Log("need " + howMuchNeeded + " more " + requiredItemName); 
+                return false; 
+            }
+            
         }
+        return true;
     }
-    public void addCraftAsItem(string craftName, decimal craftPrice) {
+    private static void addCraftAsItem(string craftName, decimal craftPrice) {
         Inventory.Add(craftName, 1, craftPrice);
     }
-    void removeRequirementsFromInventory(string craftName) {
+    private static void removeRequirementsFromInventory(string craftName) {
  
         foreach (var itemName in requirements[craftName].Keys) {
             //Debug.Log(Inventory.GetItemQuantity(itemName));
@@ -79,47 +82,15 @@ public class Crafting : MonoBehaviour
         }
     }
 
-
-    public string build(string craftName, decimal craftPrice) { 
-        if(!BuildSchemas.checkRequirements(craftName)) {
+    public static string build(string craftName, decimal craftPrice) { 
+        if(!checkRequirements(craftName)) {
             return "cannot build anything with selected items: ";
         }
         removeRequirementsFromInventory(craftName); 
         addCraftAsItem(craftName, craftPrice);
-        TriggerCraft triggerCraft = this.GetComponent<TriggerCraft>();
-        triggerCraft.spawnCraft(); 
+        //TriggerCraft triggerCraft = this.GetComponent<TriggerCraft>();
+        //triggerCraft.spawnCraft(); 
         Inventory.Save();
         return "success"; 
     } 
-
-    // Start is called before the first frame update
-    void Start()
-    {   // add test data into inventory 
-        
-        Inventory.LoadFromDb(); 
-
-        /*Inventory.Add("wood",3,1); 
-        Inventory.Add("steel",3,2); 
-        Inventory.Add("mana",1,0); 
-        string craftItemName = "bridge"; // tmp for testing
-        decimal craftItemPrice = 1; // this data will need to come from database of crafts
-        string builtItem = build(craftItemName, craftItemPrice);
-        
-        Debug.Log("remianing wood: " + Inventory.GetItemQuantity("wood"));
-        //Debug.Log("remianing steel: " + Inventory.GetItemQuantity("steel"));
-        //Debug.Log("remianing mana: " + Inventory.GetItemQuantity("mana"));
-        //Debug.Log("Item built: " + builtItem);
-        
-        Inventory.Save(); 
-        Debug.Log("Inventory saved");*/
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if(player.transform.position == this.transform.position){
-            build(craftName); 
-        }*/
-    }
 }
