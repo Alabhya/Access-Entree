@@ -14,7 +14,6 @@ public static class DB {
         //var dictionaryType = typeof(Dictionary<>);
         //var dictionaryPropertyType = dictionaryType.MakeGenericType(dataType);
         //dynamic dictOfItems = dictionaryPropertyType.GetProperty("Value").GetValue(v1, null);
-        Debug.Log("here");
         Dictionary<string, T> dictOfItems = new Dictionary<string, T>();
 
         if (File.Exists(dataPath))

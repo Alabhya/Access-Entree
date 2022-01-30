@@ -135,10 +135,11 @@ public class PlayerInteractorResources : MonoBehaviour
                 TimeTillDestroy -= Time.deltaTime;
                 if (TimeTillDestroy <= 0)
                 {
-                    string canCraft = Crafting.build("bridge", 1);
+                    string[] crafts = new string[] {"bridge" };
+                    string canCraft = Crafting.build(crafts[0], 1);
                     if (canCraft == "success")
                     {
-                        hit.transform.GetComponent<TriggerCraft>().spawnCraft();
+                        ItemHandler.Instance.spawnItems(crafts, hit.transform.position);
                     }
                     else Debug.Log(canCraft);
                     isCrafting = false;
