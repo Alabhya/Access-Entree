@@ -11,9 +11,6 @@ public static class DB {
 
     public static Dictionary<string, T> LoadItems<T>(string dataPath)
     {
-        //var dictionaryType = typeof(Dictionary<>);
-        //var dictionaryPropertyType = dictionaryType.MakeGenericType(dataType);
-        //dynamic dictOfItems = dictionaryPropertyType.GetProperty("Value").GetValue(v1, null);
         Dictionary<string, T> dictOfItems = new Dictionary<string, T>();
 
         if (File.Exists(dataPath))
@@ -24,7 +21,6 @@ public static class DB {
                 dictOfItems = JsonConvert.DeserializeObject<Dictionary<string, T>>(json);
             }
         };           
-        //Debug.Log(dictOfItems["wood"].Quantity);
         return dictOfItems;
     }        
 

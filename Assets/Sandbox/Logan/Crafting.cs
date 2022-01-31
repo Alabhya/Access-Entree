@@ -6,57 +6,30 @@ using UnityEngine;
 public static class Crafting
 {
     static Inventory inventory;
+
+
     static Dictionary<string, Item> Items = new Dictionary<string, Item>(); 
     static Crafting()
     {
-        Items = DB.LoadItems<Item>("craftableItems.json");   
+        Items = DB.LoadItems<Item>("craftableItems.json"); 
     }
-    
-    // Add any requirements here as a dictionary, please use format below
-    static Dictionary<string, int> bridgeRequirements = new Dictionary<string, int> 
-    {     
-        {"wood", 2 },
-        {"stone", 3 }
-    }; 
-    static Dictionary<string, int> benchRequirements = new Dictionary<string, int> 
-    {     
-        {"wood", 3 },
-        {"steel", 1 }, 
-        {"mana", 1},      
-    }; 
-    static Dictionary<string, int> woodenSwordRequirements = new Dictionary<string, int> 
-    {     
-        {"stone", 2 }, 
-    }; 
-    // these should eventually be scriptable objects accessible to other scripts
-    public static Dictionary<string, Dictionary<string,int>> requirements = new Dictionary<string, Dictionary<string,int>>
-    {
-        {   
-            "bridge", // key 
-            bridgeRequirements
-        },
-        {   
-            "bench", // key 
-            benchRequirements
-        },
-        {   
-            "wooden sword", // key 
-            woodenSwordRequirements
-        }
-    };
-    public static bool checkRequirements(string craftName) {
-        if(!requirements.ContainsKey(craftName)) return false; 
-        
-        foreach (var requiredItemName in requirements[craftName].Keys) {
 
-            if( Inventory.GetItemQuantity(requiredItemName) == 0 )  {
-                Debug.Log("need: " + requiredItemName); 
+    public static bool checkRequirements(string craftName) {
+        
+        if(!Items.ContainsKey(craftName)) return false; 
+        Dictionary<string, int> requirements = new Dictionary<string, int>(); 
+        requirements = Items[craftName].ResourcesRequired; 
+        
+        foreach (var requirementName in requirements.Keys) {
+
+            if( Inventory.GetItemQuantity(requirementName) == 0 )  {
+                Debug.Log("need: " + requirementName); 
                 return false;
             }
             
-            else if(requirements[craftName][requiredItemName] > Inventory.GetItemQuantity(requiredItemName)) {
-                int howMuchNeeded = requirements[craftName][requiredItemName] - Inventory.GetItemQuantity(requiredItemName); 
-                Debug.Log("need " + howMuchNeeded + " more " + requiredItemName); 
+            else if(requirements[requirementName] > Inventory.GetItemQuantity(requirementName)) {
+                int howMuchNeeded = requirements[requirementName] - Inventory.GetItemQuantity(requirementName); 
+                Debug.Log("need " + howMuchNeeded + " more " + requirementName); 
                 return false; 
             }
             
@@ -67,18 +40,18 @@ public static class Crafting
         Inventory.Add(craftName, 1, craftPrice);
     }
     private static void removeRequirementsFromInventory(string craftName) {
- 
-        foreach (var itemName in requirements[craftName].Keys) {
-            //Debug.Log(Inventory.GetItemQuantity(itemName));
+        Dictionary<string, int> requirements = new Dictionary<string, int>(); 
+        requirements = Items[craftName].ResourcesRequired;
+        foreach (var requirementName in requirements.Keys) {
             // item has been used to build, so remove from inventory
-            if(Inventory.GetItemQuantity(itemName) >= requirements[craftName][itemName]) {
+            if(Inventory.GetItemQuantity(requirementName) >= requirements[requirementName]) {
                 // item has been used to build, so remove from inventory
-                Inventory.ReduceItemCount(itemName, requirements[craftName][itemName]);
+                Inventory.ReduceItemCount(requirementName, requirements[requirementName]);
             }
             else { // this should never happen because checkRequirements method should be called first
                 Debug.Log("ERROR: Item was built without correct materials");
             }   
-            if(Inventory.GetItemQuantity(itemName) == 0) Inventory.RemoveItem(itemName);
+            if(Inventory.GetItemQuantity(requirementName) == 0) Inventory.RemoveItem(requirementName);
         }
     }
 
