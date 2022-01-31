@@ -13,7 +13,6 @@ public class TriggerCraft : MonoBehaviour
     private Vector3 PlayersPosition;
     private Vector3 ReturnPosition;
     private bool built = false;
-
     void Start() {
         this.transform.rotation = Quaternion.Euler(0,4,0);
     }

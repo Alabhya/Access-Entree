@@ -12,7 +12,7 @@ public class Item
     public string Name { get; set; }
     public decimal Price { get; set; }
     public int Quantity { get; set; }
-
+    public Dictionary<string,int>  ResourcesRequired {get; set;}
     // Possible Constructor Usage. Ask Logan
 
 }
@@ -22,7 +22,6 @@ public class Inventory : ScriptableObject {
     public static Dictionary<string, Item> Items;
     private static string dataPath = "testDb.json"; //tmp db for inventory
 
-    //public static Inventory inventoryObject = Resources.Load<Inventory>("Inventory");
     static Inventory()
     {
         Items = new Dictionary<string, Item>(); 
@@ -67,7 +66,6 @@ public class Inventory : ScriptableObject {
             else item.Price = 0; 
             Items[itemName] = item;
         }
-        //Debug.Log("item added");
     }
 
     public static int GetTotalItems() // how many types of items (keys)
