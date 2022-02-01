@@ -24,16 +24,13 @@ public class agentcontroller : MonoBehaviour
         //}
         //start = true;
         cv = Vector3.zero;
-        //Debug.Log("get agent");
         agent = GetComponent<NavMeshAgent>();
-        //Debug.Log("Got agent");
         //agent.speed = Random.Range(5.0f, 10.0f);
         agent.speed = 5;
         agent.SetDestination(destination);
         agent.autoRepath = true;
         agent.autoBraking = true;
         bs = new boundingstuff(agent.speed, 0.5f, 0.3f, transform, agent.nextPosition);
-        //Debug.Log("get anima");
         anima = GetComponent<Animator>();
         //Debug.Log(anima.runtimeAnimatorController.name);
         flag = true;
@@ -63,7 +60,6 @@ public class agentcontroller : MonoBehaviour
         if (Vector3.Distance(agent.destination, transform.position) <= float.Epsilon || stop)
         {
             agent.SetDestination(transform.position);
-            Debug.Log(dialogue);
             anima.SetBool("walking", false);
             stop = true;
             stopCount += 1;
@@ -74,7 +70,6 @@ public class agentcontroller : MonoBehaviour
     public void Stop()
     {
         //bs.front = 1;
-        Debug.Log("2");
         anima.SetBool("walking", false);
         stop = true;
     }
