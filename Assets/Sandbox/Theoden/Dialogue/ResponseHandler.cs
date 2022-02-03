@@ -26,6 +26,26 @@ public class ResponseHandler : MonoBehaviour
 		this.responseEvents = responseEvents;
 	}
 	
+	private void LinkButtons()
+	{
+		int i = 0;
+		foreach(GameObject button in tempRespBtn)
+		{
+			Navigation NewNav = new Navigation();
+			NewNav.mode = Navigation.Mode.Explicit;
+			
+			//Left button
+			if(i == 0){NewNav.selectOnLeft = tempRespBtn[tempRespBtn.Count -1].GetComponent<Button>();}//First button
+			else{NewNav.selectOnLeft = tempRespBtn[i-1].GetComponent<Button>();}
+			//Right button
+			if(i == tempRespBtn.Count -1){NewNav.selectOnRight = tempRespBtn[0].GetComponent<Button>();}
+			else{NewNav.selectOnRight = tempRespBtn[i+1].GetComponent<Button>();}
+			
+			button.GetComponent<Button>().navigation = NewNav;
+			i++;
+		}
+	}
+	
 	//Fills in a list of response buttons
 	public void ShowResponses(Response[] responses)
 	{
@@ -48,13 +68,16 @@ public class ResponseHandler : MonoBehaviour
 			responseBoxHeight += responseButtonTemplate.sizeDelta.y;
 		}
 		
+		//Link buttons
+		//LinkButtons();
+		
 		//Update the whole box
 		responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
 		responseBox.gameObject.SetActive(true);
 	}
-	
-	//Add button functionality for when it is clicked and clear out responses
-	private void OnPickedResponse(Response response, int responseIndex)
+
+    //Add button functionality for when it is clicked and clear out responses
+    private void OnPickedResponse(Response response, int responseIndex, string[] dialogueItems = null)
 	{
 		//Clear out buttons first
 		responseBox.gameObject.SetActive(false);

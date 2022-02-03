@@ -38,15 +38,22 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 	//Allows player to open the dialogue when interact button is pressed
 	public void Interact(DialogueController player)
 	{
+		//Set up Response events (if necessary)
 		foreach(DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
 		{
 			if(responseEvents.DialogueObject == dialogueObject)
 			{
-				player.DialogueUI.AddResponseEvents(responseEvents.Events);
+				player.DialogueUI.AddResponseEvents(responseEvents.R_Events);
 				break;
 			}
 		}
 		
+		//Set up Post Dialogue events (if necessary)
+		if(gameObject.GetComponent("PostDialogueEvents") != null)
+		{
+			player.DialogueUI.AddPostEvents(gameObject.GetComponent<PostDialogueEvents>().PostEvent, gameObject.GetComponent<PostDialogueEvents>().DialogueObject);
+		}
+
 		player.DialogueUI.ShowDialogue(dialogueObject);
 	}
 }

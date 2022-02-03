@@ -5,25 +5,14 @@ using UnityEngine;
 public class TriggerCraft : MonoBehaviour
 {
     public float buildObjectDistance;
-    public float TimeTillPickupable;
-    public float GravityStrength;
     public GameObject Prefab;
     public Transform spawn;
 
     public GameObject Player;
     private Vector3 ItemsPosition;
-    //private PlayerInteractor PlayerInteractorScript;
-    private Building Building;
     private Vector3 PlayersPosition;
     private Vector3 ReturnPosition;
     private bool built = false;
-    // Start is called before the first frame update
-    void Awake()
-    {
-        //Player = PlayerInteractor.Instance.gameObject;
-        //Building = Building.Instance;
-        Building = this.GetComponent<Building>();
-    }
     void Start() {
         this.transform.rotation = Quaternion.Euler(0,4,0);
     }
@@ -37,8 +26,9 @@ public class TriggerCraft : MonoBehaviour
         //Debug.Log(CalculatePositionZ());
         if(CalculatePositionX() < buildObjectDistance && CalculatePositionZ() < buildObjectDistance && !built)
         {
-            //Building.build("bridge",1);
-            built = true; 
+            Crafting.build("axe",1);
+            built = true;
+            
         }
         if(CalculatePositionX() > buildObjectDistance && CalculatePositionZ() > buildObjectDistance && built) {
             built = false; 
@@ -56,16 +46,5 @@ public class TriggerCraft : MonoBehaviour
         Vector3 NegativeReturnPosition = PlayersPosition - ItemsPosition;
         ReturnPosition.z = Mathf.Abs(NegativeReturnPosition.z);
         return Mathf.Abs(ReturnPosition.z);
-    }
-
-    public void spawnCraft()
-    {
-        GameObject craft = Instantiate(Prefab, spawn.position, this.transform.rotation);
-        Vector3 scale = transform.localScale;
-        scale.x = 0.01F;
-        scale.y = 0.01F;
-        scale.z = 0.01F;
-        craft.transform.localScale = scale;
-        //craft.GetComponent<Rigidbody>().AddForce(new Vector3(RandomX,0,RandomZ));
     }
 }

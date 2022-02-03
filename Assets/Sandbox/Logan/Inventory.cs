@@ -12,29 +12,30 @@ public class Item
     public string Name { get; set; }
     public decimal Price { get; set; }
     public int Quantity { get; set; }
-
+    public Dictionary<string,int>  ResourcesRequired {get; set;}
     // Possible Constructor Usage. Ask Logan
 
 }
 [CreateAssetMenu(fileName = "New Inventory", menuName="Inventory")]
 public class Inventory : ScriptableObject {
     int currentIdCount = 0; // this increments for each new item
-    //public static List<Item> items;
-    public static Dictionary<string, Item> Items;  
+    public static Dictionary<string, Item> Items;
+    private static string dataPath = "testDb.json"; //tmp db for inventory
 
     static Inventory()
     {
         Items = new Dictionary<string, Item>(); 
+        LoadFromDb();
     }
 
     public static void LoadFromDb()
     {
-        Items = DataManager.LoadItems();
+        Items = DB.LoadItems<Item>("testDb.json");
     }
 
     public static void Save()
     {
-        DataManager.SaveItems(Items);
+        DB.SaveItems("testDb.json",Items);
     }
 
     // What happens if itemName is not in Item Dictionary TryGetKey?
@@ -65,7 +66,6 @@ public class Inventory : ScriptableObject {
             else item.Price = 0; 
             Items[itemName] = item;
         }
-        Debug.Log("item added");
     }
 
     public static int GetTotalItems() // how many types of items (keys)
@@ -119,34 +119,5 @@ public class Inventory : ScriptableObject {
     public static void ClearInventory()
     {
         Items.Clear();
-    }
-}
-static class DataManager
-{
-    private static string dataPath = "testDb.json"; //tmp db
-
-    public static Dictionary<string, Item> LoadItems()
-    {
-        Dictionary<string, Item> dictOfItems = new Dictionary<string, Item>();
-
-        if (File.Exists(dataPath))
-        {
-            string json = File.ReadAllText("testDb.json");
-            if (!string.IsNullOrWhiteSpace(json))
-            {
-                dictOfItems = JsonConvert.DeserializeObject<Dictionary<string, Item>>(json);
-            }
-        };           
-        //Debug.Log(dictOfItems["wood"].Quantity);
-        return dictOfItems;
-    }        
-
-    public static void SaveItems(Dictionary<string, Item> ItemsToSave)
-    {   
-        if (!File.Exists(dataPath))
-            File.Create(dataPath);
-
-        string json = JsonConvert.SerializeObject(ItemsToSave);
-        File.WriteAllText(dataPath, json);
     }
 }
