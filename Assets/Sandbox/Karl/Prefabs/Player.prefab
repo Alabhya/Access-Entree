@@ -470,6 +470,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -648,7 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc32db813970f1347a477f1e82e9598b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueUI: {fileID: 0}
   _inputX: 0
   _inputZ: 0
   _playerSpeed: 10
@@ -660,12 +660,12 @@ MonoBehaviour:
   _playerVelocity: {x: 0, y: 0, z: 0}
   BlockPlayerRotation: 0
   DesiredRotationSpeed: 0.3
-  DesiredMoveDirection: {x: 0, y: 0, z: 0}
   AllowPlayerRotation: 0.1
+  DesiredMoveDirection: {x: 0, y: 0, z: 0}
   _groundCheck: {fileID: 4852269007725375104}
   _groundMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 4096
   _isGrounded: 0
   _groundDistance: 0.4
 --- !u!1 &1520370257769753061

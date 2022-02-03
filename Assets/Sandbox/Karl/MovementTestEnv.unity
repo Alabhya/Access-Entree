@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 464012551}
   - component: {fileID: 464012550}
   - component: {fileID: 464012549}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 1529310882}
   - component: {fileID: 1529310881}
   - component: {fileID: 1529310880}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,23 +668,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1520370257458062701, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.021534564
+      value: 0.021534579
       objectReference: {fileID: 0}
     - target: {fileID: 1520370257458062701, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.5459218e-17
+      value: -0.000000014484998
       objectReference: {fileID: 0}
     - target: {fileID: 1520370257458062701, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.217982e-18
+      value: 0.0000000034970715
       objectReference: {fileID: 0}
     - target: {fileID: 1520370257470869935, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 7.761891e-24
+      value: -6.3148335e-15
       objectReference: {fileID: 0}
     - target: {fileID: 1520370257470869935, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -7.18049e-23
+      value: 5.841823e-14
       objectReference: {fileID: 0}
     - target: {fileID: 1520370257694970064, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_Name
@@ -738,13 +738,21 @@ PrefabInstance:
       propertyPath: _playerMovement
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1520370257694970071, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
+      propertyPath: AllowPlayerRotation
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520370257694970071, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
+      propertyPath: DesiredRotationSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1520370258839811712, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1.2856935e-22
+      value: 8.354331e-24
       objectReference: {fileID: 0}
     - target: {fileID: 1520370258839811712, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 6.537291e-23
+      value: 1.4420462e-22
       objectReference: {fileID: 0}
     - target: {fileID: 1520370259003360804, guid: 0c223c8f9c08dd640bb17074876f97b5, type: 3}
       propertyPath: m_LocalRotation.y

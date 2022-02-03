@@ -14,9 +14,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region GLOBAL VARIABLES
-    [Header("Player Dialogue")]
-	[SerializeField] private DialogueUI _dialogueUI;
-
     [Header("Movement Values")]
     [Tooltip("Up/Down input.")]
     [SerializeField] private float _inputX;
