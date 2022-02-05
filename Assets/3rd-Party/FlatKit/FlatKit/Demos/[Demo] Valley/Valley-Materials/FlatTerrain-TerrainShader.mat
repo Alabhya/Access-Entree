@@ -145,7 +145,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GradientAngle: 0
+    - _GradientAngle: 90
     - _GradientCenterX: 0
     - _GradientCenterY: 38
     - _GradientEnabled: 1
@@ -199,7 +199,7 @@ Material:
     - _ColorDimCurve: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorDimExtra: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
     - _ColorDimSteps: {r: 0.85, g: 0.85, b: 0.85, a: 0.85}
-    - _ColorGradient: {r: 0.31132078, g: 0.12775901, b: 0.16332224, a: 1}
+    - _ColorGradient: {r: 0.21223079, g: 0.31854683, b: 0.11953845, a: 1}
     - _ColorSecondary: {r: 1, g: 0.55879205, b: 0, a: 1}
     - _ColorShadow: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _ColorShadows: {r: 0.4627451, g: 0.40784314, b: 0.41833144, a: 1}
