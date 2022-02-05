@@ -15,7 +15,6 @@ public class PlayerInteractorResources : MonoBehaviour
     private LayerMask CraftingLayer;
     private Outline MyOutline;
     private InteractorController MyInteractorController;
-    private Crafting CraftScript;
 
     private float TimeTillDestroy;
     private bool IsHarvestingResource;
@@ -136,11 +135,11 @@ public class PlayerInteractorResources : MonoBehaviour
                 TimeTillDestroy -= Time.deltaTime;
                 if (TimeTillDestroy <= 0)
                 {
-                    CraftScript = this.GetComponent<Crafting>();
-                    string canCraft = CraftScript.build("bridge", 1);
+                    string[] crafts = new string[] {"bridge" };
+                    string canCraft = Crafting.build(crafts[0], 1);
                     if (canCraft == "success")
                     {
-                        hit.transform.GetComponent<TriggerCraft>().spawnCraft();
+                        ItemHandler.Instance.spawnItems(crafts, hit.transform.position);
                     }
                     else Debug.Log(canCraft);
                     isCrafting = false;

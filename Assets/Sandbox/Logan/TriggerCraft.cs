@@ -10,15 +10,9 @@ public class TriggerCraft : MonoBehaviour
 
     public GameObject Player;
     private Vector3 ItemsPosition;
-    private Crafting Craft;
     private Vector3 PlayersPosition;
     private Vector3 ReturnPosition;
     private bool built = false;
-    // Start is called before the first frame update
-    void Awake()
-    {
-        Craft = this.GetComponent<Crafting>();
-    }
     void Start() {
         this.transform.rotation = Quaternion.Euler(0,4,0);
     }
@@ -32,7 +26,7 @@ public class TriggerCraft : MonoBehaviour
         //Debug.Log(CalculatePositionZ());
         if(CalculatePositionX() < buildObjectDistance && CalculatePositionZ() < buildObjectDistance && !built)
         {
-            Craft.build("wooden sword",1);
+            Crafting.build("axe",1);
             built = true;
             
         }
@@ -52,17 +46,5 @@ public class TriggerCraft : MonoBehaviour
         Vector3 NegativeReturnPosition = PlayersPosition - ItemsPosition;
         ReturnPosition.z = Mathf.Abs(NegativeReturnPosition.z);
         return Mathf.Abs(ReturnPosition.z);
-    }
-
-    public void spawnCraft()
-    {
-        GameObject craft = Instantiate(Prefab, spawn.position, this.transform.rotation);
-        Vector3 scale = transform.localScale;
-        //scale.x = 0.01F;
-        //scale.y = 0.01F;
-        //scale.z = 0.01F;
-        craft.transform.localScale = scale;
-        Inventory.Add("cool item", 1, 10); 
-        //craft.GetComponent<Rigidbody>().AddForce(new Vector3(RandomX,0,RandomZ));
     }
 }
