@@ -48,8 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 680eeeac5360d5ca0a6e16809c55a4ee, type: 2}
-  dialogueItems:
-  - StonePrefab
 --- !u!114 &8725856118979529152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +77,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 11f85f14d5ba5eb4da00c1d95d2d9088, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
       propertyPath: m_RootOrder
       value: 0

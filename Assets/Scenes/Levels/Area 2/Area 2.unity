@@ -188,11 +188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544053285521, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001762991
+      value: 0.000000017629906
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544053285521, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000019363626
+      value: -0.0000000019363622
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544249633740, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_Enabled
@@ -220,11 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544711201815, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000001706663
+      value: -0.000000017066634
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544711201815, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021885211
+      value: 0.0000000021885216
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544908031827, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -248,11 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544908031827, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017079184
+      value: -0.000000017079186
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544908031827, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021871958
+      value: 0.0000000021871964
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
@@ -539,6 +539,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2047874154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047874156}
+  - component: {fileID: 2047874155}
+  m_Layer: 0
+  m_Name: Town NPCs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2047874155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047874154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b60565dd86aea28bb7b19c29448221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number_of_agents: 2
+  NPC: {fileID: 1624752132170550599, guid: 2937b6d63ec8b3b4a84ca36468831c75, type: 3}
+--- !u!4 &2047874156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047874154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7340739138585230598
 PrefabInstance:

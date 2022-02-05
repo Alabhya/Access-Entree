@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f91992a9e8b0f468302d61e0812850, type: 3}
+  m_Name: Speedy Gonzales
+  m_EditorClassIdentifier: 
+  mainPortrait: {fileID: 21300000, guid: 5ee779b09803b5a48acfc09d97b266f4, type: 3}
+  objectName: Speedy Gonzales
+  objectInfo:
+  - Restraurateur
+  - The fastest mouse in Mexico.
+  objectIcons:
+  - iconListTitle: Likes
+    iconList:
+    - {fileID: 21300000, guid: 927989a06f0e793449c0f5a47a23285a, type: 3}
+    - {fileID: 21300000, guid: 7c4917a2a9be80842a57706c421571eb, type: 3}
+  - iconListTitle: Dislikes
+    iconList:
+    - {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
