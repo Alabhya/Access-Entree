@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager
 {
     /**
      * Game Manager System
@@ -13,8 +13,27 @@ public class GameManager : MonoBehaviour
      * - Implement singleton object
      */
 
-    public static GameManager Instance;
+    public static GameManager instance;
 
+    private GameManager()
+    {
+        // initialize your game manager here. Do not reference GameObjects here (i.e. GameObject.Find etc.)
+        // because game manager will be created before the objects
+        CheckGameState();
+    }
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameManager();
+            }
+
+            return instance;
+        }
+    }
     public enum GameState
     { 
         START,
@@ -26,23 +45,6 @@ public class GameManager : MonoBehaviour
 
     public GameState CurrentState = GameState.START;
 
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void Update()
-    {
-        CheckGameState();
-    }
-
     /**
      * Check Game State:
      * - Check the overall game's current state
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour
         switch (CurrentState)
         {
             case GameState.START:
-                print("Game State: STARTING LEVEL...");
+                Debug.Log("Game State: STARTING LEVEL...");
                 CurrentState = GameState.NORMAL;
                 break;
 
@@ -61,15 +63,15 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.PAUSE:
-                print("Game State: Game is currently paused!");
+                Debug.Log("Game State: Game is currently paused!");
                 break;
 
             case GameState.TALKING:
-                print("Game State: Player is talking...");
+                Debug.Log("Game State: Player is talking...");
                 break;
 
             case GameState.MENU:
-                print("Game State: Menu is up! Game world is paused!");
+                Debug.Log("Game State: Menu is up! Game world is paused!");
                 break;
 
             default:
