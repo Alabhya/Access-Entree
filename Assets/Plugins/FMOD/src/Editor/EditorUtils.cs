@@ -27,7 +27,7 @@ namespace FMODUnity
         Paused,
     }
 
-    class EditorUtils : MonoBehaviour
+    public class EditorUtils : MonoBehaviour
     {
         public const string BuildFolder = "Build";
 
