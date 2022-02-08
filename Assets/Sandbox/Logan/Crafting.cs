@@ -7,7 +7,6 @@ public static class Crafting
 {
     static Inventory inventory;
 
-
     static Dictionary<string, Item> Items = new Dictionary<string, Item>(); 
     static Crafting()
     {
@@ -32,7 +31,6 @@ public static class Crafting
                 Debug.Log("need " + howMuchNeeded + " more " + requirementName); 
                 return false; 
             }
-            
         }
         return true;
     }
@@ -61,8 +59,6 @@ public static class Crafting
         }
         removeRequirementsFromInventory(craftName); 
         addCraftAsItem(craftName, craftPrice);
-        //TriggerCraft triggerCraft = this.GetComponent<TriggerCraft>();
-        //triggerCraft.spawnCraft(); 
         Inventory.Save();
         return "success"; 
     } 
