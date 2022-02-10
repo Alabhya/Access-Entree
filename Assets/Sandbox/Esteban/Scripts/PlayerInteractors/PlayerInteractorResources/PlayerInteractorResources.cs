@@ -15,7 +15,6 @@ public class PlayerInteractorResources : MonoBehaviour
     private LayerMask CraftingLayer;
     private Outline MyOutline;
     private InteractorController MyInteractorController;
-    private Crafting CraftScript;
 
     private float TimeTillDestroy;
     private bool IsHarvestingResource;
@@ -66,7 +65,6 @@ public class PlayerInteractorResources : MonoBehaviour
             RaycastHit hit;
             if (Physics.SphereCast(transform.position, 0.75f, transform.TransformDirection(Vector3.forward), out hit, 6, ResourceLayer))
             {   
-                //Debug.Log("hit check" + hit.transform.GetComponent<TriggerCraft>());
                 if (hit.transform.GetComponent<Outline>() == null)
                     return;
                 if (hit.transform.GetComponent<Outline>().enabled == false)
@@ -89,14 +87,10 @@ public class PlayerInteractorResources : MonoBehaviour
             }
             else if (Physics.SphereCast(transform.position, 0.75f, transform.TransformDirection(Vector3.forward), out hit, 6, CraftingLayer))
             {   
-                Debug.Log("hit check" + hit.transform.GetComponent<TriggerCraft>());
                 if (hit.transform.GetComponent<Outline>() == null) return;
                 if (hit.transform.GetComponent<Outline>().enabled == false)
                 {
-                    if (hit.transform.GetComponent<TriggerCraft>() != null)
-                    {
-                        isCrafting = true;
-                    }
+                    isCrafting = true;
                 }
             }
             else
@@ -136,11 +130,11 @@ public class PlayerInteractorResources : MonoBehaviour
                 TimeTillDestroy -= Time.deltaTime;
                 if (TimeTillDestroy <= 0)
                 {
-                    CraftScript = this.GetComponent<Crafting>();
-                    string canCraft = CraftScript.build("bridge", 1);
+                    string[] crafts = new string[] {"bridge" };
+                    string canCraft = Crafting.build(crafts[0], 1);
                     if (canCraft == "success")
                     {
-                        hit.transform.GetComponent<TriggerCraft>().spawnCraft();
+                        ItemHandler.Instance.spawnItems(crafts, hit.transform.position);
                     }
                     else Debug.Log(canCraft);
                     isCrafting = false;

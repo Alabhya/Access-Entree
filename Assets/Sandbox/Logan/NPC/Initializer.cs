@@ -29,7 +29,7 @@ public class Initializer : MonoBehaviour
         //int switcher = 0;
         for (int i = 0; i < number_of_agents; i++)
         {
-            spots = Startandend();
+            spots = Startandend(); // why return 2 spots, why not just grab one and move from its current location to the next one
             //if (switcher == 0)
             //{
             //    agents[i] = Instantiate(NPC1, spots[0], Quaternion.identity);
@@ -47,26 +47,31 @@ public class Initializer : MonoBehaviour
         }
     }
 
-    Vector3[] Startandend()
+    // TODO: I commented the loop as it would lock the program for now, this will need to be reworked and proper check will need to be provided, I also made some changes
+    // in the GetRandomLocation() function. - Julio
+    Vector3[] Startandend() // this is causing an infinite loop when GetRandomLocation() gets invalid data
     {
         Vector3[] result = new Vector3[2];
         result[0] = GetRandomLocation();
-        do
-        {
+       // do
+       // {
             result[1] = GetRandomLocation();
-        } while ((result[0] - result[1]).sqrMagnitude < 100);
+       // } while ((result[0] - result[1]).sqrMagnitude < 100);
         return result;
     }
 
     public static Vector3 GetRandomLocation()
     {
+        Vector3 point = Vector3.zero;
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
         //UnityEngine.Debug.Log(navMeshData.indices.Length);
         //UnityEngine.Debug.Log(navMeshData.vertices.Length);
         int t = Random.Range(0, navMeshData.indices.Length - 3);
-
-        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
-        point = Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+        if (t > 0) {
+            //UnityEngine.Debug.Log("index: " + t + " navMeshData.indices.length: " + navMeshData.indices.Length + " navMeshData.vertices.lenght: " + navMeshData.vertices.Length);
+            point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
+            point = Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+       }
 
         return point;
     }
@@ -78,9 +83,9 @@ public class Initializer : MonoBehaviour
         float time;
         for (int i = 0; i < number_of_agents - 1; i++)
         {
+            if (!agents[i]) { return; } // @LOGAN I added this safety check, make sure you review it - Julio
             var aci = agents[i].GetComponent<agentcontroller>();
-            if (!aci.flag)
-                return;
+            if (!aci.flag) { return; }
             for (int j = i + 1; j < number_of_agents; j++)
             {
                 var acj = agents[j].GetComponent<agentcontroller>();
