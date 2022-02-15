@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterDialogue : MonoBehaviour
+//CharacterDialogue requires the GameObject to have a DialogueActivator script
+[RequireComponent(typeof(DialogueActivator))]
 
+public class CharacterDialogue : MonoBehaviour
 {
     public string ObjectToAttachTo = "Character";
     public bool TempActivateMovement;
