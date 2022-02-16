@@ -16,13 +16,14 @@ public class ResourceUIController : MonoBehaviour
     void Start() {
         WoodText.text = "Wood: " + NumberOfWood;
         StoneText.text = "Stone: " + NumberOfStone;
+        AccessScore.text = PlayerInfo.getScore();
     }
 
     // Update is called once per frame
     void Update() {
         WoodText.text = "Wood: " + Inventory.GetItemQuantity("wood");
         StoneText.text = "Stone: " + Inventory.GetItemQuantity("stone");
-        AccessScore.text = PlayerInfo.getScore();
+        
     }
 
     // these functions are no longer needed and do not update when removing items from the inventory
