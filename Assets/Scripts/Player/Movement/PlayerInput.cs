@@ -80,6 +80,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotate Camera"",
+                    ""type"": ""Value"",
+                    ""id"": ""4146b802-b03b-44a8-86ee-c0afb93e9b2f"",
+                    ""expectedControlType"": ""Touch"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -214,6 +223,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d7eca87-1fb4-4546-9c9f-b4b9cc5887fe"",
+                    ""path"": ""<Touchscreen>/primaryTouch"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -228,6 +248,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_Test_Interact = m_Player_Test.FindAction("Interact", throwIfNotFound: true);
         m_Player_Test_Skip = m_Player_Test.FindAction("Skip", throwIfNotFound: true);
         m_Player_Test_Confirm = m_Player_Test.FindAction("Confirm", throwIfNotFound: true);
+        m_Player_Test_RotateCamera = m_Player_Test.FindAction("Rotate Camera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -293,6 +314,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Test_Interact;
     private readonly InputAction m_Player_Test_Skip;
     private readonly InputAction m_Player_Test_Confirm;
+    private readonly InputAction m_Player_Test_RotateCamera;
     public struct Player_TestActions
     {
         private @PlayerInput m_Wrapper;
@@ -303,6 +325,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Test_Interact;
         public InputAction @Skip => m_Wrapper.m_Player_Test_Skip;
         public InputAction @Confirm => m_Wrapper.m_Player_Test_Confirm;
+        public InputAction @RotateCamera => m_Wrapper.m_Player_Test_RotateCamera;
         public InputActionMap Get() { return m_Wrapper.m_Player_Test; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +353,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Confirm.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnConfirm;
                 @Confirm.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnConfirm;
                 @Confirm.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnConfirm;
+                @RotateCamera.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnRotateCamera;
+                @RotateCamera.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnRotateCamera;
             }
             m_Wrapper.m_Player_TestActionsCallbackInterface = instance;
             if (instance != null)
@@ -352,6 +378,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Confirm.started += instance.OnConfirm;
                 @Confirm.performed += instance.OnConfirm;
                 @Confirm.canceled += instance.OnConfirm;
+                @RotateCamera.started += instance.OnRotateCamera;
+                @RotateCamera.performed += instance.OnRotateCamera;
+                @RotateCamera.canceled += instance.OnRotateCamera;
             }
         }
     }
@@ -364,5 +393,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
+        void OnRotateCamera(InputAction.CallbackContext context);
     }
 }
