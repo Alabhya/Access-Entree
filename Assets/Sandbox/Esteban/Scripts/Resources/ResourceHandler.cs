@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceHandler : MonoBehaviour
 {
+    //public string ObjectToAttachTo = "UI";
+    [Space]
+    public Text WoodText;
+    public int NumberOfWood;
+    public Text StoneText;
+    public int NumberOfStone;
+
     public string ObjectToAttachTo = "Resource Handler";
     [Space]
     public ResourceUIController MyResourceUIController;
@@ -14,6 +22,8 @@ public class ResourceHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        WoodText.text = "Wood: " + NumberOfWood;
+        StoneText.text = "Stone: " + NumberOfStone;
         #region Singleton
         if (_instance != null && _instance != this)
         {
@@ -29,7 +39,8 @@ public class ResourceHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        WoodText.text = "Wood: " + Inventory.GetItemQuantity("wood");
+        StoneText.text = "Stone: " + Inventory.GetItemQuantity("stone");
     }
 
 
@@ -43,13 +54,13 @@ public class ResourceHandler : MonoBehaviour
                 }
             case ResourceType.ResourceName.Stone:
                 {
-                    MyResourceUIController.AddStone();
+                    AddStone();
                     Inventory.Add("stone", 1, 3);
                     break;
                 }
             case ResourceType.ResourceName.Wood:
                 {
-                    MyResourceUIController.AddWood();
+                    AddWood();
                     Inventory.Add("wood", 1, 2);
                     break;
                 }
@@ -59,6 +70,19 @@ public class ResourceHandler : MonoBehaviour
                 }
         }
         
+    }
+
+    public void AddWood()
+    {
+        NumberOfWood += 1;
+        // WoodText.text = "Wood: " + NumberOfWood;
+    }
+
+
+    public void AddStone()
+    {
+        NumberOfStone += 1;
+        // StoneText.text = "Stone: " + NumberOfStone;
     }
 
 }
