@@ -21,7 +21,7 @@ public class WaypointController : MonoBehaviour
         //waypoints[4];
         for(int i = 0; i < CharacterDestinations.transform.childCount; i++)
         {
-            Debug.Log("SDF");
+            //Debug.Log("SDF");
             waypoints.Add(CharacterDestinations.transform.GetChild(i).transform);
         }
     }
