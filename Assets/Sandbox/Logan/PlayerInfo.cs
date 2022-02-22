@@ -3,20 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 class PlayerDatum { // singular for data is datum
-    public int AcessScore { get; set; }
+    public string AccessScore { get; set; }
     public string Name { get; set; }
 }
 
 public static class PlayerInfo
 {
-    private static string name = "test player";
+    private static string name = "test player"; // test data until we have player login
     private static string username = "testPlayerOne";
     static PlayerDatum currentPlayer;
-    private static int accessScore;
+    private static string accessScore = "10"; // test data to initialize JSON with
     static Dictionary<string, PlayerDatum> playerData = new Dictionary<string, PlayerDatum>(); 
-    
     static PlayerInfo() {
         playerData = DB.LoadItems<PlayerDatum>("playerData.json");
+
+        if(!playerData.ContainsKey(username)) {
+            PlayerDatum initPlayer = new PlayerDatum(); 
+            initPlayer.Name = name; 
+            initPlayer.AccessScore = accessScore; 
+            playerData[username] = initPlayer; 
+            savePlayerData();
+        }
+
         currentPlayer = playerData["testPlayerOne"];
     }
     
@@ -26,7 +34,7 @@ public static class PlayerInfo
     public static string getName() {
         return currentPlayer.Name;
     }
-    public static int getScore() {
-        return currentPlayer.AcessScore;
+    public static string getScore() {
+        return currentPlayer.AccessScore;
     }
 }

@@ -426,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 2013042883}
   PlayerMoveTrigger2: {fileID: 2031743687}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &248372112
 MonoBehaviour:
@@ -471,6 +471,7 @@ RectTransform:
   m_Children:
   - {fileID: 1891668457}
   - {fileID: 1214952267}
+  - {fileID: 420114229}
   m_Father: {fileID: 1947427794}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -724,6 +725,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Red: 0
   Blue: 1
+--- !u!1 &420114228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 420114229}
+  - component: {fileID: 420114230}
+  - component: {fileID: 420114231}
+  m_Layer: 5
+  m_Name: AccessScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &420114229
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420114228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.093463, y: 0.093463, z: 0.093463}
+  m_Children: []
+  m_Father: {fileID: 255549860}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 171.20001, y: -144.6}
+  m_SizeDelta: {x: 908.98, y: 418.2338}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &420114230
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420114228}
+  m_CullTransparentMesh: 1
+--- !u!114 &420114231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420114228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 178
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 234
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Stone: 0'
 --- !u!1 &421744790
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1134912277}
   PlayerMoveTrigger2: {fileID: 1254651254}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &448783999
 MonoBehaviour:
@@ -1486,7 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1747117121}
   PlayerMoveTrigger2: {fileID: 617354428}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &621915814
 MonoBehaviour:
@@ -1550,7 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1936499937}
   PlayerMoveTrigger2: {fileID: 411708774}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &700812636
 MonoBehaviour:
@@ -1614,7 +1694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 77113632}
   PlayerMoveTrigger2: {fileID: 1200339303}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &757664109
 MonoBehaviour:
@@ -2945,7 +3025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1347429650}
   PlayerMoveTrigger2: {fileID: 2040462281}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &1351376018
 MonoBehaviour:
@@ -3281,6 +3361,154 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592290712}
   m_CullTransparentMesh: 1
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534632, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283577164849534635, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_Name
+      value: Camera Holder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518004938568408, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518004938568408, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000017626755
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518004938568408, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000024237076
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99979204
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.020395428
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000000008564385
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518005043298940, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000012295927
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006349582737, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99987304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006349582737, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.015935421
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006349582737, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0000000045501807
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006349582737, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000006051085
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.610001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3400006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.89111495
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.45377764
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000001335141
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006867, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0000000067968586
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654518006362006878, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 2033899025}
+    - target: {fileID: 1654518006362006878, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 2033899025}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bac568203eb8484883a6501ba5db441, type: 3}
 --- !u!1 &1733586034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3980,6 +4208,7 @@ GameObject:
   - component: {fileID: 1947427792}
   - component: {fileID: 1947427791}
   - component: {fileID: 1947427790}
+  - component: {fileID: 1947427795}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -4001,6 +4230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: UI
   WoodText: {fileID: 1891668459}
+  AccessScore: {fileID: 420114231}
   NumberOfWood: 0
   StoneText: {fileID: 1214952265}
   NumberOfStone: 0
@@ -4087,6 +4317,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1947427795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947427789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99e7ed303a886a4fa1868ad124b7f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToAttachTo: Resource Handler
+  MyResourceUIController: {fileID: 1947427790}
 --- !u!1 &2013042882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4231,7 +4475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1733586035}
   PlayerMoveTrigger2: {fileID: 510035613}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 2033899025}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &2013287929
 MonoBehaviour:
