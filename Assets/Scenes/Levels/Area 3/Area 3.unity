@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 2013042883}
   PlayerMoveTrigger2: {fileID: 2031743687}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &248372112
 MonoBehaviour:
@@ -471,6 +471,7 @@ RectTransform:
   m_Children:
   - {fileID: 1891668457}
   - {fileID: 1214952267}
+  - {fileID: 420114229}
   m_Father: {fileID: 1947427794}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -724,6 +725,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Red: 0
   Blue: 1
+--- !u!1 &420114228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 420114229}
+  - component: {fileID: 420114230}
+  - component: {fileID: 420114231}
+  m_Layer: 5
+  m_Name: AccessScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &420114229
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420114228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.093463, y: 0.093463, z: 0.093463}
+  m_Children: []
+  m_Father: {fileID: 255549860}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 171.20001, y: -144.6}
+  m_SizeDelta: {x: 908.98, y: 418.2338}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &420114230
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420114228}
+  m_CullTransparentMesh: 1
+--- !u!114 &420114231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420114228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 178
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 234
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Stone: 0'
 --- !u!1 &421744790
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1134912277}
   PlayerMoveTrigger2: {fileID: 1254651254}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &448783999
 MonoBehaviour:
@@ -1242,6 +1322,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Red: 0
   Blue: 1
+--- !u!1 &517373114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9034252543523205591, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+  m_PrefabInstance: {fileID: 884813390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &517373115
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517373114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &571461227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,7 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1747117121}
   PlayerMoveTrigger2: {fileID: 617354428}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &621915814
 MonoBehaviour:
@@ -1526,7 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1936499937}
   PlayerMoveTrigger2: {fileID: 411708774}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &700812636
 MonoBehaviour:
@@ -1590,7 +1694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 77113632}
   PlayerMoveTrigger2: {fileID: 1200339303}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &757664109
 MonoBehaviour:
@@ -1680,6 +1784,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861357465013935576, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861357465013935576, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+      propertyPath: AccessScore
+      value: 
+      objectReference: {fileID: 420114231}
+    - target: {fileID: 1726637516341145152, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726637516341145152, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+      propertyPath: AccessScore
+      value: 
+      objectReference: {fileID: 420114231}
+    - target: {fileID: 3249396080943216640, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+      propertyPath: WoodText
+      value: 
+      objectReference: {fileID: 1920469534}
+    - target: {fileID: 3249396080943216640, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+      propertyPath: StoneText
+      value: 
+      objectReference: {fileID: 1166992316}
     - target: {fileID: 3568131304625282447, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1758,11 +1886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544053285521, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017629906
+      value: 0.00000001762991
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544053285521, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000019363622
+      value: -0.0000000019363626
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544249633740, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_Enabled
@@ -1778,15 +1906,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544704828300, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14521314
+      value: 0.14521313
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544704828300, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -8.619646e-15
+      value: 0.000000032966824
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544704828300, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 9.284736e-16
+      value: -0.000000004838501
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544711201815, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1798,11 +1926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544711201815, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017066634
+      value: -0.00000001706663
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544711201815, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021885216
+      value: 0.0000000021885211
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544908031827, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1826,11 +1954,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544908031827, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017079186
+      value: -0.000000017079184
       objectReference: {fileID: 0}
     - target: {fileID: 9034252544908031827, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021871964
+      value: 0.0000000021871958
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
@@ -2171,6 +2299,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Red: 0
   Blue: 1
+--- !u!114 &1166992316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7000245179945406240, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+  m_PrefabInstance: {fileID: 884813390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1200339302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +3033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1347429650}
   PlayerMoveTrigger2: {fileID: 2040462281}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &1351376018
 MonoBehaviour:
@@ -3809,6 +3948,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Wood: 0'
+--- !u!114 &1920469534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2259380315875070686, guid: a84c0b59f16cebb4db988a2e0ef3fdb2, type: 3}
+  m_PrefabInstance: {fileID: 884813390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1936499936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,6 +4068,7 @@ GameObject:
   - component: {fileID: 1947427792}
   - component: {fileID: 1947427791}
   - component: {fileID: 1947427790}
+  - component: {fileID: 1947427795}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -3939,6 +4090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: UI
   WoodText: {fileID: 1891668459}
+  AccessScore: {fileID: 420114231}
   NumberOfWood: 0
   StoneText: {fileID: 1214952265}
   NumberOfStone: 0
@@ -4025,6 +4177,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1947427795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947427789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99e7ed303a886a4fa1868ad124b7f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WoodText: {fileID: 1891668459}
+  NumberOfWood: 0
+  StoneText: {fileID: 1214952265}
+  NumberOfStone: 0
+  ObjectToAttachTo: Resource Handler
+  MyResourceUIController: {fileID: 1947427790}
 --- !u!1 &2013042882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4169,7 +4339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerMoveTrigger: {fileID: 1733586035}
   PlayerMoveTrigger2: {fileID: 510035613}
-  Player: {fileID: 1042038356}
+  Player: {fileID: 0}
   MyWayPointController: {fileID: 467373760}
 --- !u!114 &2013287929
 MonoBehaviour:
