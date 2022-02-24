@@ -168,8 +168,12 @@ public class PlayerController : MonoBehaviour
     private void PlayerJump()
     {
         if (_playerInput.Player_Test.Jump.triggered && _isGrounded)
+        {
+            _controller.stepOffset = 0f;
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * _gravityMultiplier * _gravityValue);
-        
+        }
+
+        _playerAnim.SetBool("IsGrounded", _isGrounded);
         _playerVelocity.y += _gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
