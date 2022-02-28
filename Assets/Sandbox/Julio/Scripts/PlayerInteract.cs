@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour
 {
     private LayerMask interactionLayer;
     private InteractionObj current;
+    public float RayCastLenght = 0.75f;
     // will need whatever UI element represents a button
 
     private void Start() {
@@ -22,6 +23,11 @@ public class PlayerInteract : MonoBehaviour
         } else {
             // deactivate interaction button
         }
+
+
+        RaycastHit hit;
+        // this raycast will detect any interactible objects
+        Physics.SphereCast(transform.position, RayCastLenght, transform.TransformDirection(Vector3.forward), out hit, 6, interactionLayer);
     }
 
 }
