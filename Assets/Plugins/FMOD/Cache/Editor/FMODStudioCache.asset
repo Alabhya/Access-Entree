@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5825852382020763055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TownMusic_01
+  m_EditorClassIdentifier: 
+  Path: event:/TownMusic_01
+  Guid:
+    Data1: 714681356
+    Data2: 1228193491
+    Data3: 932072590
+    Data4: 1421118862
+  Banks:
+  - {fileID: -93415812567898876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 110769
+--- !u!114 &-93415812567898876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/GamePlay.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/GamePlay.bank
+  Name: GamePlay
+  StudioPath: bank:/GamePlay
+  lastModified: 637816796982810975
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,16 +61,18 @@ MonoBehaviour:
   - {fileID: 4467857254412738650}
   - {fileID: 4254532845986374950}
   - {fileID: 4531380908250209617}
+  - {fileID: -93415812567898876}
   EditorEvents:
   - {fileID: 4791783937226509528}
   - {fileID: 1562249058697791641}
   - {fileID: 2635230703180039232}
+  - {fileID: -5825852382020763055}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4254532845986374950}
   StringsBanks:
   - {fileID: 4467857254412738650}
-  cacheTime: 637797855370000000
+  cacheTime: 637816796982810975
   cacheVersion: 10
 --- !u!114 &1562249058697791641
 MonoBehaviour:
@@ -96,7 +143,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637797855370000000
+  lastModified: 637816796981110264
   FileSizes: []
   Exists: 1
 --- !u!114 &4467857254412738650
@@ -114,10 +161,10 @@ MonoBehaviour:
   Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637797855370000000
+  lastModified: 637816796981266288
   FileSizes:
   - Name: 
-    Value: 900
+    Value: 982
   Exists: 1
 --- !u!114 &4531380908250209617
 MonoBehaviour:
@@ -134,7 +181,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637797855370000000
+  lastModified: 637816796982321251
   FileSizes: []
   Exists: 1
 --- !u!114 &4791783937226509528
