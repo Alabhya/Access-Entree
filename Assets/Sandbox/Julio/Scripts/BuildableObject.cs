@@ -88,7 +88,6 @@ public class BuildableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("Player"))
         {
             // we will not proccess any logic until we have unlocked the ability to upgrade this item
@@ -113,7 +112,7 @@ public class BuildableObject : MonoBehaviour
 
             if (hasEnough)
             {
-                Debug.Log("Player has enought Items!");
+                //Debug.Log("Player has enought Items!");
                 canBeModified = false;
                 isUpgrading = true;
                 // start construction call
