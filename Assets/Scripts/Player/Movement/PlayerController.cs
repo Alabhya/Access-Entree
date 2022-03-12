@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController _controller;
     private PlayerInput _playerInput;
-    private Animator _playerAnim;
 
     [Header("Animator Conditionals")]
     [Tooltip("Use this to trigger specific animations.")]
@@ -52,19 +51,6 @@ public class PlayerController : MonoBehaviour
       
     [Tooltip("Set 180 degree turn animation of target in range [0,1].")]
     [Range(0, 1f)] public float AllowPlayerRotation = 0.1f;
-
-    [Header("Animation Smoothing")]
-    [Range(0, 1f)]
-    [SerializeField] private float _horizontalAnimSmoothTime = 0.2f;
-
-    [Range(0, 1f)]
-    [SerializeField] private float _verticalAnimSmoothTime = 0.2f;
-
-    [Range(0, 1f)]
-    [SerializeField] private float _startAnimTime = 0.3f;
-
-    [Range(0, 1f)]
-    [SerializeField] private float _stopAnimTime = 0.15f;
 
     [Tooltip("The current desired move direction relative to the camera's current view position.")]
     public Vector3 DesiredMoveDirection;
@@ -90,7 +76,6 @@ public class PlayerController : MonoBehaviour
     {
         _playerInput = new PlayerInput();
         _controller = GetComponent<CharacterController>();
-        _playerAnim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -130,14 +115,7 @@ public class PlayerController : MonoBehaviour
         _currSpeed = new Vector2(_inputX, _inputZ).sqrMagnitude;
 
         if (_currSpeed > AllowPlayerRotation)
-        {
-            _playerAnim.SetFloat("Blend", _currSpeed, _startAnimTime, Time.deltaTime);
             PlayerMoveAndRotation();
-        }
-        else if (_currSpeed < AllowPlayerRotation)
-        {
-            _playerAnim.SetFloat("Blend", _currSpeed, _stopAnimTime, Time.deltaTime);
-        }
     }
 
     /*

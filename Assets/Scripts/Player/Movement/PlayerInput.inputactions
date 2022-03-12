@@ -58,15 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Rotate Camera",
-                    "type": "Value",
-                    "id": "4146b802-b03b-44a8-86ee-c0afb93e9b2f",
-                    "expectedControlType": "Touch",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -199,17 +190,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Confirm",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2d7eca87-1fb4-4546-9c9f-b4b9cc5887fe",
-                    "path": "<Touchscreen>/primaryTouch",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate Camera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

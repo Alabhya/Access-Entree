@@ -13,7 +13,7 @@ public class GameManager
      * - Implement singleton object
      */
 
-    private static GameManager instance;
+    public static GameManager instance;
 
     private GameManager()
     {
@@ -34,7 +34,6 @@ public class GameManager
             return instance;
         }
     }
-
     public enum GameState
     { 
         START,

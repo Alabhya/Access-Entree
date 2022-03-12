@@ -13,7 +13,8 @@ public static class DB {
     {
         Dictionary<string, T> dictOfItems = new Dictionary<string, T>();
 
-        if (File.Exists(dataPath)) {
+        if (File.Exists(dataPath))
+        {
             string json = File.ReadAllText(dataPath);
             if (!string.IsNullOrWhiteSpace(json))
             {
@@ -26,7 +27,7 @@ public static class DB {
     public static void SaveItems<T>(string dataPath, Dictionary<string, T> ItemsToSave)
     {   
         if (!File.Exists(dataPath))
-            File.Create(dataPath).Dispose();
+            File.Create(dataPath);
 
         string json = JsonConvert.SerializeObject(ItemsToSave);
         File.WriteAllText(dataPath, json);

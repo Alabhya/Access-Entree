@@ -283,7 +283,6 @@ RectTransform:
   m_Children:
   - {fileID: 1919498271}
   - {fileID: 851782669}
-  - {fileID: 997944055}
   m_Father: {fileID: 1759330322}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -607,7 +606,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250848795}
-  m_LocalRotation: {x: 0.12719245, y: 0.000000017080875, z: -0.0000000021866373, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719245, y: 0.000000017080882, z: -0.0000000021866973, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -944,7 +943,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316015298}
-  m_LocalRotation: {x: 0.14521313, y: 0.00000003296683, z: -0.000000004838502, w: 0.98940045}
+  m_LocalRotation: {x: 0.14521313, y: 0.000000032966824, z: -0.000000004838501, w: 0.98940045}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1783,11 +1782,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c76d6e8ce837a4c99594cd89598d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger:
-    m_PersistentCalls:
-      m_Calls: []
-  objectDistance: 0
+  buildObjectDistance: 2
   Prefab: {fileID: 6868816754579215383, guid: f947b027811f37040be84c44d90532cc, type: 3}
+  spawn: {fileID: 716411029}
   Player: {fileID: 1531207832}
 --- !u!1 &729347200 stripped
 GameObject:
@@ -2235,7 +2232,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: UI
   WoodText: {fileID: 1919498272}
-  AccessScore: {fileID: 0}
   NumberOfWood: 0
   StoneText: {fileID: 851782670}
   NumberOfStone: 0
@@ -2440,85 +2436,6 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7768275924863cb468059cfd45d0cc89, type: 3}
---- !u!1 &997944052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 997944055}
-  - component: {fileID: 997944054}
-  - component: {fileID: 997944053}
-  m_Layer: 5
-  m_Name: AccessScore
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &997944053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997944052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 178
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 234
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: AccessScore:0
---- !u!222 &997944054
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997944052}
-  m_CullTransparentMesh: 1
---- !u!224 &997944055
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997944052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.093463, y: 0.093463, z: 0.093463}
-  m_Children: []
-  m_Father: {fileID: 78443300}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291.9, y: -81.8}
-  m_SizeDelta: {x: 1200, y: 418.2338}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1005437917
 GameObject:
   m_ObjectHideFlags: 3
@@ -2543,7 +2460,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005437917}
-  m_LocalRotation: {x: 0.1091774, y: -0.000000019122318, z: 0.0000000021002804, w: 0.9940223}
+  m_LocalRotation: {x: 0.1091774, y: 0.000000019122322, z: -0.0000000021002806, w: 0.9940223}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3723,25 +3640,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc32db813970f1347a477f1e82e9598b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputX: 0
-  _inputZ: 0
-  _playerSpeed: 2
-  _jumpHeight: 1
-  _gravityValue: -9.81
-  _gravityMultiplier: -3
-  _currSpeed: 0
-  _moveVector: {x: 0, y: 0, z: 0}
-  _playerVelocity: {x: 0, y: 0, z: 0}
-  BlockPlayerRotation: 0
-  DesiredRotationSpeed: 0.3
-  AllowPlayerRotation: 0.1
-  DesiredMoveDirection: {x: 0, y: 0, z: 0}
-  _groundCheck: {fileID: 993085146}
-  _groundMask:
-    serializedVersion: 2
-    m_Bits: 0
-  _isGrounded: 0
-  _groundDistance: 0.4
+  dialogueUI: {fileID: 0}
+  playerSpeed: 10
+  jumpHeight: 1
+  gravityValue: -9.81
 --- !u!114 &1531207835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4623,7 +4525,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: UI
   WoodText: {fileID: 1919498272}
-  AccessScore: {fileID: 997944053}
   NumberOfWood: 0
   StoneText: {fileID: 851782670}
   NumberOfStone: 15
@@ -4772,7 +4673,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759330321}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2868e91929bc2054e84cd4085604d0b4, type: 3}
   m_Name: 
