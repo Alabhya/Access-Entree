@@ -4,18 +4,31 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/* This script is used to fill the Character Profile Card element type with information stored
+   in JournalEntryObjects.
+   
+   This script is attached to any 'Character Profile' object (look at the 'Character Profile Template' for an example) and takes seven variables.
+   The 'profile'  is a JournalEntryObject that stores the profile information for a given character.
+   The 'nameText' variable is where on the 'Character Profile' the given character's name is written.
+   The 'profText' variable is where on the 'Character Profile' the given character's profile is written.
+   The 'profPic' variable is where on the 'Character Profile' the given character's picture is placed.
+   The 'likeGrid' variable is where on the 'Character Profile' the given character's likes are placed.
+   The 'dLikeGrid' variable is where on the 'Character Profile' the given character's diislikes are placed.
+   The 'greidElemTemp' variable is a template for the like and dislike grid elements to give them a uniform look.
+*/
+
 public class CharacterProfileCardFiller : MonoBehaviour
 {
 	//Profile update information
-	public JournalEntryObject profile;
+	public JournalEntryObject profile; //The journal entry object that stores all of hte information about the given character.
 	
 	//Reference to GUI elements
-	[SerializeField] private TMP_Text nameText;
-	[SerializeField] private TMP_Text profText;
-	[SerializeField] private Image profPic;
-	[SerializeField] private Transform likeGrid;
-	[SerializeField] private Transform dLikeGrid;
-	[SerializeField] private Image gridElemTemp;
+	[SerializeField] private TMP_Text nameText; //Where the character's name is placed.
+	[SerializeField] private TMP_Text profText; //Where the character's profession is placed.
+	[SerializeField] private Image profPic;		//Where the character's
+	[SerializeField] private Transform likeGrid;//Where the character's likes are placed.
+	[SerializeField] private Transform dLikeGrid;//Where the character's dislikes are placed.
+	[SerializeField] private Image gridElemTemp; //A template used for the like and dislike grid elements.
 	
     //Called when something is updated in the inspector
 	[ExecuteInEditMode]
