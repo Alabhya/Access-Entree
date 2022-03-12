@@ -621,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8342501556490268047
 RectTransform:
   m_ObjectHideFlags: 0
@@ -719,6 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: UI
   WoodText: {fileID: 2259380315875070686}
+  AccessScore: {fileID: 0}
   NumberOfWood: 0
   StoneText: {fileID: 7000245179945406240}
   NumberOfStone: 0
@@ -765,6 +766,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99e7ed303a886a4fa1868ad124b7f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WoodText: {fileID: 0}
+  NumberOfWood: 0
+  StoneText: {fileID: 0}
+  NumberOfStone: 0
   ObjectToAttachTo: Resource Handler
   MyResourceUIController: {fileID: 1726637516341145152}
 --- !u!1 &6227870660101783506
@@ -894,6 +899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToAttachTo: HUD
   WoodText: {fileID: 2259380315875070686}
+  AccessScore: {fileID: 0}
   NumberOfWood: 0
   StoneText: {fileID: 7000245179945406240}
   NumberOfStone: 0
@@ -1670,6 +1676,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f8551abc-b3e3-4d81-a8de-d9523bc06337
     m_ActionName: Player_Test/Confirm[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4146b802-b03b-44a8-86ee-c0afb93e9b2f
+    m_ActionName: Player_Test/Rotate Camera
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player_Test
@@ -1741,6 +1751,10 @@ MonoBehaviour:
   BlockPlayerRotation: 0
   DesiredRotationSpeed: 0.3
   AllowPlayerRotation: 0.1
+  _horizontalAnimSmoothTime: 0.2
+  _verticalAnimSmoothTime: 0.2
+  _startAnimTime: 0.3
+  _stopAnimTime: 0.15
   DesiredMoveDirection: {x: 0, y: 0, z: 0}
   _groundCheck: {fileID: 0}
   _groundMask:
@@ -2448,7 +2462,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9034252544711201816}
-  m_LocalRotation: {x: 0.12719242, y: -0.000000017066634, z: 0.0000000021885216, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719242, y: 0.00000001706663, z: -0.0000000021885211, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2525,7 +2539,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9034252544908031828}
-  m_LocalRotation: {x: 0.12719245, y: 0.000000017079186, z: -0.0000000021871964, w: 0.9918781}
+  m_LocalRotation: {x: 0.12719245, y: 0.000000017079184, z: -0.0000000021871958, w: 0.9918781}
   m_LocalPosition: {x: 0, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
