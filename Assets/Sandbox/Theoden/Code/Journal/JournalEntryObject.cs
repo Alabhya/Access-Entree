@@ -1,7 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-//Create a Character Profile template type
+/* This script creates a generic journal element scriptable object that is designed to be used
+   by a myriad of element types.
+   
+   This object is highly customizable and will need specific filler code in order to fill in the
+   various element types properly.
+*/
 [CreateAssetMenu(menuName = "JournalEntry/JournalEntryObject")]
 public class JournalEntryObject : ScriptableObject
 {
