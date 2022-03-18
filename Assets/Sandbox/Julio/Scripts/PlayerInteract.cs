@@ -13,7 +13,6 @@ public class PlayerInteract : MonoBehaviour
 
     private void Start() {
         interactionLayer = LayerMask.GetMask("Interaction");
-
         current = null;
     }
 
