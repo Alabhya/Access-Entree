@@ -113,6 +113,11 @@ public class DialogueUI : MonoBehaviour
 				yield return null;
 				yield return new WaitUntil(() => (conf.triggered)); //Wait for button press before continuing
 			}
+			//Run post element event if necessary
+			if(dialogueObject.DialogueList[j].postEvent != null)
+			{
+				dialogueObject.DialogueList[j].postEvent?.Invoke();
+			}
 		}
 		
 		//If there is a response dialouge, send it. Otherwise close the dialog box.
