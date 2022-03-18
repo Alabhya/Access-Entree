@@ -10,6 +10,8 @@ public class PlayerInteract : MonoBehaviour
     private LayerMask interactionLayer;
     private InteractionObj current;
     public float RayCastLenght = 0.75f;
+    [SerializeField]
+    private float rayCastDistance = 10.0f;
 
     public Button button;
     // will need whatever UI element represents a button
@@ -23,27 +25,21 @@ public class PlayerInteract : MonoBehaviour
     }
 
     private void Update() {
-        if (current != null) {
-            // activate interaction button
-        } else {
-            // deactivate interaction button
-        }
-
-
         RaycastHit hit;
         // this raycast will detect any interactible objects
-        Physics.SphereCast(transform.position, RayCastLenght, transform.TransformDirection(Vector3.forward), out hit, 6, interactionLayer);
-        current = hit.transform.GetComponent<InteractionObj>();
-        button.gameObject.SetActive(current != null);
-
-        
-        if (button && button.gameObject.activeInHierarchy) {
-
+        if (Physics.SphereCast(transform.position, RayCastLenght, transform.TransformDirection(Vector3.forward), out hit, rayCastDistance, interactionLayer)) {
+            current = hit.transform.GetComponent<InteractionObj>();
+        } else {
+            current = null;
         }
+
+        button.gameObject.SetActive(current != null);
+        // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10.0f, Color.yellow);
     }
 
     public void ButtonPress() {
-        Debug.Log("We pressed the button\nInteracting with: " + current.name);
+       // Debug.Log("We pressed the button");
+        current.Interaction();
     }
 
 }
