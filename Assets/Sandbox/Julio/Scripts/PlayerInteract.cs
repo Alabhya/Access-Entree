@@ -13,13 +13,13 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private float rayCastDistance = 10.0f;
 
-    public Button button;
+    public GameObject button;
     // will need whatever UI element represents a button
 
     private void Start() {
         interactionLayer = LayerMask.GetMask("Interaction");
         if (button != null) {
-            button.gameObject.SetActive(false);
+            button.SetActive(false);
         }
         current = null;
     }
@@ -33,7 +33,7 @@ public class PlayerInteract : MonoBehaviour
             current = null;
         }
 
-        button.gameObject.SetActive(current != null);
+        button.SetActive(current != null);
         // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10.0f, Color.yellow);
     }
 
@@ -41,5 +41,4 @@ public class PlayerInteract : MonoBehaviour
        // Debug.Log("We pressed the button");
         current.Interaction();
     }
-
 }

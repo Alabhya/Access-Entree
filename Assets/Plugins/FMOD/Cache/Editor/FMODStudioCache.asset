@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 637832485928857445
+  lastModified: 637833810682595560
   FileSizes: []
   Exists: 1
 --- !u!114 &-3101110808626091734
@@ -114,7 +114,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/Character SFX.assets.bank
   Name: Character SFX.assets
   StudioPath: bank:/Character SFX.assets
-  lastModified: 637832485928647608
+  lastModified: 637833810682575567
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -150,7 +150,7 @@ MonoBehaviour:
   - {fileID: 3767481653378367105}
   StringsBanks:
   - {fileID: 1531207268380466820}
-  cacheTime: 637832485928927455
+  cacheTime: 637833810682625541
   cacheVersion: 10
 --- !u!114 &1323894784094803482
 MonoBehaviour:
@@ -167,7 +167,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/BG Music.assets.bank
   Name: BG Music.assets
   StudioPath: bank:/BG Music.assets
-  lastModified: 637832485927127468
+  lastModified: 637833810682525603
   FileSizes: []
   Exists: 1
 --- !u!114 &1531207268380466820
@@ -185,7 +185,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637832485928927455
+  lastModified: 637833810682625541
   FileSizes:
   - Name: 
     Value: 1328
@@ -232,7 +232,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/Character SFX.bank
   Name: Character SFX
   StudioPath: bank:/Character SFX
-  lastModified: 637832485928147453
+  lastModified: 637833810682585566
   FileSizes: []
   Exists: 1
 --- !u!114 &2635230703180039232
@@ -277,7 +277,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637832485928767463
+  lastModified: 637833810682605544
   FileSizes: []
   Exists: 1
 --- !u!114 &4193261138232806014
@@ -459,7 +459,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Wyatt/AudioBank/BG Music.bank
   Name: BG Music
   StudioPath: bank:/BG Music
-  lastModified: 637832485925607474
+  lastModified: 637833810682555577
   FileSizes: []
   Exists: 1
 --- !u!114 &8018124806672770069
