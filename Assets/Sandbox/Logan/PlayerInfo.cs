@@ -16,7 +16,7 @@ public static class PlayerInfo
     static Dictionary<string, PlayerDatum> playerData = new Dictionary<string, PlayerDatum>(); 
     static PlayerInfo() {
         playerData = DB.LoadItems<PlayerDatum>("playerData.json");
-
+        // check if there is any saved data for current username
         if(!playerData.ContainsKey(username)) {
             PlayerDatum initPlayer = new PlayerDatum(); 
             initPlayer.Name = name; 
@@ -25,7 +25,7 @@ public static class PlayerInfo
             savePlayerData();
         }
 
-        currentPlayer = playerData["testPlayerOne"];
+        currentPlayer = playerData[username];
     }
     
     public static void savePlayerData() {
