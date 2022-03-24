@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 52712518020961890}
   - component: {fileID: 52712518020961899}
   - component: {fileID: 52712518020961896}
+  - component: {fileID: 7283779771034543673}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -109,3 +110,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItem: {fileID: 11400000, guid: 47bbe0e9f7aa5c540bb23bee94636e6e, type: 2}
+--- !u!114 &7283779771034543673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52712518020961897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965dee147b4d7e64c9922c7a35a656c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioChannelSO: {fileID: 11400000, guid: 9e374e2911082e64b89218bf729323e9, type: 2}
+  eventPath:
+    Guid:
+      Data1: 1734262145
+      Data2: 1106695110
+      Data3: 1127753132
+      Data4: -339647824
+    Path: event:/Events/Main Character/herb_gather
