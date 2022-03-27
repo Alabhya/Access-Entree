@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Events;
+
 
 //Creates the Dialogue object type
 [CreateAssetMenu(menuName = "Dialouge/DialogueObject")]
@@ -34,6 +36,7 @@ public class Dialogue : ISerializationCallbackReceiver
 	public float textSpeed = 25f; //How quickly text is typed out
 	public float pauseTime = 0.6f; //How long text pauses at punctuation.
 	public bool typeText = true; //Whether or not to type out text
+	public UnityEvent postEvent; //List of events to run after the Dialogue element has finished
 	
 	private CharacterTemplateObject lastCharTemplate; //Tracks the last charTemplate added
 	
