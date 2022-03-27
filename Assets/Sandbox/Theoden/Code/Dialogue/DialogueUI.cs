@@ -97,7 +97,10 @@ public class DialogueUI : MonoBehaviour
 			//Update text writing values
 			float txtSpd = dialogueObject.DialogueList[j].textSpeed;
 			float pTime = dialogueObject.DialogueList[j].pauseTime;
-			
+
+			Debug.Log("Playing Anim");
+			//get anim, play anim, play different anims based on j int
+
 			//Write out the text in the dialogue
 			for (int i = 0; i < dialogueObject.DialogueList[j].text.Length; i++)
 			{
