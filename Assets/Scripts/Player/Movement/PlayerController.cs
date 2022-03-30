@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
         _playerInput = new PlayerInput();
         _controller = GetComponent<CharacterController>();
         _playerAnim = GetComponent<Animator>();
+        string message = Crafting.build("axe",1); // this is for testing crafting until it is implemented into journal menu
     }
 
     private void Update()

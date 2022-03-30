@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildableObject : MonoBehaviour
+public class BuildableObject : InteractionObj
 {
     public bool canBeModified = false;
     public bool isUpgrading = false;
@@ -18,8 +18,6 @@ public class BuildableObject : MonoBehaviour
     [SerializeField] private float EffectDuration = 0;
 
     private MeshFilter objectMesh;
-
-    
 
     void Start()
     {
@@ -86,39 +84,41 @@ public class BuildableObject : MonoBehaviour
         isUpgrading = false;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+    private void OnTriggerEnter(Collider other) {
+       // no longer needed
+    }
+
+    public override void Interaction() {
+        // Debug.Log("Interacted with: " + this.name);
+        // we will not proccess any logic until we have unlocked the ability to upgrade this item
+        if (canBeModified == false)
         {
-            // we will not proccess any logic until we have unlocked the ability to upgrade this item
-            if (canBeModified == false){
-                return; 
-            }
+            return;
+        }
 
-            // used to check if we have enough resources in the inventory, will assume yes until proven otherwise
-            bool hasEnough = true;
+        // used to check if we have enough resources in the inventory, will assume yes until proven otherwise
+        bool hasEnough = true;
 
-            // safety check conditional
-            int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
-            for (int i = 0; i < it; ++i)
+        // safety check conditional
+        int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
+        for (int i = 0; i < it; ++i)
+        {
+            int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
+            // checking the current item count requirement with the inventory amount, if not enought we will break the loop
+            if (currItemCount < (int)requiredQuantities[i])
             {
-                int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
-                // checking the current item count requirement with the inventory amount, if not enought we will break the loop
-                if ( currItemCount < (int)requiredQuantities[i]) {
-                    hasEnough = false;
-                    break;
-                }
+                hasEnough = false;
+                break;
             }
+        }
 
-            if (hasEnough)
-            {
-                //Debug.Log("Player has enought Items!");
-                canBeModified = false;
-                isUpgrading = true;
-                // start construction call
-                BeginUpgrade();
-            } 
-           
+        if (hasEnough)
+        {
+            //Debug.Log("Player has enought Items!");
+            canBeModified = false;
+            isUpgrading = true;
+            // start construction call
+            BeginUpgrade();
         }
     }
 }
