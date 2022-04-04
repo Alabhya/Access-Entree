@@ -216,8 +216,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 0
   HasPlatforms: 0
-  sourceProjectPath: Assets/Sandbox/Wyatt/AudioSourceProj/entree_soundboard.fspro
-  sourceBankPath: Assets/Sandbox/Wyatt/AudioBank
+  sourceProjectPath: 
+  sourceBankPath: Assets/Sandbox/Umar/AudioModule/AudioBanks
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -242,11 +242,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - BG Music
-  - BG Music.assets
-  - Character SFX
-  - Character SFX.assets
-  - Master.assets
+  - UI
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
