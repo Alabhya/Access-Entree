@@ -1,3 +1,4 @@
+using InventorySystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class BuildableObject : InteractionObj
     [SerializeField] private GameObject triggerPoint;
     [SerializeField] private GameObject particleSpawnLocation;
     [SerializeField] private List<string> requiredItems;
+    [SerializeField] private List<InventoryItem> requiredInventoryItems;
     [SerializeField] private List<uint> requiredQuantities;
     [SerializeField] private float EffectDuration = 0;
 
@@ -35,6 +37,10 @@ public class BuildableObject : InteractionObj
             // trigger point will only be active if we can upgrade this object
             triggerPoint.SetActive(canBeModified);
         }
+    }
+
+    public List<InventoryItem> GetResourcesList() {
+        return requiredInventoryItems;
     }
 
     // This function will start the construction/upgrade of this object where the mesh will be swapped and particles spawned

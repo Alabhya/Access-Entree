@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2715929173774102370}
   - component: {fileID: 2289864004683981992}
   - component: {fileID: 2289864004683981993}
+  - component: {fileID: 3813608270171948820}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -109,3 +110,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryItem: {fileID: 11400000, guid: 15e8653379995c94596273826e471dce, type: 2}
+--- !u!114 &3813608270171948820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2289864004683981994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965dee147b4d7e64c9922c7a35a656c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioChannelSO: {fileID: 11400000, guid: 9e374e2911082e64b89218bf729323e9, type: 2}
+  eventPath:
+    Guid:
+      Data1: 122762081
+      Data2: 1174676659
+      Data3: 1752645250
+      Data4: -1812088275
+    Path: event:/Events/Main Character/tree_crack
