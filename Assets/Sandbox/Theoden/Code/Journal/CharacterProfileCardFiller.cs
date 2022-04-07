@@ -31,12 +31,12 @@ public class CharacterProfileCardFiller : MonoBehaviour
 	[SerializeField] private Image gridElemTemp; //A template used for the like and dislike grid elements.
 	
     //Called when something is updated in the inspector
-	[ExecuteInEditMode]
+/*	[ExecuteInEditMode]
 	void OnValidate()
 	{
 		//Update card to reflect changes
 		SetProfile(false);
-    }
+    }*/
 
     //Start is called before the first frame update    
 	void Start()
@@ -46,7 +46,7 @@ public class CharacterProfileCardFiller : MonoBehaviour
     }
 	
 	//Add like and dislike icons
-	void AddSprites(Transform pTrans, Sprite[] sArray)
+	void AddIcons(Transform pTrans, Icon[] iArray, string nameVar)
 	{
 		//Clear out old elements
 		for (int i=0; i<pTrans.childCount; i++)
@@ -55,16 +55,25 @@ public class CharacterProfileCardFiller : MonoBehaviour
 		}
 		
 		//Add new elements
-		foreach (Sprite sprite in sArray)
+		int x = 0;
+		foreach (Icon icon in iArray)
 		{
 			//Set image and make visible
 			Image gridElem = Instantiate(gridElemTemp) as Image;
 			
 			//Add to grid
 			gridElem.transform.SetParent(pTrans, false);
+			gridElem.sprite = icon.iconImg;
 			
-			gridElem.sprite = sprite;
-			gridElem.gameObject.SetActive(true);
+			//Rename Object
+			gridElem.name = nameVar+x;
+			x++;
+
+			//Make visible
+			if(aScoreEventManager.instance.GetEvent(icon.contEvt))
+				gridElem.gameObject.SetActive(true);
+			else
+				gridElem.gameObject.SetActive(false);
 		}
 	}
 	
@@ -75,21 +84,26 @@ public class CharacterProfileCardFiller : MonoBehaviour
 		if(profile == null)
 		{return;}
 		
+		string objName = profile.ObjectName;
+		
 		//Fill in the name
-		nameText.text = profile.ObjectName;
+		nameText.text = objName;
+		nameText.name = objName + " Name";
 		
 		//Fill in the Profile
 		profText.text = profile.ObjectInfo[0] + "\r\n" + profile.ObjectInfo[1];
+		profText.name = objName + " Profile";
 		
 		//Fill in the Picture
 		profPic.sprite = profile.MainPortrait;
+		profPic.name = objName + " Picture";
 		
 		//Only fill in icons in game
 		if(fillList)
 		{
 			//Fill in the Likes and Dislikes
-			AddSprites(likeGrid, profile.ObjectIcons[0].iconList);
-			AddSprites(dLikeGrid, profile.ObjectIcons[1].iconList);
+			AddIcons(likeGrid, profile.ObjectIcons[0].iconList, objName+" Likes ");
+			AddIcons(dLikeGrid, profile.ObjectIcons[1].iconList, objName+" Dislikes ");
 		}
 	}
 }

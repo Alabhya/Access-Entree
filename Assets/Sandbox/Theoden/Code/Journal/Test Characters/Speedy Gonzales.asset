@@ -20,8 +20,12 @@ MonoBehaviour:
   objectIcons:
   - iconListTitle: Likes
     iconList:
-    - {fileID: 21300000, guid: 927989a06f0e793449c0f5a47a23285a, type: 3}
-    - {fileID: 21300000, guid: 7c4917a2a9be80842a57706c421571eb, type: 3}
+    - iconImg: {fileID: 21300000, guid: 5ee779b09803b5a48acfc09d97b266f4, type: 3}
+      contEvt: speedy_like_0
+    - iconImg: {fileID: 21300000, guid: 7c4917a2a9be80842a57706c421571eb, type: 3}
+      contEvt: speedy_like_1
   - iconListTitle: Dislikes
     iconList:
-    - {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    - iconImg: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+      contEvt: speedy_dlike_0
+  contEvt: MetSpeedy
