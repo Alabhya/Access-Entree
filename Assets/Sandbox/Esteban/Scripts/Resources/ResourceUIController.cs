@@ -23,17 +23,6 @@ public class ResourceUIController : MonoBehaviour
         StoneText.text = "Stone: " + Inventory.GetItemQuantity("stone");
     }
 
-    // these functions are no longer needed and do not update when removing items from the inventory
-    public void AddWood()
-    {
-        NumberOfWood += 1;
-        // WoodText.text = "Wood: " + NumberOfWood;
-    }
 
-    public void AddStone()
-    {
-        NumberOfStone += 1;
-        // StoneText.text = "Stone: " + NumberOfStone;
-    }
 
 }
