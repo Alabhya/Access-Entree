@@ -29,6 +29,9 @@ public class PlayerInteract : MonoBehaviour
         // this raycast will detect any interactible objects
         if (Physics.SphereCast(transform.position, RayCastLenght, transform.TransformDirection(Vector3.forward), out hit, rayCastDistance, interactionLayer)) {
             current = hit.transform.GetComponent<InteractionObj>();
+            if (current) {
+                button.transform.GetChild(0).gameObject.GetComponent<ResourceSetUpUI>().AddRequiredResources(current.GetComponent<BuildableObject>().GetResourcesList(), current.gameObject);
+            }
         } else {
             current = null;
         }
