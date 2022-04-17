@@ -8,6 +8,8 @@ namespace InventorySystem {
         private Dictionary<ItemType, InventoryItem> itemsList = null;
 
         public void OnEnable() {
+
+            itemsList?.Clear();
             if(itemsList == null)
                 itemsList = new Dictionary<ItemType, InventoryItem>();
             Debug.Log("Inventory SetUped");
