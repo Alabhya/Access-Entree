@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d840cff2e4fa1f542b8c5d6c171629bb, type: 3}
+  m_Name: AudioManagerSO
+  m_EditorClassIdentifier: 
+  oneshotChannelSO: {fileID: 11400000, guid: 9e374e2911082e64b89218bf729323e9, type: 2}
+  oneshotWithParametersSO: {fileID: 11400000, guid: 2f32eb286c3b15e48900ea7964310213, type: 2}
+  playInstanceBasedSound: {fileID: 11400000, guid: e84936ca86cf624469ef764ee7235dc7, type: 2}
+  stopInstanceBassedSound: {fileID: 11400000, guid: 896cb3fb1b6070e45982429083432fbc, type: 2}
