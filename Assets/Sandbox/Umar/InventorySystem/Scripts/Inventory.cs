@@ -43,11 +43,15 @@ namespace InventorySystem {
         }
 
         public string GetItemName(InventoryItem item) {
-            return itemsList[item.itemType].itemName;
+            if (itemsList.ContainsKey(item.itemType))
+                return itemsList[item.itemType].itemName;
+            return null;
         }
 
         public int GetItemAmount(InventoryItem item) {
-            return itemsList[item.itemType].itemAmount;
+            if(itemsList.ContainsKey(item.itemType))
+                return itemsList[item.itemType].itemAmount;
+            return -1;
         }
 
         public ItemType GetItemType(InventoryItem item) {

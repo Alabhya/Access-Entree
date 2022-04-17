@@ -10,6 +10,7 @@ public class BuildableObject : InteractionObj
     public bool hasBeenUpgraded { get; private set; } = false;
 
     // this will be the trigger to start the event, this reference may not be needed
+    [SerializeField] private InventorySystem.Inventory inventoryObj;
     [SerializeField] private Mesh upgradeMesh;
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private GameObject triggerPoint;
@@ -107,11 +108,11 @@ public class BuildableObject : InteractionObj
 
         // safety check conditional
         int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
-        for (int i = 0; i < it; ++i)
+        for (int i = 0; i < requiredInventoryItems.Count; i++)
         {
-            int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
+            int inventoryItemAmount = inventoryObj.GetItemAmount(requiredInventoryItems[i]);
             // checking the current item count requirement with the inventory amount, if not enought we will break the loop
-            if (currItemCount < (int)requiredQuantities[i])
+            if (inventoryItemAmount < (int)requiredInventoryItems[i].itemAmount)
             {
                 hasEnough = false;
                 break;
@@ -125,6 +126,9 @@ public class BuildableObject : InteractionObj
             isUpgrading = true;
             // start construction call
             BeginUpgrade();
+        }
+        else {
+            print("Not enough resources..");
         }
     }
 }
