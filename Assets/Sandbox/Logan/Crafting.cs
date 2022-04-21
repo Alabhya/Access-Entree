@@ -5,12 +5,27 @@ using UnityEngine;
 
 public static class Crafting
 {
-    static Inventory inventory;
-
     static Dictionary<string, Item> Items = new Dictionary<string, Item>(); 
+    
     static Crafting()
     {
         Items = DB.LoadItems<Item>("craftableItems.json"); 
+        // if there is no axe in craftableItems, then json has not been created yet
+        // for now, we initialize json of craftable itmes with an axe. 
+        if(!Items.ContainsKey("axe")) {
+            Item axe = new Item(); 
+            axe.Id = 1;
+            axe.Name = "axe"; 
+            axe.Price = 5;  
+            axe.Quantity = 1; 
+            Dictionary<string,int> axeRequirements = new Dictionary<string,int> {
+                {"stone", 2},
+                {"wood",1}
+            };
+            axe.ResourcesRequired = axeRequirements;
+            Items["axe"] = axe; 
+            DB.SaveItems("craftableItems.json", Items);
+        }
     }
 
     public static bool checkRequirements(string craftName) {
