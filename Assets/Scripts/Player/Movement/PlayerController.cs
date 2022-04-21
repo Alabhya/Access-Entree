@@ -85,10 +85,6 @@ public class PlayerController : MonoBehaviour
 
     public bool IsOnFlatGround { get; private set; }
     #endregion
-    // reference variables for PlayerAudio script
-    public bool playerMoving;
-    public bool playerJumping;
-    // later variables may be added for gathering, chopping trees, etc.
 
     private void Awake()
     {
@@ -96,8 +92,6 @@ public class PlayerController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _playerAnim = GetComponent<Animator>();
         string message = Crafting.build("axe",1); // this is for testing crafting until it is implemented into journal menu
-        playerMoving = false;
-        playerJumping = false;
     }
 
     private void Update()
@@ -140,12 +134,10 @@ public class PlayerController : MonoBehaviour
         {
             _playerAnim.SetFloat("Blend", _currSpeed, _startAnimTime, Time.deltaTime);
             PlayerMoveAndRotation();
-            playerMoving = true;
         }
         else if (_currSpeed < AllowPlayerRotation)
         {
             _playerAnim.SetFloat("Blend", _currSpeed, _stopAnimTime, Time.deltaTime);
-            playerMoving = false;
         }
     }
 
@@ -158,7 +150,6 @@ public class PlayerController : MonoBehaviour
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
         _playerVelocity.y = (_isGrounded && _playerVelocity.y < 0) ? 0 : _playerVelocity.y;
         IsOnFlatGround = _isGrounded;
-        playerJumping = false;
     }
 
     /*
@@ -178,9 +169,12 @@ public class PlayerController : MonoBehaviour
     private void PlayerJump()
     {
         if (_playerInput.Player_Test.Jump.triggered && _isGrounded)
+        {
+            _controller.stepOffset = 0f;
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * _gravityMultiplier * _gravityValue);
-        playerJumping = true;
-        
+        }
+
+        _playerAnim.SetBool("IsGrounded", _isGrounded);
         _playerVelocity.y += _gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
