@@ -25,9 +25,9 @@ MonoBehaviour:
     postEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8282679985028006108, guid: fcfc6f9f5a20b2040ac7b37545033c41, type: 3}
+        - m_Target: {fileID: 11500000, guid: 9f346eb75aa0333479041bd43afbfb62, type: 3}
           m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
-          m_MethodName: TestFunction
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

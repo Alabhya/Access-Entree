@@ -13,13 +13,13 @@ using UnityEngine;
 */
 
 public class PageFiller : MonoBehaviour
-{
+{	
 	[SerializeField] private GameObject guiElement; //The type of element to fill the list with
 	[SerializeField] private JournalEntryObject[] profiles; //The information to fill in the disperate elements
 	[SerializeField] private Transform holder; //The layout group to fill
 	
 	//Start is called before the first frame update    
-	void Start()
+	void OnEnable()
 	{
 		//Clear out old elements (prevents duplicates)
 		for (int i=0; i<holder.childCount; i++)
@@ -33,6 +33,7 @@ public class PageFiller : MonoBehaviour
 	//Fills the area with the provided information
 	void AddElements()
 	{
+		string elemName = "name";
 		foreach (JournalEntryObject profile in profiles)
 		{
 			//Fill in the element information depending on information type
@@ -41,6 +42,7 @@ public class PageFiller : MonoBehaviour
 			{
 				case "Character Profile Template":
 					tmp.GetComponent<CharacterProfileCardFiller>().profile = profile;
+					elemName = profile.ObjectName + " Character Profile";
 					break;
 					
 				/*More cases can be added here, just make sure to update the documentation*/
@@ -49,9 +51,15 @@ public class PageFiller : MonoBehaviour
 			//Create the new element
 			GameObject gridElem = Instantiate(tmp) as GameObject;
 			
-			//Place elements and make sure they are visible
+			//Place elements
+			gridElem.name = elemName;
 			gridElem.transform.SetParent(holder, false);
-			gridElem.SetActive(true);
+			
+			//Make visible
+			if(aScoreEventManager.instance.GetEvent(profile.ContEvt))
+				gridElem.gameObject.SetActive(true);
+			else
+				gridElem.gameObject.SetActive(false);
 		}
 	}
 }
