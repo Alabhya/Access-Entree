@@ -29,14 +29,6 @@ public class CharacterProfileCardFiller : MonoBehaviour
 	[SerializeField] private Transform likeGrid;//Where the character's likes are placed.
 	[SerializeField] private Transform dLikeGrid;//Where the character's dislikes are placed.
 	[SerializeField] private Image gridElemTemp; //A template used for the like and dislike grid elements.
-	
-    //Called when something is updated in the inspector
-/*	[ExecuteInEditMode]
-	void OnValidate()
-	{
-		//Update card to reflect changes
-		SetProfile(false);
-    }*/
 
     //Start is called before the first frame update    
 	void Start()

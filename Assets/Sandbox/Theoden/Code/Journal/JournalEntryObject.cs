@@ -15,7 +15,6 @@ public class JournalEntryObject : ScriptableObject
 	[SerializeField] private string objectName;
 	[TextArea] [SerializeField] private string[] objectInfo;
 	[SerializeField] private Icons[] objectIcons;
-	//[SerializeField] private bool showProfile;
 	[SerializeField] private string contEvt;
 	
 	//Getters
@@ -23,7 +22,6 @@ public class JournalEntryObject : ScriptableObject
 	public string ObjectName => objectName;
 	public string[] ObjectInfo => objectInfo;
 	public Icons[] ObjectIcons => objectIcons;
-	//public bool isEnabled => showProfile;
 	public string ContEvt => contEvt;
 }
 
@@ -31,7 +29,6 @@ public class JournalEntryObject : ScriptableObject
 public class Icon : ISerializationCallbackReceiver
 	{
 		public Sprite iconImg;
-		//public bool isEnabled;
 		public string contEvt;
 		
 		//Needed for OnValidate to work
