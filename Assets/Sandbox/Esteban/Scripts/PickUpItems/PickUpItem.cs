@@ -26,6 +26,7 @@ public class PickUpItem : MonoBehaviour
         if(other.tag == "Player")
         {
             ToolBarUI.Instance.AddItem(ItemSprite);
+            //Inventory.add(item.name,item.quantity);
             Destroy(this.gameObject);
         }
     }
