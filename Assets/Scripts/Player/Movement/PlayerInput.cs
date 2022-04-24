@@ -89,6 +89,33 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PrimaryTouchPos"",
+                    ""type"": ""Value"",
+                    ""id"": ""701e61d4-c8b5-4de2-a608-7da363229597"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SecondaryTouchPos"",
+                    ""type"": ""Value"",
+                    ""id"": ""74ef16c0-deaa-48fd-bf5c-9fb2223a611b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SecondaryTouchContact"",
+                    ""type"": ""Button"",
+                    ""id"": ""57f15ee2-9997-4588-94c6-09f90e274469"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -234,6 +261,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Rotate Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af2656a8-4bab-4444-86c5-b9d9a93b7396"",
+                    ""path"": ""<Touchscreen>/touch0/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryTouchPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a07bfd7-becc-4e34-96fd-412d3f97c1d0"",
+                    ""path"": ""<Touchscreen>/touch1/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondaryTouchPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5effa037-e304-4aed-939f-017e967ab210"",
+                    ""path"": ""<Touchscreen>/touch1/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondaryTouchContact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -249,6 +309,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_Test_Skip = m_Player_Test.FindAction("Skip", throwIfNotFound: true);
         m_Player_Test_Confirm = m_Player_Test.FindAction("Confirm", throwIfNotFound: true);
         m_Player_Test_RotateCamera = m_Player_Test.FindAction("Rotate Camera", throwIfNotFound: true);
+        m_Player_Test_PrimaryTouchPos = m_Player_Test.FindAction("PrimaryTouchPos", throwIfNotFound: true);
+        m_Player_Test_SecondaryTouchPos = m_Player_Test.FindAction("SecondaryTouchPos", throwIfNotFound: true);
+        m_Player_Test_SecondaryTouchContact = m_Player_Test.FindAction("SecondaryTouchContact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,6 +378,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Test_Skip;
     private readonly InputAction m_Player_Test_Confirm;
     private readonly InputAction m_Player_Test_RotateCamera;
+    private readonly InputAction m_Player_Test_PrimaryTouchPos;
+    private readonly InputAction m_Player_Test_SecondaryTouchPos;
+    private readonly InputAction m_Player_Test_SecondaryTouchContact;
     public struct Player_TestActions
     {
         private @PlayerInput m_Wrapper;
@@ -326,6 +392,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Skip => m_Wrapper.m_Player_Test_Skip;
         public InputAction @Confirm => m_Wrapper.m_Player_Test_Confirm;
         public InputAction @RotateCamera => m_Wrapper.m_Player_Test_RotateCamera;
+        public InputAction @PrimaryTouchPos => m_Wrapper.m_Player_Test_PrimaryTouchPos;
+        public InputAction @SecondaryTouchPos => m_Wrapper.m_Player_Test_SecondaryTouchPos;
+        public InputAction @SecondaryTouchContact => m_Wrapper.m_Player_Test_SecondaryTouchContact;
         public InputActionMap Get() { return m_Wrapper.m_Player_Test; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -356,6 +425,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @RotateCamera.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnRotateCamera;
                 @RotateCamera.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnRotateCamera;
                 @RotateCamera.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnRotateCamera;
+                @PrimaryTouchPos.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnPrimaryTouchPos;
+                @PrimaryTouchPos.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnPrimaryTouchPos;
+                @PrimaryTouchPos.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnPrimaryTouchPos;
+                @SecondaryTouchPos.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSecondaryTouchPos;
+                @SecondaryTouchPos.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSecondaryTouchPos;
+                @SecondaryTouchPos.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSecondaryTouchPos;
+                @SecondaryTouchContact.started -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSecondaryTouchContact;
+                @SecondaryTouchContact.performed -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSecondaryTouchContact;
+                @SecondaryTouchContact.canceled -= m_Wrapper.m_Player_TestActionsCallbackInterface.OnSecondaryTouchContact;
             }
             m_Wrapper.m_Player_TestActionsCallbackInterface = instance;
             if (instance != null)
@@ -381,6 +459,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @RotateCamera.started += instance.OnRotateCamera;
                 @RotateCamera.performed += instance.OnRotateCamera;
                 @RotateCamera.canceled += instance.OnRotateCamera;
+                @PrimaryTouchPos.started += instance.OnPrimaryTouchPos;
+                @PrimaryTouchPos.performed += instance.OnPrimaryTouchPos;
+                @PrimaryTouchPos.canceled += instance.OnPrimaryTouchPos;
+                @SecondaryTouchPos.started += instance.OnSecondaryTouchPos;
+                @SecondaryTouchPos.performed += instance.OnSecondaryTouchPos;
+                @SecondaryTouchPos.canceled += instance.OnSecondaryTouchPos;
+                @SecondaryTouchContact.started += instance.OnSecondaryTouchContact;
+                @SecondaryTouchContact.performed += instance.OnSecondaryTouchContact;
+                @SecondaryTouchContact.canceled += instance.OnSecondaryTouchContact;
             }
         }
     }
@@ -394,5 +481,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnSkip(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
         void OnRotateCamera(InputAction.CallbackContext context);
+        void OnPrimaryTouchPos(InputAction.CallbackContext context);
+        void OnSecondaryTouchPos(InputAction.CallbackContext context);
+        void OnSecondaryTouchContact(InputAction.CallbackContext context);
     }
 }
