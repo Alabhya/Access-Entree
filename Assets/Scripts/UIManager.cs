@@ -18,19 +18,17 @@ public class UIManager: MonoBehaviour
     }
     
     // Spawns a UI in front of a building
-    public GameObject SpawnUIWorld(GameObject obj,GameObject spritePrefab)
+    public GameObject SpawnUIWorld(GameObject parent,GameObject spritePrefab,Vector3 scale)
     {
-        GameObject worldUI = Instantiate(spritePrefab, GetUIPos(obj), spritePrefab.transform.rotation, obj.transform);
-        worldUI.transform.SetParent(obj.transform,false);
-        worldUI.transform.localScale = new Vector3(0.1f,0.1f,0.1f); // TODO figure out way to ensure scaling matches building
+        GameObject worldUI = Instantiate(spritePrefab, GetUIPos(parent), spritePrefab.transform.rotation, parent.transform);
+        worldUI.transform.localScale = scale;
         worldUI.GetComponent<Canvas>().enabled = true;
         worldUI.transform.rotation = Quaternion.LookRotation(worldUI.transform.position - Main_Camera.transform.position);
         return worldUI;
     }
-    public GameObject SpawnUIScreen(GameObject spritePrefab)
+    public GameObject SpawnUIScreen(GameObject spritePrefab, Vector3 canvasPosition)
     {
-        GameObject UI = Instantiate(spritePrefab, Main_Canvas.transform.position, spritePrefab.transform.rotation, Main_Canvas.transform);
-        UI.transform.SetParent(Main_Canvas.transform,false);
+        GameObject UI = Instantiate(spritePrefab, canvasPosition, spritePrefab.transform.rotation, Main_Canvas.transform);
         UI.transform.localScale = new Vector3(1,1,1);
         return UI;
     }
