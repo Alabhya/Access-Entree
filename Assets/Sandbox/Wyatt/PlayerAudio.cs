@@ -45,8 +45,9 @@ public class PlayerAudio : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
-        playerIsMoving = playerController.playerMoving;
-        playerInAir = playerController.playerJumping;
+        // these variables are undefined in PlayerController
+        // playerIsMoving = playerController.playerMoving; 
+        // playerInAir = playerController.playerJumping;
     }
 
     // Update is called once per frame

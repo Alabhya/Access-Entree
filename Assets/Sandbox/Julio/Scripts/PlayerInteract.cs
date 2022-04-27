@@ -9,9 +9,9 @@ public class PlayerInteract : MonoBehaviour
 {
     private LayerMask interactionLayer;
     private InteractionObj current;
-    public float RayCastLenght = 0.75f;
+    public float sphereCastRadius = 0.75f;
     [SerializeField]
-    private float rayCastDistance = 10.0f;
+    private float sphereCastDistance = 10.0f;
 
     public GameObject button;
     // will need whatever UI element represents a button
@@ -27,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
     private void Update() {
         RaycastHit hit;
         // this raycast will detect any interactible objects
-        if (Physics.SphereCast(transform.position, RayCastLenght, transform.TransformDirection(Vector3.forward), out hit, rayCastDistance, interactionLayer)) {
+        if (Physics.SphereCast(transform.position, sphereCastRadius, transform.TransformDirection(Vector3.forward), out hit, sphereCastDistance, interactionLayer)) {
             current = hit.transform.GetComponent<InteractionObj>();
             if (current) {
                 button.transform.GetChild(0).gameObject.GetComponent<ResourceSetUpUI>().AddRequiredResources(current.GetComponent<BuildableObject>().GetResourcesList(), current.gameObject);
@@ -35,8 +35,9 @@ public class PlayerInteract : MonoBehaviour
         } else {
             current = null;
         }
-
-        button.SetActive(current != null);
+        
+        // TODO: CanInteract function should be used to gray out a button (make it unclickable) instead
+        button.SetActive(current != null && current.CanInteract());
         // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10.0f, Color.yellow);
     }
 

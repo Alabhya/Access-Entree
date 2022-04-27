@@ -5,4 +5,6 @@ using UnityEngine;
 public abstract class InteractionObj : MonoBehaviour
 {
     public abstract void Interaction();
+
+    public abstract bool CanInteract();
 }

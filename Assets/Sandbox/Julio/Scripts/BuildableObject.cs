@@ -94,14 +94,7 @@ public class BuildableObject : InteractionObj
        // no longer needed
     }
 
-    public override void Interaction() {
-        // Debug.Log("Interacted with: " + this.name);
-        // we will not proccess any logic until we have unlocked the ability to upgrade this item
-        if (canBeModified == false)
-        {
-            return;
-        }
-
+    public override bool CanInteract() {
         // used to check if we have enough resources in the inventory, will assume yes until proven otherwise
         bool hasEnough = true;
 
@@ -118,13 +111,13 @@ public class BuildableObject : InteractionObj
             }
         }
 
-        if (hasEnough)
-        {
-            //Debug.Log("Player has enought Items!");
-            canBeModified = false;
-            isUpgrading = true;
-            // start construction call
-            BeginUpgrade();
-        }
+        return hasEnough && canBeModified;
+    }
+
+    public override void Interaction() {  
+        canBeModified = false;
+        isUpgrading = true;
+        // start construction call
+        BeginUpgrade();
     }
 }
