@@ -11,9 +11,8 @@ public abstract class InteractionObj : MonoBehaviour
 
     // this function is used to make the button clickable or not, if the player can interact with the object but does not meet the requirements to interact with said object, this shoudl return false
     public abstract bool CanInteract();
-
-    // TODO: add highlight object functionality
-
+    
+    //enables/disables the outline on the objects
     public void SetOutline(bool active) {
         Outline objOutline = gameObject.GetComponent<Outline>();
         if (objOutline == null) { return; }

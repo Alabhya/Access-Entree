@@ -41,10 +41,10 @@ public class DropResource : InteractionObj
     private void SpawnResource() {
         for (int i = 0; i < HowManyToSpawn; i++)
         {
-            float RandomX = Random.Range(-275, 275);
-            float RandomZ = Random.Range(-275, 275);
+            float RandomX = Random.Range(-1.5f,1.5f);
+            float RandomZ = Random.Range(-1.5f,1.5f);
             GameObject currentResource = Instantiate(resource, this.transform.position, this.transform.rotation);
-            currentResource.GetComponent<Rigidbody>().AddForce(RandomX, 50.0f, RandomZ);
+            currentResource.GetComponent<Rigidbody>().AddForce(RandomX, 0.001f, RandomZ);
         }
         //Destroy(this.gameObject);
         gameObject.SetActive(false);
