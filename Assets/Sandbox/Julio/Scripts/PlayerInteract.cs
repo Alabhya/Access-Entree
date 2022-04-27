@@ -29,15 +29,21 @@ public class PlayerInteract : MonoBehaviour
         // this raycast will detect any interactible objects
         if (Physics.SphereCast(transform.position, sphereCastRadius, transform.TransformDirection(Vector3.forward), out hit, sphereCastDistance, interactionLayer)) {
             current = hit.transform.GetComponent<InteractionObj>();
-            if (current) {
-                button.transform.GetChild(0).gameObject.GetComponent<ResourceSetUpUI>().AddRequiredResources(current.GetComponent<BuildableObject>().GetResourcesList(), current.gameObject);
-            }
+            //if (current) {
+                // NOOOOOOOOOOOOOOOOOOOOOOOOOO, you cannot reference any specific types of interactible objects in this scrip, because the whole point is polymorphism
+                //button.transform.GetChild(0).gameObject.GetComponent<ResourceSetUpUI>().AddRequiredResources(current.GetComponent<BuildableObject>().GetResourcesList(), current.gameObject);
+            //}
         } else {
+            if (current) { current.SetOutline(false); }
             current = null;
         }
         
         // TODO: CanInteract function should be used to gray out a button (make it unclickable) instead
         button.SetActive(current != null && current.CanInteract());
+
+        if (current) {
+            current.SetOutline(true);
+        }
         // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10.0f, Color.yellow);
     }
 

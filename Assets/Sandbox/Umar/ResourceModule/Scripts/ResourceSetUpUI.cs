@@ -6,12 +6,12 @@ public class ResourceSetUpUI : MonoBehaviour {
     [SerializeField] private GameObject resourceItemObj;
 
     List<GameObject> uiObjs = new List<GameObject>();
-    GameObject interactedObj = default;
+    GameObject interactedObj = default; //? what is going on here
 
     public void  AddRequiredResources(List<InventoryItem> itemLists, GameObject objToInteract) {
         if (objToInteract != interactedObj) {
             interactedObj = objToInteract;
-            if(uiObjs.Count > 0) {
+            if(uiObjs.Count > 0) { // you don't need to do this because foreach loop will do that implicitly 
                 foreach (GameObject obj in uiObjs)
                     Destroy(obj);
             }

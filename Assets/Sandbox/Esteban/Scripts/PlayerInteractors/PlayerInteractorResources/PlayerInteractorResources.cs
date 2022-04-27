@@ -118,7 +118,7 @@ public class PlayerInteractorResources : MonoBehaviour
                     {
                         MyInteractorController.EnableAllInteractors(ThisScriptsName);
                     }
-                    hit.transform.GetComponent<DropResource>().SpawnResource();
+                    //hit.transform.GetComponent<DropResource>().SpawnResource();
                     IsHarvestingResource = false;
                 }
             }
