@@ -23,7 +23,6 @@ public class ResourceSetUpUI : MonoBehaviour {
                 obj.GetComponent<ResourceGUI>().SetUpResourceUI(itemObj);
                 uiObjs.Add(obj);
             }
-        } else {
         }
     }
 }
