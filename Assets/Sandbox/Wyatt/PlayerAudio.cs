@@ -21,8 +21,8 @@ public class PlayerAudio : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
-        playerIsMoving = playerController.playerMoving;
-        playerInAir = playerController.playerJumping;
+        // playerIsMoving = playerController.playerMoving;
+        // playerInAir = playerController.playerJumping;
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class PlayerAudio : MonoBehaviour
         }
         else if(playerIsMoving == false)
         {
-            footStep.stop(); // FIX ME
+            // footStep.stop(); // FIX ME
         }
 
         if(playerInAir == true)

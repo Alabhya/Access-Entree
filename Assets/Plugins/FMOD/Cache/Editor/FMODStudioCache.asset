@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637827261251461201
+  lastModified: 637812328516983661
   FileSizes:
   - Name: 
     Value: 900
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637827261251401236
+  lastModified: 637812328516854007
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -90,7 +90,7 @@ MonoBehaviour:
   - {fileID: -297496945356918077}
   StringsBanks:
   - {fileID: -1904974350667101093}
-  cacheTime: 637827261251740888
+  cacheTime: 637812328520083879
   cacheVersion: 10
 --- !u!114 &1562249058697791641
 MonoBehaviour:
@@ -244,7 +244,7 @@ MonoBehaviour:
   Path: Assets/Sandbox/Umar/AudioModule/AudioBanks/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 637827261251740888
+  lastModified: 637812328520083879
   FileSizes: []
   Exists: 1
 --- !u!114 &6995405959467432013
