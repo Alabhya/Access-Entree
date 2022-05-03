@@ -11,16 +11,16 @@ public class PlayerAudio : MonoBehaviour
         FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance(eventPath);
         FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(eventPath);
 
-        if (playerIsMoving == true)
+        if (Input.GetKey("W") || Input.GetKey("A") || Input.GetKey("S") || Input.GetKey("D")) 
         {
             footStep.start();
         }
-        else if (playerIsMoving == false)
+        else
         {
             footStep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); // fixed?
         }
 
-        if (playerInAir == true)
+        if (Input.GetKeyDown("space"))
         {
             jumpGrunt.start();
             jumpGrunt.release();
@@ -38,15 +38,13 @@ public class PlayerAudio : MonoBehaviour
 
     private PlayerController playerController;
 
-    public bool playerIsMoving;
-    bool playerInAir;
+    // public bool playerIsMoving;
+    // bool playerInAir;
     
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        playerIsMoving = playerController.playerMoving;
-        playerInAir = playerController.playerJumping;
+        
     }
 
     // Update is called once per frame
