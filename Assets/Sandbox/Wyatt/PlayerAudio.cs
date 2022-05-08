@@ -8,7 +8,7 @@ public class PlayerAudio : MonoBehaviour
 
     private void PlayMovementAudio (FMOD.GUID eventPath)
     {
-        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance("event:/Character SFX/footstep (soft)");
         FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(eventPath);
 
         if (Input.GetKey("W") || Input.GetKey("A") || Input.GetKey("S") || Input.GetKey("D")) 
@@ -24,6 +24,7 @@ public class PlayerAudio : MonoBehaviour
         {
             jumpGrunt.start();
             jumpGrunt.release();
+            
         }
 
         /* else if(playerInAir == false)
