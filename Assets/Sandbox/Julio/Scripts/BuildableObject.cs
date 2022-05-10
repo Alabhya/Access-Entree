@@ -112,7 +112,7 @@ public class BuildableObject : InteractionObj
         {
             int inventoryItemAmount = inventoryObj.GetItemAmount(requiredInventoryItems[i]);
             // checking the current item count requirement with the inventory amount, if not enought we will break the loop
-            if (inventoryItemAmount < (int)requiredInventoryItems[i].itemAmount)
+            if (inventoryItemAmount < (int)requiredInventoryItems[i].itemObj.itemAmount)
             {
                 hasEnough = false;
                 break;

@@ -16,7 +16,7 @@ namespace InventorySystem {
         }
 
         public void AddItemInInventory(InventoryItem item) {
-            if (itemsList.ContainsKey(item.itemType)) {
+            if (itemsList.ContainsKey(item.itemObj.itemType)) {
                 AddItemAmount(item);
             } else {
                 AddItem(item);
@@ -25,43 +25,43 @@ namespace InventorySystem {
         }
 
         private void AddItem(InventoryItem item) {
-            itemsList.Add(item.itemType, item);
+            itemsList.Add(item.itemObj.itemType, item);
         }
 
         private InventoryItem AddItemAmount(InventoryItem item) {
-            if (item.inventoryType == InventoryType.Consumable) {
-                itemsList[item.itemType].itemAmount += item.itemAmount;
-                return itemsList[item.itemType];
+            if (item.itemObj.inventoryType == InventoryType.Consumable) {
+                itemsList[item.itemObj.itemType].itemObj.itemAmount += item.itemObj.itemAmount;
+                return itemsList[item.itemObj.itemType];
             } else {
-                InventoryItem oldItem = itemsList[item.itemType];
-                itemsList[item.itemType] = item;
+                InventoryItem oldItem = itemsList[item.itemObj.itemType];
+                itemsList[item.itemObj.itemType] = item;
                 return oldItem;
             }
         }
 
         public void RemoveItemAmount(InventoryItem item) {
-            itemsList[item.itemType].itemAmount -= item.itemAmount;
+            itemsList[item.itemObj.itemType].itemObj.itemAmount -= item.itemObj.itemAmount;
             uiUpdateSO.RaiseEvent(itemsList);
         }
 
         public string GetItemName(InventoryItem item) {
-            if (itemsList.ContainsKey(item.itemType))
-                return itemsList[item.itemType].itemName;
+            if (itemsList.ContainsKey(item.itemObj.itemType))
+                return itemsList[item.itemObj.itemType].itemObj.itemName;
             return null;
         }
 
         public int GetItemAmount(InventoryItem item) {
-            if(itemsList.ContainsKey(item.itemType))
-                return itemsList[item.itemType].itemAmount;
+            if(itemsList.ContainsKey(item.itemObj.itemType))
+                return itemsList[item.itemObj.itemType].itemObj.itemAmount;
             return -1;
         }
 
         public ItemType GetItemType(InventoryItem item) {
-            return itemsList[item.itemType].itemType;
+            return itemsList[item.itemObj.itemType].itemObj.itemType;
         }
 
         public Sprite GetItemImg(InventoryItem item) {
-            return itemsList[item.itemType].itemImg;
+            return itemsList[item.itemObj.itemType].itemObj.itemImg;
         }
 
         public Dictionary<ItemType, InventoryItem> GetListOfItems() {

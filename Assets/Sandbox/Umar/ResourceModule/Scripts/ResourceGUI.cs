@@ -10,8 +10,8 @@ public class ResourceGUI : MonoBehaviour
     [SerializeField] private Image itemImg;
 
     public void SetUpResourceUI(InventoryItem inventoryItem) {
-        itemName.text = inventoryItem.itemName;
-        itemAmount.text = inventoryItem.itemAmount.ToString();
-        itemImg.sprite = inventoryItem.itemImg;
+        itemName.text = inventoryItem.itemObj.itemName;
+        itemAmount.text = inventoryItem.itemObj.itemAmount.ToString();
+        itemImg.sprite = inventoryItem.itemObj.itemImg;
     }
 }
