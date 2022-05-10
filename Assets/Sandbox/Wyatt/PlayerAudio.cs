@@ -6,44 +6,51 @@ using FMODUnity;
 public class PlayerAudio : MonoBehaviour
 {
 
-    // [FMODUnity.EventRef] - turns out this is obsolete
+    private void PlayMovementAudio (FMOD.GUID eventPath)
+    {
+        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance("event:/Character SFX/footstep (soft)");
+        FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(eventPath);
 
-    FMOD.Studio.EventInstance footStep;
-    public string jumpGrunt;
+        if (Input.GetKey("W") || Input.GetKey("A") || Input.GetKey("S") || Input.GetKey("D")) 
+        {
+            footStep.start();
+        }
+        else
+        {
+            footStep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); // fixed?
+        }
+
+        if (Input.GetKeyDown("space"))
+        {
+            jumpGrunt.start();
+            jumpGrunt.release();
+            
+        }
+
+        /* else if(playerInAir == false)
+        {
+            // we'll get to this later
+        }*/
+
+    }
+
+
 
 
     private PlayerController playerController;
 
-    public bool playerIsMoving;
-    bool playerInAir;
+    // public bool playerIsMoving;
+    // bool playerInAir;
     
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        playerIsMoving = playerController.playerMoving;
-        playerInAir = playerController.playerJumping;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerIsMoving == true)
-        {
-            footStep.start();
-        }
-        else if(playerIsMoving == false)
-        {
-            footStep.stop(); // FIX ME
-        }
-
-        if(playerInAir == true)
-        {
-            FMODUnity.RuntimeManager.PlayOneShot(jumpGrunt);
-        }
-        else if(playerInAir == false)
-        {
-            // we'll get to this later
-        }
+        
     }
 }

@@ -20,9 +20,12 @@ MonoBehaviour:
   objectIcons:
   - iconListTitle: Likes
     iconList:
-    - {fileID: 21300000, guid: e56dfa013068fd64b97bb4afa8feb298, type: 3}
-    - {fileID: 21300000, guid: 1fdb42febc45b3a4a9da13b43196ec01, type: 3}
+    - iconImg: {fileID: 21300000, guid: ce8d1478fef6ed14ca41eb960695372e, type: 3}
+      contEvt: garland_like_0
+    - iconImg: {fileID: 21300000, guid: b118bdb9f2d6c804c89ec0c4939cb95b, type: 3}
+      contEvt: garland_like_1
   - iconListTitle: Dislikes
     iconList:
-    - {fileID: 21300000, guid: e56dfa013068fd64b97bb4afa8feb298, type: 3}
-    - {fileID: 21300000, guid: 7c4917a2a9be80842a57706c421571eb, type: 3}
+    - iconImg: {fileID: 21300000, guid: e56dfa013068fd64b97bb4afa8feb298, type: 3}
+      contEvt: garland_dlike_0
+  contEvt: MetGarland

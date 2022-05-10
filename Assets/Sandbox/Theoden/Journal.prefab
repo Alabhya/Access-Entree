@@ -163,7 +163,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7590723741101389053}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 7590723739547708365}
   - component: {fileID: 7590723739547708362}
   m_Layer: 5
-  m_Name: Profile Text
+  m_Name: Garland Profile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 7590723739654292789}
   - component: {fileID: 7590723739654292786}
   m_Layer: 5
-  m_Name: Name Text Box
+  m_Name: Garland Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,7 +934,7 @@ RectTransform:
   m_Children:
   - {fileID: 7590723741018169880}
   m_Father: {fileID: 7590723741101389053}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 7590723740725884331}
   - component: {fileID: 7590723740725884328}
   m_Layer: 5
-  m_Name: Profile Image
+  m_Name: Garland Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1998,10 +1998,10 @@ RectTransform:
   - {fileID: 7590723739353062976}
   - {fileID: 7590723741345549987}
   - {fileID: 7590723740001631361}
-  - {fileID: 7590723741274133160}
   - {fileID: 7590723740331928264}
   - {fileID: 7590723741166426221}
   - {fileID: 7590723739358757062}
+  - {fileID: 7590723741274133160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2095,7 +2095,7 @@ RectTransform:
   m_Children:
   - {fileID: 7590723740457503682}
   m_Father: {fileID: 7590723741101389053}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2309,7 +2309,7 @@ RectTransform:
   m_Children:
   - {fileID: 7590723740767759243}
   m_Father: {fileID: 7590723741101389053}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
