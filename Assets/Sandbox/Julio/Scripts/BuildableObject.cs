@@ -2,6 +2,7 @@ using InventorySystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RotaryHeart.Lib.SerializableDictionary;
 
 public class BuildableObject : InteractionObj
 {
@@ -18,6 +19,7 @@ public class BuildableObject : InteractionObj
     [SerializeField] private List<string> requiredItems;
     [SerializeField] private List<InventoryItem> requiredInventoryItems;
     [SerializeField] private List<uint> requiredQuantities;
+    [SerializeField] private SerializableDictionaryBase<InventoryItem, int> requiredInventory = new SerializableDictionaryBase<InventoryItem, int>();
     [SerializeField] private float EffectDuration = 0;
 
     private MeshFilter objectMesh;
@@ -40,8 +42,8 @@ public class BuildableObject : InteractionObj
         }
     }
 
-    public List<InventoryItem> GetResourcesList() {
-        return requiredInventoryItems;
+    public SerializableDictionaryBase<InventoryItem, int> GetResourcesList() {
+        return requiredInventory;
     }
 
     // This function will start the construction/upgrade of this object where the mesh will be swapped and particles spawned
