@@ -13,7 +13,7 @@ public class ResourceSetUpUI : MonoBehaviour {
     [SerializeField] private GameObject resourceItemObj, objToBeShown;
 
     List<GameObject> uiObjs = new List<GameObject>();
-    GameObject interactedObj = default;
+    GameObject interactedObj = default; //? what is going on here
 
     public void  AddRequiredResources(SerializableDictionaryBase<InventoryItem, int> itemLists, GameObject objToInteract) {
         //if (objToInteract != interactedObj) 
