@@ -16,8 +16,9 @@ public class ResourceSetUpUI : MonoBehaviour {
     GameObject interactedObj = default;
 
     public void  AddRequiredResources(SerializableDictionaryBase<InventoryItem, int> itemLists, GameObject objToInteract) {
-        if (objToInteract != interactedObj) {
-            interactedObj = objToInteract;
+        //if (objToInteract != interactedObj) 
+        {
+            //interactedObj = objToInteract;
             if (uiObjs.Count > 0) {
                 foreach (GameObject obj in uiObjs)
                     Destroy(obj);
@@ -47,7 +48,8 @@ public class ResourceSetUpUI : MonoBehaviour {
                 }
             }
 
-        } else {
-        }
+        } 
+        //else {
+        //}
     }
 }
