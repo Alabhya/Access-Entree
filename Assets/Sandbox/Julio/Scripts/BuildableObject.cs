@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Made by Julio Delgado
 public class BuildableObject : InteractionObj
 {
     public bool canBeModified = false;
@@ -23,6 +24,8 @@ public class BuildableObject : InteractionObj
 
     void Start()
     {
+        base.Start();
+        // todo contruct UI button
         objectMesh = this.GetComponent<MeshFilter>();
         if (EffectDuration <= 0)
         {
@@ -119,5 +122,16 @@ public class BuildableObject : InteractionObj
         isUpgrading = true;
         // start construction call
         BeginUpgrade();
+    }
+
+
+    public override void ActivateButtonUI()
+    {
+        // TODO: Add resource call for UI
+    }
+
+    public override void DissableButtonUI()
+    {
+        // TODO: Dissable Button UI object
     }
 }

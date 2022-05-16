@@ -13,8 +13,9 @@ public class DropResource : InteractionObj
     public ResourceType TypeOfResource;
     public float TimeTillDestroy;
     // Start is called before the first frame update
-    void Start()
-    {
+   void Start()
+   {
+        base.Start();
         //this.transform.rotation = Quaternion.Euler(0,4,0); // ? why is this here
         //switch (TypeOfResource)
         //{
@@ -49,4 +50,15 @@ public class DropResource : InteractionObj
         //Destroy(this.gameObject);
         gameObject.SetActive(false);
     }
+
+    public override void ActivateButtonUI() // NOTE: THESE FUNCTIONS MAY CHANGE IN THE FUTURE
+    {
+        buttonUI.SetActive(true);
+    }
+
+    public override void DissableButtonUI()
+    {
+        buttonUI.SetActive(false);
+    }
+
 }
