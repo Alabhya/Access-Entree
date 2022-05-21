@@ -61,11 +61,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  walkRadius: 10
   destination: {x: 0, y: 0, z: 0}
-  cv: {x: 0, y: 0, z: 0}
   flag: 0
   stop: 0
   dialogue: 0
+--- !u!64 &1144163113439759820
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624752132170550599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6796121518194019630, guid: c34a9d5c172345544929d622c75e1d3c, type: 3}
 --- !u!1001 &7326699510310818894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
       propertyPath: m_Name
-      value: master Variant
+      value: Master Builder
       objectReference: {fileID: 0}
     - target: {fileID: 2135624897131870642, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
       propertyPath: m_Materials.Array.data[0]
