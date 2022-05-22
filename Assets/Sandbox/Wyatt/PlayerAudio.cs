@@ -6,9 +6,9 @@ using FMODUnity;
 public class PlayerAudio : MonoBehaviour
 {
 
-    private void PlayMovementAudio (FMOD.GUID eventPath)
+    private void PlayMovementAudio (FMOD.GUID eventPath, Vector3 positionObj = new Vector3())
     {
-        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance("event:/Character SFX/footstep (soft)");
+        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance(eventPath);
         FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(eventPath);
 
         if (Input.GetKey("W") || Input.GetKey("A") || Input.GetKey("S") || Input.GetKey("D")) 
@@ -22,9 +22,7 @@ public class PlayerAudio : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            jumpGrunt.start();
-            jumpGrunt.release();
-            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Character SFX/jump1"); 
         }
 
         /* else if(playerInAir == false)
