@@ -6,8 +6,8 @@ using FMODUnity;
 public class PlayerAudio : MonoBehaviour
 {
 
-    [EventRef, SerializeField] string moveKey = default;
-    [EventRef, SerializeField] string jumpKey = default;
+    public FMODUnity.EventReference moveKey = default;
+    public FMODUnity.EventReference jumpKey = default;
 
     private void PlayMovementAudio (FMOD.GUID eventPath, Vector3 positionObj = new Vector3())
     {
@@ -28,7 +28,7 @@ public class PlayerAudio : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Events/Main Character/jump1"); 
+            FMODUnity.RuntimeManager.PlayOneShot(jumpKey); 
         }
 
         /* else if(playerInAir == false)
