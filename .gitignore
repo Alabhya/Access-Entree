@@ -66,10 +66,11 @@ crashlytics-build.properties
 # Don't ignore images and gizmos used by FMOD in the Unity Editor.
 !/[Aa]ssets/Gizmos/FMOD/*
 !/[Aa]ssets/Editor Default Resources/FMOD/*
-                    
+/[Aa]ssets/**/FMODStudioCache.asset
+
 # Ignore the Cache folder since it is updated locally.
 /[Aa]ssets/Plugins/FMOD/Cache/*
-                    
+
 # Ignore bank files in the StreamingAssets folder.
 /[Aa]ssets/StreamingAssets/**/*.bank
 /[Aa]ssets/StreamingAssets/**/*.bank.meta
@@ -78,3 +79,5 @@ crashlytics-build.properties
 # Log files can be ignored.
 fmod_editor.log
 
+# ignore DB files
+*.json

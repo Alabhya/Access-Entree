@@ -32,7 +32,6 @@ public class DialogueResponseEvents : MonoBehaviour
 		for(int i =0; i < dialogueObject.Responses.Length; i++)
 		{
 			Response response = dialogueObject.Responses[i];
-			
 			if(rEvents[i] != null)
 			{
 				rEvents[i].name = response.ResponseText;

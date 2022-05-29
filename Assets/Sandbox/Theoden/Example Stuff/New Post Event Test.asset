@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea76015847553cc4f829edab8ab136cc, type: 3}
+  m_Name: New Post Event Test
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - text:
+    - Fine. I'll just print out a thing.
+    - Lousy Unity never lets me have any fun...
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 0}
+    textSpeed: 7
+    pauseTime: 1.2
+    typeText: 1
+    postEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11500000, guid: 9f346eb75aa0333479041bd43afbfb62, type: 3}
+          m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 8282679985028006108, guid: fcfc6f9f5a20b2040ac7b37545033c41, type: 3}
+          m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+          m_MethodName: TestFunction3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - text:
+    - Looks like doing it this way requires the use of prefabs.
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 0}
+    textSpeed: 7
+    pauseTime: 1.2
+    typeText: 1
+    postEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text:
+    - This may cause some problems in the future, but it seems like we can just use
+      the other method in that case.
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 0}
+    textSpeed: 7
+    pauseTime: 1.2
+    typeText: 1
+    postEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8282679985028006108, guid: fcfc6f9f5a20b2040ac7b37545033c41, type: 3}
+          m_TargetAssemblyTypeName: DestroyObject, Assembly-CSharp
+          m_MethodName: TestFunction2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - text:
+    - And with that, I must go.
+    - My planet needs me.
+    charTemplate: {fileID: 11400000, guid: fac592ca5c7283942aff319566f03ed1, type: 2}
+    charPortrait: {fileID: 21300000, guid: e3c5d89c5fcae0142acea61a847b0c3f, type: 3}
+    voice: {fileID: 0}
+    textSpeed: 7
+    pauseTime: 1.2
+    typeText: 1
+    postEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  responses: []

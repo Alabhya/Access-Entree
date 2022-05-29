@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PickUpItem : MonoBehaviour
 {
     public Sprite ItemSprite;
-    public float Speed = 100;
+    public float RotateSpeed = 0;
     private float ItemRotationSpeed;
     // Start is called before the first frame update
     void Awake()
@@ -17,15 +17,17 @@ public class PickUpItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ItemRotationSpeed += Time.deltaTime * Speed;
-        this.transform.GetChild(0).transform.rotation = Quaternion.Euler(0, ItemRotationSpeed, 0);
+        ItemRotationSpeed += Time.deltaTime * RotateSpeed;
+        this.transform.transform.rotation = Quaternion.Euler(0, ItemRotationSpeed, 0);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
+            if (!ItemSprite) { Debug.LogWarning("ItemSprite Not set up in PickUpItem object"); return; }
             ToolBarUI.Instance.AddItem(ItemSprite);
+            //Inventory.add(item.name,item.quantity);
             Destroy(this.gameObject);
         }
     }

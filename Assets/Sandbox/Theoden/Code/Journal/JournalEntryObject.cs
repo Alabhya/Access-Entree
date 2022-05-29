@@ -1,7 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-//Create a Character Profile template type
+/* This script creates a generic journal element scriptable object that is designed to be used
+   by a myriad of element types.
+   
+   This object is highly customizable and will need specific filler code in order to fill in the
+   various element types properly.
+*/
 [CreateAssetMenu(menuName = "JournalEntry/JournalEntryObject")]
 public class JournalEntryObject : ScriptableObject
 {
@@ -10,19 +15,32 @@ public class JournalEntryObject : ScriptableObject
 	[SerializeField] private string objectName;
 	[TextArea] [SerializeField] private string[] objectInfo;
 	[SerializeField] private Icons[] objectIcons;
+	[SerializeField] private string contEvt;
 	
 	//Getters
 	public Sprite MainPortrait => mainPortrait;
 	public string ObjectName => objectName;
 	public string[] ObjectInfo => objectInfo;
 	public Icons[] ObjectIcons => objectIcons;
+	public string ContEvt => contEvt;
 }
 
 [System.Serializable]
+public class Icon : ISerializationCallbackReceiver
+	{
+		public Sprite iconImg;
+		public string contEvt;
+		
+		//Needed for OnValidate to work
+		void ISerializationCallbackReceiver.OnBeforeSerialize () {}
+		void ISerializationCallbackReceiver.OnAfterDeserialize () {}
+	}
+
+[System.Serializable]
 public class Icons : ISerializationCallbackReceiver
-{
+{	
 	public string iconListTitle;
-	public Sprite[] iconList;
+	public Icon[] iconList;
 	
 	//Needed for OnValidate to work
 	void ISerializationCallbackReceiver.OnBeforeSerialize () {}
