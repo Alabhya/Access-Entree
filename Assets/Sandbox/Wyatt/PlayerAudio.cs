@@ -6,10 +6,16 @@ using FMODUnity;
 public class PlayerAudio : MonoBehaviour
 {
 
-    private void PlayMovementAudio (FMOD.GUID eventPath)
+    [EventRef, SerializeField] string moveKey = default;
+    [EventRef, SerializeField] string jumpKey = default;
+
+    private void PlayMovementAudio (FMOD.GUID eventPath, Vector3 positionObj = new Vector3())
     {
-        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance("event:/Character SFX/footstep (soft)");
-        FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+
+        
+
+        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance(moveKey);
+        FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(jumpKey);
 
         if (Input.GetKey("W") || Input.GetKey("A") || Input.GetKey("S") || Input.GetKey("D")) 
         {
@@ -17,14 +23,12 @@ public class PlayerAudio : MonoBehaviour
         }
         else
         {
-            footStep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); // fixed?
+            footStep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); 
         }
 
         if (Input.GetKeyDown("space"))
         {
-            jumpGrunt.start();
-            jumpGrunt.release();
-            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Events/Main Character/jump1"); 
         }
 
         /* else if(playerInAir == false)
@@ -37,7 +41,7 @@ public class PlayerAudio : MonoBehaviour
 
 
 
-    private PlayerController playerController;
+    // private PlayerController playerController;
 
     // public bool playerIsMoving;
     // bool playerInAir;
