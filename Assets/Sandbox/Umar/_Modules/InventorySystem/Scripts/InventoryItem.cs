@@ -3,6 +3,9 @@ using UnityEngine;
 namespace InventorySystem {
     [CreateAssetMenu(fileName = "ItemData", menuName = "InventorySystem/InventoryItem")]
     public class InventoryItem : InventoryItemBase {
+        
+        public InventoryItem requiredTool;
+        
         public InventoryItem(ItemType itemTypeObj, InventoryType inventType, int amount, string name, Sprite image, string description) {
             itemType = itemTypeObj;
             inventoryType = inventType;

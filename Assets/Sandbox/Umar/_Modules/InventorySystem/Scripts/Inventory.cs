@@ -56,10 +56,12 @@ namespace InventorySystem {
         }
 
         public ItemType GetItemType(InventoryItem item) {
+            // This function is not addressing the unavilibility of item
             return itemsList[item.itemType].itemType;
         }
 
         public Sprite GetItemImg(InventoryItem item) {
+            // This function is not addressing the unavilibility of item
             return itemsList[item.itemType].itemImg;
         }
 

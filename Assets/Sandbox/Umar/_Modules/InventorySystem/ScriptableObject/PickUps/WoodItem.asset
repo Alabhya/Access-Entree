@@ -15,6 +15,7 @@ MonoBehaviour:
   itemType: 4
   inventoryType: 0
   itemName: Wood
-  itemAmount: 0
   itemImg: {fileID: 21300000, guid: 1e5c91a8eda300149ae7f8bf00531c2f, type: 3}
   itemDescription: Wood from dark forest
+  itemAmount: 0
+  requiredTool: {fileID: 11400000, guid: bc6d946afb2d05344a500adbcdaf7a75, type: 2}

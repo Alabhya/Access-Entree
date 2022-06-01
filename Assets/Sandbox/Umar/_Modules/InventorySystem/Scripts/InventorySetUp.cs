@@ -6,6 +6,16 @@ namespace InventorySystem {
 
         private void OnTriggerEnter(Collider other) {
             InventoryItemObject itemWorldObj = other.GetComponent<InventoryItemObject>();
+
+            InventoryItem tempItemObj = itemWorldObj.GetInventoryItem();
+
+            if (tempItemObj.requiredTool != null) {
+                if (inventoryObj.GetItemAmount(tempItemObj.requiredTool) < 1) {
+                    Debug.LogFormat("Not Enough {0}", tempItemObj.requiredTool.itemName);
+                    return;
+                }
+            }
+                        
             if (itemWorldObj) {
                 int itemAmount = itemWorldObj.GetInventoryItemAmount();
                 InventoryItem itemSO = itemWorldObj.GetInventoryItem();
