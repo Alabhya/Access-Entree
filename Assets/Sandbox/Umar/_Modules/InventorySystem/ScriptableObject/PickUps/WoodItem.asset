@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3c6117187dcc64dbabf8e75f643096, type: 3}
   m_Name: WoodItem
   m_EditorClassIdentifier: 
-  itemObj:
-    itemType: 4
-    inventoryType: 0
-    itemName: Wood
-    itemAmount: 0
-    itemImg: {fileID: 21300000, guid: 1e5c91a8eda300149ae7f8bf00531c2f, type: 3}
-    itemDescription: Wood of deep dark forest
+  itemType: 4
+  inventoryType: 0
+  itemName: Wood
+  itemAmount: 0
+  itemImg: {fileID: 21300000, guid: 1e5c91a8eda300149ae7f8bf00531c2f, type: 3}
+  itemDescription: Wood from dark forest

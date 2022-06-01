@@ -8,7 +8,6 @@ namespace InventorySystem {
         private Dictionary<ItemType, InventoryItem> itemsList = null;
 
         public void OnEnable() {
-
             itemsList?.Clear();
             if(itemsList == null)
                 itemsList = new Dictionary<ItemType, InventoryItem>();
@@ -16,7 +15,7 @@ namespace InventorySystem {
         }
 
         public void AddItemInInventory(InventoryItem item) {
-            if (itemsList.ContainsKey(item.itemObj.itemType)) {
+            if (itemsList.ContainsKey(item.itemType)) {
                 AddItemAmount(item);
             } else {
                 AddItem(item);
@@ -25,43 +24,43 @@ namespace InventorySystem {
         }
 
         private void AddItem(InventoryItem item) {
-            itemsList.Add(item.itemObj.itemType, item);
+            itemsList.Add(item.itemType, item);
         }
 
         private InventoryItem AddItemAmount(InventoryItem item) {
-            if (item.itemObj.inventoryType == InventoryType.Consumable) {
-                itemsList[item.itemObj.itemType].itemObj.itemAmount += item.itemObj.itemAmount;
-                return itemsList[item.itemObj.itemType];
+            if (item.inventoryType == InventoryType.Resources) {
+                itemsList[item.itemType].itemAmount += item.itemAmount;
+                return itemsList[item.itemType];
             } else {
-                InventoryItem oldItem = itemsList[item.itemObj.itemType];
-                itemsList[item.itemObj.itemType] = item;
+                InventoryItem oldItem = itemsList[item.itemType];
+                itemsList[item.itemType] = item;
                 return oldItem;
             }
         }
 
         public void RemoveItemAmount(InventoryItem item) {
-            itemsList[item.itemObj.itemType].itemObj.itemAmount -= item.itemObj.itemAmount;
+            itemsList[item.itemType].itemAmount -= item.itemAmount;
             uiUpdateSO.RaiseEvent(itemsList);
         }
 
         public string GetItemName(InventoryItem item) {
-            if (itemsList.ContainsKey(item.itemObj.itemType))
-                return itemsList[item.itemObj.itemType].itemObj.itemName;
+            if (itemsList.ContainsKey(item.itemType))
+                return itemsList[item.itemType].itemName;
             return null;
         }
 
         public int GetItemAmount(InventoryItem item) {
-            if(itemsList.ContainsKey(item.itemObj.itemType))
-                return itemsList[item.itemObj.itemType].itemObj.itemAmount;
+            if(itemsList.ContainsKey(item.itemType))
+                return itemsList[item.itemType].itemAmount;
             return -1;
         }
 
         public ItemType GetItemType(InventoryItem item) {
-            return itemsList[item.itemObj.itemType].itemObj.itemType;
+            return itemsList[item.itemType].itemType;
         }
 
         public Sprite GetItemImg(InventoryItem item) {
-            return itemsList[item.itemObj.itemType].itemObj.itemImg;
+            return itemsList[item.itemType].itemImg;
         }
 
         public Dictionary<ItemType, InventoryItem> GetListOfItems() {
@@ -74,6 +73,6 @@ namespace InventorySystem {
     }
 
     public enum InventoryType {
-        Consumable, NonConsumable
+        Resources, Tools
     }
 }

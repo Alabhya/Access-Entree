@@ -13,7 +13,7 @@ namespace InventorySystem {
 
         public void SetUpInventoryItem(Inventory inventory, InventoryItem inventoryItem) {
             inventoryObj = inventory;
-            itemTypeOfObj = inventoryItem.itemObj.itemType;
+            itemTypeOfObj = inventoryItem.itemType;
             RefreshInventoryItem(inventoryItem);
         }
 

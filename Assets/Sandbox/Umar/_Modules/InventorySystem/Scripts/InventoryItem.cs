@@ -2,31 +2,25 @@ using UnityEngine;
 
 namespace InventorySystem {
     [CreateAssetMenu(fileName = "ItemData", menuName = "InventorySystem/InventoryItem")]
-    public class InventoryItem : ScriptableObject {
-        public InventoryItemInstance itemObj;
-
+    public class InventoryItem : InventoryItemBase {
         public InventoryItem(ItemType itemTypeObj, InventoryType inventType, int amount, string name, Sprite image, string description) {
-            itemObj = new InventoryItemInstance(itemTypeObj, inventType, amount, name, image, description);
+            itemType = itemTypeObj;
+            inventoryType = inventType;
+            itemName = name;
+            itemImg = image;
+            itemDescription = description;
+            itemAmount = amount;
         }
     }
 
     [System.Serializable]
-    public class InventoryItemInstance {
+    public class InventoryItemBase : ScriptableObject {
         public ItemType itemType;
         public InventoryType inventoryType;
         public string itemName;
-        [HideInInspector] public int itemAmount;
         public Sprite itemImg;
         public string itemDescription;
-
-        public InventoryItemInstance(ItemType itemTypeObj, InventoryType inventType, int amount, string name, Sprite image, string description)
-        {
-            itemType = itemTypeObj;
-            inventoryType = inventType;
-            itemAmount = amount;
-            itemName = name;
-            itemImg = image;
-            itemDescription = description;
-        }
+        [HideInInspector] public int itemAmount;
     }
+
 }

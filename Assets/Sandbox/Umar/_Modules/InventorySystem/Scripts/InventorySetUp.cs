@@ -9,8 +9,8 @@ namespace InventorySystem {
             if (itemWorldObj) {
                 int itemAmount = itemWorldObj.GetInventoryItemAmount();
                 InventoryItem itemSO = itemWorldObj.GetInventoryItem();
-                InventoryItem itemObj = new InventoryItem(itemSO.itemObj.itemType, itemSO.itemObj.inventoryType, 
-                    itemAmount, itemSO.itemObj.itemName, itemSO.itemObj.itemImg, itemSO.itemObj.itemDescription);
+                InventoryItem itemObj = new InventoryItem(itemSO.itemType, itemSO.inventoryType, 
+                    itemAmount, itemSO.itemName, itemSO.itemImg, itemSO.itemDescription);
 
                 inventoryObj.AddItemInInventory(itemObj);
                 itemWorldObj.DestroySelf();

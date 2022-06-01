@@ -17,14 +17,14 @@ namespace InventorySystem {
         }
 
         private void UpdateUI(Dictionary<ItemType, InventoryItem> inventoryObj) {
-            if (inventType == InventoryType.Consumable) {
+            if (inventType == InventoryType.Resources) {
                 for (int i = 0; i < inventoryObj.Count; i++) {
-                    if(inventoryObj.ElementAt(i).Value.itemObj.inventoryType == InventoryType.Consumable)
+                    if(inventoryObj.ElementAt(i).Value.inventoryType == InventoryType.Resources)
                         UpdateConsumableInventoryItem(inventoryObj.ElementAt(i).Value);
                 }
             } else {
                 for (int i = 0; i < inventoryObj.Count; i++) {
-                    if (inventoryObj.ElementAt(i).Value.itemObj.inventoryType == InventoryType.NonConsumable)
+                    if (inventoryObj.ElementAt(i).Value.inventoryType == InventoryType.Tools)
                         UpdateConsumableInventoryItem(inventoryObj.ElementAt(i).Value);
                 }
             }
@@ -34,7 +34,7 @@ namespace InventorySystem {
             bool isItemAvailable = false;
             if (inventoryItemObjs.Count > 0) {
                 foreach (InventoryGUISetup obj in inventoryItemObjs) {
-                    if (obj.GetItemType() == itemObj.itemObj.itemType) {
+                    if (obj.GetItemType() == itemObj.itemType) {
                         obj.UpdateInventoryItemAmount(itemObj);
                         isItemAvailable = true;
                     }
