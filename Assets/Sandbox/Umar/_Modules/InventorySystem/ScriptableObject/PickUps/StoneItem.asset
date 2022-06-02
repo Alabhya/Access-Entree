@@ -15,6 +15,7 @@ MonoBehaviour:
   itemType: 5
   inventoryType: 0
   itemName: Stone
-  itemAmount: 0
   itemImg: {fileID: 21300000, guid: 348446ee180943f4789fe88d985163cb, type: 3}
   itemDescription: Stone for buildings
+  itemAmount: 1
+  requiredTool: {fileID: 11400000, guid: 18bbf7350fbb5de45bc14dd7b8c82e49, type: 2}
