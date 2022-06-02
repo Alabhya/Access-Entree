@@ -3479,7 +3479,9 @@ MonoBehaviour:
   hudPanel: {fileID: 8298753240553906407}
   resourceInfoPanel: {fileID: 5171227496860243926}
   journalPanel: {fileID: 8298753241557475942}
-  resourceInfoEvent: {fileID: 0}
+  resourceSetupObj: {fileID: 5694603285857472264}
+  resourceInfoOpenEvent: {fileID: 11400000, guid: 33890486ba172d44393702792edfae66, type: 2}
+  resourceInfoCloseEvent: {fileID: 11400000, guid: 0e7369b889d925b468f115bb8c3027a1, type: 2}
 --- !u!1 &8298753242360138542
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,16 +7,16 @@ using UnityEngine;
 public abstract class InteractionObj : MonoBehaviour
 {
     // This reference should be added to the prefabs
-    public GameObject buttonUI; // TODO: Contruct button on start of derived class
+    public GameEventSO resourceInfoOpenEvent, resourceInfoCloseEvent; // TODO: Contruct button on start of derived class
 
     // Definitions for these functions must be defined for each class that derives from it
 
     protected void Start() {
         // POTENTIAL BUG: The parent object was dissabled, not sure if this happened here or somewhere else.
-        if (buttonUI != null)
-        {
-            buttonUI.SetActive(false);
-        }
+        //if (buttonUI != null)
+        //{
+        //    buttonUI.SetActive(false);
+        //}
        // Debug.LogWarning("Howdy friend!");
     }
 

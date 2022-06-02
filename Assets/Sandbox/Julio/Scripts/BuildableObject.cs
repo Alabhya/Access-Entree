@@ -131,10 +131,12 @@ public class BuildableObject : InteractionObj
     public override void ActivateButtonUI()
     {
         // TODO: Add resource call for UI
+        resourceInfoOpenEvent.RaiseEvent(requiredInventory, gameObject);
     }
 
     public override void DissableButtonUI()
     {
         // TODO: Dissable Button UI object
+        resourceInfoCloseEvent.RaiseEvent();
     }
 }
