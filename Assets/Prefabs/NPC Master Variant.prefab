@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &1144163113439759820
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624752132170550599}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6796121518194019630, guid: c34a9d5c172345544929d622c75e1d3c, type: 3}
 --- !u!135 &2644916848887242374
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -66,20 +80,6 @@ MonoBehaviour:
   flag: 0
   stop: 0
   dialogue: 0
---- !u!64 &1144163113439759820
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624752132170550599}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6796121518194019630, guid: c34a9d5c172345544929d622c75e1d3c, type: 3}
 --- !u!1001 &7326699510310818894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,6 +87,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6057140222963153312, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
     - target: {fileID: -6057140222963153312, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
       propertyPath: m_Controller
       value: 
@@ -153,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
       propertyPath: m_Name
-      value: Master Builder
+      value: NPC Master Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2135624897131870642, guid: 539fd6d05595b30498f42c9a3be21544, type: 3}
       propertyPath: m_Materials.Array.data[0]
