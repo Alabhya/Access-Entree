@@ -82,6 +82,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The offset for ground detection. Default value is 0.4f Increase the value for a broader detection. NOTE: If value is set too high, the player's model will not match the collision data!")]
     [SerializeField]
     [Range(0, 1f)] private float _groundDistance = 0.4f;
+    
+    [Tooltip("GameEventSO a scriptable object, which will help camera to find player")]
+    [SerializeField] private GameEventSO setUpPlayerCamera;
 
     public bool IsOnFlatGround { get; private set; }
     #endregion
@@ -92,6 +95,12 @@ public class PlayerController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _playerAnim = GetComponent<Animator>();
         string message = Crafting.build("axe",1); // this is for testing crafting until it is implemented into journal menu
+    }
+
+    private void Start()
+    {
+        // When this object is instantiated, it will invoke event for settingUp Camera with player
+        setUpPlayerCamera.RaiseEvent(gameObject);
     }
 
     private void Update()

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078694747570796413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0.5}
+  m_LocalPosition: {x: -0.368, y: -0.269, z: 0.388}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7384445163462514136}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 4180197784350495745}
   - component: {fileID: 7643368618338162230}
   m_Layer: 0
-  m_Name: Player_new
+  m_Name: PlayerObj
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
     m_Bits: 4096
   _isGrounded: 0
   _groundDistance: 0.4
+  setUpPlayerCamera: {fileID: 11400000, guid: 390f12defa9c2514498a89b2ff9c4406, type: 2}
 --- !u!95 &7384445161653304208
 Animator:
   serializedVersion: 3
@@ -241,6 +242,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4146b802-b03b-44a8-86ee-c0afb93e9b2f
     m_ActionName: Player_Test/Rotate Camera
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 701e61d4-c8b5-4de2-a608-7da363229597
+    m_ActionName: Player_Test/PrimaryTouchPos
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 74ef16c0-deaa-48fd-bf5c-9fb2223a611b
+    m_ActionName: Player_Test/SecondaryTouchPos
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 57f15ee2-9997-4588-94c6-09f90e274469
+    m_ActionName: Player_Test/SecondaryTouchContact
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player_Test
