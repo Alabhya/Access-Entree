@@ -6,24 +6,29 @@ using FMODUnity;
 public class PlayerAudio : MonoBehaviour
 {
 
-    private void PlayMovementAudio (FMOD.GUID eventPath)
-    {
-        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance(eventPath);
-        FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+    public FMODUnity.EventReference moveKey = default;
+    public FMODUnity.EventReference jumpKey = default;
 
-        if (playerIsMoving == true)
+    private void PlayMovementAudio (FMOD.GUID eventPath, Vector3 positionObj = new Vector3())
+    {
+
+        
+
+        FMOD.Studio.EventInstance footStep = FMODUnity.RuntimeManager.CreateInstance(moveKey);
+        FMOD.Studio.EventInstance jumpGrunt = FMODUnity.RuntimeManager.CreateInstance(jumpKey);
+
+        if (Input.GetKey("W") || Input.GetKey("A") || Input.GetKey("S") || Input.GetKey("D")) 
         {
             footStep.start();
         }
-        else if (playerIsMoving == false)
+        else
         {
-            footStep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); // fixed?
+            footStep.stop(FMOD.Studio.STOP_MODE.IMMEDIATE); 
         }
 
-        if (playerInAir == true)
+        if (Input.GetKeyDown("space"))
         {
-            jumpGrunt.start();
-            jumpGrunt.release();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Events/Main Character/jump1"); 
         }
 
         /* else if(playerInAir == false)
@@ -36,17 +41,15 @@ public class PlayerAudio : MonoBehaviour
 
 
 
-    private PlayerController playerController;
+    // private PlayerController playerController;
 
-    public bool playerIsMoving;
-    bool playerInAir;
+    // public bool playerIsMoving;
+    // bool playerInAir;
     
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        playerIsMoving = playerController.playerMoving;
-        playerInAir = playerController.playerJumping;
+        
     }
 
     // Update is called once per frame

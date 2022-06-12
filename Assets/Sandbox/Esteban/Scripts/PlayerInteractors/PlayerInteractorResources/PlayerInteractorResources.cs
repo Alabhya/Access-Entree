@@ -54,7 +54,7 @@ public class PlayerInteractorResources : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {  // why are there so many if statement bro chill
         if (MyInteractorController.InteractorBoolActives.TryGetValue(ThisScriptsName, out DictionaryValueOut))
         {
             IsEnabled = DictionaryValueOut;
@@ -118,7 +118,7 @@ public class PlayerInteractorResources : MonoBehaviour
                     {
                         MyInteractorController.EnableAllInteractors(ThisScriptsName);
                     }
-                    hit.transform.GetComponent<DropResource>().SpawnResource();
+                    //hit.transform.GetComponent<DropResource>().SpawnResource();
                     IsHarvestingResource = false;
                 }
             }

@@ -38,7 +38,8 @@ public class Building : MonoBehaviour
 
     }
     public void SpawnBuildingUIWorld() {
-        building3DUI = UIManager.Instance.SpawnUIWorld(gameObject,UI_3D_Prefab);
+        Vector3 buildingUIScale = new Vector3(0.1f,0.1f,0.1f);
+        building3DUI = UIManager.Instance.SpawnUIWorld(gameObject,UI_3D_Prefab,buildingUIScale);
         UpdateBuildingUI();
         UI_3D = true; 
     }
@@ -49,7 +50,8 @@ public class Building : MonoBehaviour
     {
         if(UI_Prefab == null) Debug.Log("UI prefab not set for building");
         else { 
-            building2DUI = UIManager.Instance.SpawnUIScreen(UI_Prefab);
+            Vector3 center = new Vector3(Screen.width/2,Screen.height/2,0);
+            building2DUI = UIManager.Instance.SpawnUIScreen(UI_Prefab,center);
             UI_2D = true;
         }
     }

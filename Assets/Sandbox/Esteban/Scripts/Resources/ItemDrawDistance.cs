@@ -43,7 +43,7 @@ public class ItemDrawDistance : MonoBehaviour
         } else
         {
             Vector3 gravity = GravityStrength * 2 * Vector3.down;
-            this.GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
+           // this.GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
         }
         //Debug.Log(CalculatePositionX());
         //Debug.Log(CalculatePositionZ());
@@ -53,7 +53,7 @@ public class ItemDrawDistance : MonoBehaviour
         }
         if(CalculatePositionX() < DeleteObjectDistance && CalculatePositionZ() < DeleteObjectDistance && Pickup)
         {
-            MyResourceHandler.AddResource(MyResourceType.MyResourceName);
+            MyResourceHandler.AddResource(MyResourceType);
             Destroy(this.gameObject);
         }
     }
