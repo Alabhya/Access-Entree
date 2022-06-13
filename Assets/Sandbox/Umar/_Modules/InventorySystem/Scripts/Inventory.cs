@@ -11,7 +11,6 @@ namespace InventorySystem {
             itemsList?.Clear();
             if(itemsList == null)
                 itemsList = new Dictionary<ItemType, InventoryItem>();
-            Debug.Log("Inventory SetUped");
         }
 
         public void AddItemInInventory(InventoryItem item) {
