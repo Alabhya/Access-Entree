@@ -10,7 +10,6 @@ namespace InventorySystem {
         public void OnEnable() {
             if(itemsList == null)
                 itemsList = new Dictionary<ItemType, InventoryItem>();
-            Debug.Log("Inventory SetUped");
         }
 
         public void AddItemInInventory(InventoryItem item) {

@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c288ee7bebbc9c49af84576b5a0e4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToAttachTo: Insert Resource Name Prefab
-  MyResourceName: 1
+  resourceName: DEFAULT
+  value: 0
 --- !u!114 &5589725540935117966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,11 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b65c073964b134dbb942a43d2db213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToAttachTo: Insert Resource Name Prefab
-  Prefab: {fileID: 3498996463135649630, guid: 55ca5eff6fde98e46836b7f2b6d5ff38, type: 3}
-  SpawnPosition: {fileID: 5589725541065851440}
-  TypeOfResource: 0
+  buttonUI: {fileID: 1349998662384948, guid: f6ce33b91f6ffe54cadacbf4bb112440, type: 3}
+  resource: {fileID: 52712518020961897, guid: 6c2695fc2aeb58f4b8f615378b241227, type: 3}
   TimeTillDestroy: 0
+  buttonUI: {fileID: 5589725541892912578}
 --- !u!114 &5589725540935117965
 MonoBehaviour:
   m_ObjectHideFlags: 0
