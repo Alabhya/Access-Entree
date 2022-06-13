@@ -1,7 +1,7 @@
-# Access-Score
+# Access-Entree
  FDAAF - Accessibility Game
 
-Project Name: Access Score
+Project Name: Access Entree
 
 Unity Version: 2020.3.14f1 LTS  
 
