@@ -53,8 +53,11 @@ public class SceneTransition : MonoBehaviour
 
 		
 		//Turn teleport point back on
-		tTrigger.canUse = true;
-		tTrigger.curCount = 0;
+		if(tTrigger)
+		{
+			tTrigger.canUse = true;
+			tTrigger.curCount = 0;
+		}
 	}
 	
 }
