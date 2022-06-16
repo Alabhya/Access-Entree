@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3924260437220845734
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265735026396684441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c4dc05fc0f77ec240b1f8de16c57bd34, type: 3}
+  m_Controller: {fileID: 9100000, guid: 11f85f14d5ba5eb4da00c1d95d2d9088, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+    'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+    'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+    'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tand
+    more ...\n\tFrom animation clip 'Idle'\n\tFrom animation clip 'Walking'"
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1764814499016527037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,8 +131,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
       propertyPath: m_Name
-      value: builder 1 Variant
+      value: Elder NPC Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: c4dc05fc0f77ec240b1f8de16c57bd34, type: 3}
     - target: {fileID: 5866666021909216657, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
       propertyPath: m_Controller
       value: 
