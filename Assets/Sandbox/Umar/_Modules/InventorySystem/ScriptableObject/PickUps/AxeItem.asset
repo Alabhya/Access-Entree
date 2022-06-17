@@ -15,5 +15,7 @@ MonoBehaviour:
   itemType: 1
   inventoryType: 1
   itemName: Axe
-  itemAmount: 1
   itemImg: {fileID: 21300000, guid: ce8d1478fef6ed14ca41eb960695372e, type: 3}
+  itemDescription: An old axe for woods
+  itemAmount: 0
+  collectorObj: []

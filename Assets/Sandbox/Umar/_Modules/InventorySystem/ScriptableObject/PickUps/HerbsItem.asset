@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 7
   inventoryType: 0
-  itemName: Herb
-  itemAmount: 1
-  itemImg: {fileID: 21300000, guid: 5093b96e63d6770408b36568ab6ad828, type: 3}
+  itemName: Herbs
+  itemAmount: 0
+  itemImg: {fileID: 21300000, guid: f419805b1917e2a499cf04d2b678d70a, type: 3}
+  itemDescription: Herbs used in medicine

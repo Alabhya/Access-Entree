@@ -8,7 +8,6 @@ namespace InventorySystem {
         private Dictionary<ItemType, InventoryItem> itemsList = null;
 
         public void OnEnable() {
-
             itemsList?.Clear();
             if(itemsList == null)
                 itemsList = new Dictionary<ItemType, InventoryItem>();
@@ -29,7 +28,7 @@ namespace InventorySystem {
         }
 
         private InventoryItem AddItemAmount(InventoryItem item) {
-            if (item.inventoryType == InventoryType.Consumable) {
+            if (item.inventoryType == InventoryType.Resources) {
                 itemsList[item.itemType].itemAmount += item.itemAmount;
                 return itemsList[item.itemType];
             } else {
@@ -57,10 +56,12 @@ namespace InventorySystem {
         }
 
         public ItemType GetItemType(InventoryItem item) {
+            // This function is not addressing the unavilibility of item
             return itemsList[item.itemType].itemType;
         }
 
         public Sprite GetItemImg(InventoryItem item) {
+            // This function is not addressing the unavilibility of item
             return itemsList[item.itemType].itemImg;
         }
 
@@ -74,6 +75,6 @@ namespace InventorySystem {
     }
 
     public enum InventoryType {
-        Consumable, NonConsumable
+        Resources, Tools
     }
 }

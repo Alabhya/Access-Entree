@@ -1,14 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JournalController : MonoBehaviour
 {
 	private int pageIndex = 0;
-	[SerializeField] private GameObject[] jPage;
-	
-	//Start is called before the first frame update    
-	void Start()
+	[SerializeField] private GameObject[] jPage, guiBtns;
+	[SerializeField] private Color selectedBtnColor, normalColor;
+
+    private void OnEnable() {
+		ChangePage(0);
+		guiBtns[0].GetComponent<Image>().color = selectedBtnColor;
+	}
+
+    //Start is called before the first frame update    
+    void Start()
 	{
 		//Set starting page
 		ChangePage(pageIndex);
@@ -35,6 +40,9 @@ public class JournalController : MonoBehaviour
 	
 	public void ChangePage(int newPage)
 	{
+		if(newPage != 0)
+			guiBtns[0].GetComponent<Image>().color = normalColor;
+
 		//Hide current page page
 		jPage[pageIndex].SetActive(false);
 		pageIndex = newPage;
