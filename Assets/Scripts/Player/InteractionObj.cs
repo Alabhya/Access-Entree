@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Made Julio Delgado
+//  *** Made Julio Delgado  ****
 
 public abstract class InteractionObj : MonoBehaviour
 {

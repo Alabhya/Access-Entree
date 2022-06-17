@@ -55,5 +55,6 @@ namespace InventorySystem {
         private void OnDisable() {
             uiUpdateSO.inventoryEvent -= UpdateUI;
         }
+
     }
 }

@@ -127,6 +127,7 @@ MonoBehaviour:
     m_Bits: 4096
   _isGrounded: 0
   _groundDistance: 0.4
+  setUpPlayerCamera: {fileID: 11400000, guid: 390f12defa9c2514498a89b2ff9c4406, type: 2}
 --- !u!95 &7384445161653304208
 Animator:
   serializedVersion: 3
