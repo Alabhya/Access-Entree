@@ -26,7 +26,9 @@ public class DayNightCycle : MonoBehaviour
 	void OnValidate()
 	{
 		//Sort the Lighting Templates
-		System.Array.Sort(lightingTemplates, (a,b) => a.StartTime.CompareTo(b.StartTime));
+		if(lightingTemplates.Length > 0) {
+			System.Array.Sort(lightingTemplates, (a,b) => a.StartTime.CompareTo(b.StartTime));
+		}
 		
 		//Limit time inputs to actual time values
 		startHour = Mathf.Clamp(startHour, 0, 23);
