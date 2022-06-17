@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Made by Julio Delgado
 public class BuildableObject : InteractionObj
 {
     public bool canBeModified = false;
@@ -11,6 +10,7 @@ public class BuildableObject : InteractionObj
     public bool hasBeenUpgraded { get; private set; } = false;
 
     // this will be the trigger to start the event, this reference may not be needed
+    [SerializeField] private InventorySystem.Inventory inventoryObj;
     [SerializeField] private Mesh upgradeMesh;
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private GameObject triggerPoint;
@@ -24,8 +24,6 @@ public class BuildableObject : InteractionObj
 
     void Start()
     {
-        base.Start();
-        // todo contruct UI button
         objectMesh = this.GetComponent<MeshFilter>();
         if (EffectDuration <= 0)
         {
@@ -97,41 +95,40 @@ public class BuildableObject : InteractionObj
        // no longer needed
     }
 
-    public override bool CanInteract() {
+    public override void Interaction() {
+        // Debug.Log("Interacted with: " + this.name);
+        // we will not proccess any logic until we have unlocked the ability to upgrade this item
+        if (canBeModified == false)
+        {
+            return;
+        }
+
         // used to check if we have enough resources in the inventory, will assume yes until proven otherwise
         bool hasEnough = true;
 
         // safety check conditional
         int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
-        for (int i = 0; i < it; ++i)
+        for (int i = 0; i < requiredInventoryItems.Count; i++)
         {
-            int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
+            int inventoryItemAmount = inventoryObj.GetItemAmount(requiredInventoryItems[i]);
             // checking the current item count requirement with the inventory amount, if not enought we will break the loop
-            if (currItemCount < (int)requiredQuantities[i])
+            if (inventoryItemAmount < (int)requiredInventoryItems[i].itemAmount)
             {
                 hasEnough = false;
                 break;
             }
         }
 
-        return hasEnough && canBeModified;
-    }
-
-    public override void Interaction() {  
-        canBeModified = false;
-        isUpgrading = true;
-        // start construction call
-        BeginUpgrade();
-    }
-
-
-    public override void ActivateButtonUI()
-    {
-        // TODO: Add resource call for UI
-    }
-
-    public override void DissableButtonUI()
-    {
-        // TODO: Dissable Button UI object
+        if (hasEnough)
+        {
+            //Debug.Log("Player has enought Items!");
+            canBeModified = false;
+            isUpgrading = true;
+            // start construction call
+            BeginUpgrade();
+        }
+        else {
+            print("Not enough resources..");
+        }
     }
 }
