@@ -3,6 +3,7 @@ using InventorySystem;
 using System.Collections.Generic;
 using RotaryHeart.Lib.SerializableDictionary;
 
+
 public class ResourceRequired {
     public InventoryItem item;
     public int amount;

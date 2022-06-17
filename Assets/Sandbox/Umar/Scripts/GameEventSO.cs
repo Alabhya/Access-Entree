@@ -10,14 +10,14 @@ public class GameEventSO : ScriptableObject {
     public UnityAction<SerializableDictionaryBase<InventoryItem, int>, GameObject> eventForResourceInfo;
 
     public void RaiseEvent() {
-        gameEvent.Invoke();
+        gameEvent?.Invoke();
     }
 
     public void RaiseEvent(GameObject obj) {
-        eventWithGameObject.Invoke(obj);
+        eventWithGameObject?.Invoke(obj);
     }
 
     public void RaiseEvent(SerializableDictionaryBase<InventoryItem, int> reqItems, GameObject obj) {
-        eventForResourceInfo.Invoke(reqItems, obj);
+        eventForResourceInfo?.Invoke(reqItems, obj);
     }
 }

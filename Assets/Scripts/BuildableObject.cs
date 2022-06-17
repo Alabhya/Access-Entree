@@ -136,7 +136,7 @@ public class BuildableObject : InteractionObj
 
     public override void DissableButtonUI()
     {
-        // TODO: Dissable Button UI object
+        //  TODO: Dissable Button UI object
         resourceInfoCloseEvent.RaiseEvent();
     }
 }
