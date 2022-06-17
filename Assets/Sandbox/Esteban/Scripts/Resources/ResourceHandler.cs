@@ -44,42 +44,45 @@ public class ResourceHandler : MonoBehaviour
     }
 
 
-    public void AddResource(ResourceType.ResourceName ResourceName)
+    public void AddResource(ResourceType resource)
     {
-        switch (ResourceName)
-        {
-            case ResourceType.ResourceName.None:
-                {
-                    break;
-                }
-            case ResourceType.ResourceName.Stone:
-                {
-                    AddStone();
-                    Inventory.Add("stone", 1, 3);
-                    break;
-                }
-            case ResourceType.ResourceName.Wood:
-                {
-                    AddWood();
-                    Inventory.Add("wood", 1, 2);
-                    break;
-                }
-            default:
-                {
-                    break;
-                }
-        }
+        if (resource.resourceName == "DEFAULT" || resource.resourceName == "") { return; }
+        Inventory.Add(resource.resourceName, 1, resource.value);
+        //switch (ResourceName)
+        //{
+        //    case ResourceType.ResourceName.None:
+        //        {
+        //            break;
+        //        }
+        //    case ResourceType.ResourceName.Stone:
+        //        {
+        //            AddStone();
+        //            Inventory.Add("stone", 1, 3);
+        //            break;
+        //        }
+        //    case ResourceType.ResourceName.Wood:
+        //        {
+        //            AddWood();
+        //            Inventory.Add("wood", 1, 2);
+        //            break;
+        //        }
+        //    default:
+        //        {
+        //            break;
+        //        }
+        //}
         
     }
 
-    public void AddWood()
+    // These functions are deprecated
+    private void AddWood()
     {
         NumberOfWood += 1;
         // WoodText.text = "Wood: " + NumberOfWood;
     }
 
 
-    public void AddStone()
+    private void AddStone()
     {
         NumberOfStone += 1;
         // StoneText.text = "Stone: " + NumberOfStone;

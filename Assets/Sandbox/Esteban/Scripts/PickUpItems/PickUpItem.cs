@@ -25,7 +25,9 @@ public class PickUpItem : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if (!ItemSprite) { Debug.LogWarning("ItemSprite Not set up in PickUpItem object"); return; }
             ToolBarUI.Instance.AddItem(ItemSprite);
+            //Inventory.add(item.name,item.quantity);
             Destroy(this.gameObject);
         }
     }
