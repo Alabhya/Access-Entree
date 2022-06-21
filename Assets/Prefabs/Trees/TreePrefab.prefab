@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c288ee7bebbc9c49af84576b5a0e4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceName: DEFAULT
+  resourceName: Bamboo
   value: 0
 --- !u!114 &5589725540935117966
 MonoBehaviour:
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b65c073964b134dbb942a43d2db213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonUI: {fileID: 1349998662384948, guid: f6ce33b91f6ffe54cadacbf4bb112440, type: 3}
-  resource: {fileID: 52712518020961897, guid: 6c2695fc2aeb58f4b8f615378b241227, type: 3}
+  resourceInfoOpenEvent: {fileID: 11400000, guid: 33890486ba172d44393702792edfae66, type: 2}
+  resourceInfoCloseEvent: {fileID: 11400000, guid: 0e7369b889d925b468f115bb8c3027a1, type: 2}
+  resource: {fileID: 2289864004683981994, guid: 7c8ef6935c1751b49b06bc5f90d88a73, type: 3}
   TimeTillDestroy: 0
-  buttonUI: {fileID: 5589725541892912578}
 --- !u!114 &5589725540935117965
 MonoBehaviour:
   m_ObjectHideFlags: 0
