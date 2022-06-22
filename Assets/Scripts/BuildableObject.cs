@@ -2,6 +2,7 @@ using InventorySystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RotaryHeart.Lib.SerializableDictionary;
 
 // Made by Julio Delgado
 public class BuildableObject : InteractionObj
@@ -11,6 +12,7 @@ public class BuildableObject : InteractionObj
     public bool hasBeenUpgraded { get; private set; } = false;
 
     // this will be the trigger to start the event, this reference may not be needed
+    [SerializeField] private InventorySystem.Inventory inventoryObj;
     [SerializeField] private Mesh upgradeMesh;
     [SerializeField] private GameObject particlePrefab;
     [SerializeField] private GameObject triggerPoint;
@@ -18,6 +20,7 @@ public class BuildableObject : InteractionObj
     [SerializeField] private List<string> requiredItems;
     [SerializeField] private List<InventoryItem> requiredInventoryItems;
     [SerializeField] private List<uint> requiredQuantities;
+    [SerializeField] private SerializableDictionaryBase<InventoryItem, int> requiredInventory = new SerializableDictionaryBase<InventoryItem, int>();
     [SerializeField] private float EffectDuration = 0;
 
     private MeshFilter objectMesh;
@@ -42,8 +45,8 @@ public class BuildableObject : InteractionObj
         }
     }
 
-    public List<InventoryItem> GetResourcesList() {
-        return requiredInventoryItems;
+    public SerializableDictionaryBase<InventoryItem, int> GetResourcesList() {
+        return requiredInventory;
     }
 
     // This function will start the construction/upgrade of this object where the mesh will be swapped and particles spawned
@@ -103,11 +106,11 @@ public class BuildableObject : InteractionObj
 
         // safety check conditional
         int it = requiredItems.Count < requiredQuantities.Count ? requiredItems.Count : requiredQuantities.Count;
-        for (int i = 0; i < it; ++i)
+        for (int i = 0; i < requiredInventoryItems.Count; i++)
         {
-            int currItemCount = Inventory.GetItemQuantity(requiredItems[i]);
+            int inventoryItemAmount = inventoryObj.GetItemAmount(requiredInventoryItems[i]);
             // checking the current item count requirement with the inventory amount, if not enought we will break the loop
-            if (currItemCount < (int)requiredQuantities[i])
+            if (inventoryItemAmount < (int)requiredInventoryItems[i].itemAmount)
             {
                 hasEnough = false;
                 break;
@@ -128,10 +131,12 @@ public class BuildableObject : InteractionObj
     public override void ActivateButtonUI()
     {
         // TODO: Add resource call for UI
+        resourceInfoOpenEvent.RaiseEvent(requiredInventory, gameObject);
     }
 
     public override void DissableButtonUI()
     {
-        // TODO: Dissable Button UI object
+        //  TODO: Dissable Button UI object
+        resourceInfoCloseEvent.RaiseEvent();
     }
 }

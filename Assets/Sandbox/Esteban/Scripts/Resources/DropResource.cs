@@ -40,12 +40,12 @@ public class DropResource : InteractionObj
 
     public override void ActivateButtonUI() // NOTE: THESE FUNCTIONS MAY CHANGE IN THE FUTURE
     {
-        buttonUI.SetActive(true);
+        //buttonUI.SetActive(true);
     }
 
     public override void DissableButtonUI()
     {
-        buttonUI.SetActive(false);
+        //buttonUI.SetActive(false);
     }
 
 }

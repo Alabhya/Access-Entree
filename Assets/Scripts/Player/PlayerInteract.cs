@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//
 // Made by Julio Delgado
 // this class will perform a sphere cast from the player position, to the player's forward direction.
 // Once a valid interaction obj is hit we will display an UI button which can be pressed to trigger the custom object interaction logic
 // NOTE: DO NOT REFERENCE ANY CHILD CLASES OF InteractionObj in this class
+//
+
 public class PlayerInteract : MonoBehaviour
 {
     private LayerMask interactionLayer;
