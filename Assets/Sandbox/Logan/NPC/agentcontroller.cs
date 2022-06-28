@@ -7,7 +7,6 @@ public class agentcontroller : MonoBehaviour
 {
     public NavMeshAgent agent = null;
     public int walkRadius = 10; // how far NPCs will walk
-    //public Vector3 startingpoint;
     public Vector3 destination;
     private Animator anima;
     public boundingstuff bs;
@@ -15,8 +14,6 @@ public class agentcontroller : MonoBehaviour
     public bool stop = false;
     public bool dialogue; // TODO check dialogue state through game manager
     private int stopCount = 0;
-    //private bool start = false;
-    // Start is called before the first frame update
     public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -54,7 +51,7 @@ public class agentcontroller : MonoBehaviour
         if (Vector3.Distance(agent.destination, transform.position) <= float.Epsilon || stop)
         {
             agent.SetDestination(transform.position);
-            anima.SetBool("walking", false);
+            anima.SetBool("isWalking", false);
             stop = true;
             stopCount += 1;
             Stop();
@@ -63,8 +60,7 @@ public class agentcontroller : MonoBehaviour
 
     public void Stop()
     {
-        //bs.front = 1;
-        anima.SetBool("walking", false);
+        anima.SetBool("isWalking", false);
         stop = true;
     }
 
@@ -74,13 +70,13 @@ public class agentcontroller : MonoBehaviour
         agent.SetDestination(newdes);
         destination = newdes;
         stop = false;
-        anima.SetBool("walking", true);
+        anima.SetBool("isWalking", true);
     }
 
     public void Continue()
     {
         bs.front = agent.speed;
-        anima.SetBool("walking", true);
+        anima.SetBool("isWalking", true);
         stop = false;
     }
 }
