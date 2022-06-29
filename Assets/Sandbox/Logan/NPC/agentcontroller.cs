@@ -33,8 +33,10 @@ public class agentcontroller : MonoBehaviour
 
     public void FixedUpdate()
     {   // stop ncp if dialogue state is true
-        if(dialogue == true) { // TODO check dialogue state through game manager
+        if(GameManager.Instance.CurrentState == GameManager.GameState.TALKING) { // TODO check dialogue state through game manager
             Stop();
+            dialogue = true;
+            // Call dialogue method/class for Agent from here
         }
         else if (agent != null)
             if (stop)
