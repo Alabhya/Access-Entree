@@ -63,7 +63,7 @@ public class ItemDrawDistance : MonoBehaviour
             //if (boi)
                 //TODO AGAIN: NEED PLAYER REF
             //GAMEMANAGER.PLAYER.inventoryObj.AddItemInInventory(boi.GetInventoryItem());
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 

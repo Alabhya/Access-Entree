@@ -22,15 +22,16 @@ namespace InventorySystem {
             }
 
             // TODO: THIS LOGIC SHOULD ONLY AFFECT THE RESOURSE THAT IS PICKED UP, NOT THE OBJECT THAT CAN BE INTERACTED WITH
-            //if (itemWorldObj) {
-            //    int itemAmount = itemWorldObj.GetInventoryItemAmount();
-            //    InventoryItem itemSO = itemWorldObj.GetInventoryItem();
-            //    InventoryItem itemObj = new InventoryItem(itemSO.itemType, itemSO.inventoryType, 
-            //        itemAmount, itemSO.itemName, itemSO.itemImg, itemSO.itemDescription);
+            if (itemWorldObj)
+            {
+                int itemAmount = itemWorldObj.GetInventoryItemAmount();
+                InventoryItem itemSO = itemWorldObj.GetInventoryItem();
+                InventoryItem itemObj = new InventoryItem(itemSO.itemType, itemSO.inventoryType,
+                    itemAmount, itemSO.itemName, itemSO.itemImg, itemSO.itemDescription);
 
-            //    inventoryObj.AddItemInInventory(itemObj);
-            //    itemWorldObj.DestroySelf();
-            //}
+                inventoryObj.AddItemInInventory(itemObj);
+                itemWorldObj.DestroySelf();
+            }
         }
 
         // TODO: need a function that returns a ref to equipped tool from the player
