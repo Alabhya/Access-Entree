@@ -107,6 +107,10 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.Instance.CurrentState == GameManager.GameState.NORMAL)
             HandlePlayerMovement();
+
+        // temp
+        if (_playerInput.Player_Test.Interact.triggered)
+            Debug.Log("I pressed interact");
     }
 
     /*

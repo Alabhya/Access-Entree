@@ -53,7 +53,10 @@ public class PlayerInteract : MonoBehaviour
 
     // this function needs to be called from the button object referenced in this class
     public void ButtonPress() {
-       // Debug.Log("We pressed the button");
+        Debug.Log("We pressed the button");
         current.Interaction();
+        current.SetOutline(false);
+        current.DissableButtonUI();
+        current = null;
     }
 }
