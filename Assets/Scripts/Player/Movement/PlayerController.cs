@@ -110,7 +110,15 @@ public class PlayerController : MonoBehaviour
 
         // temp
         if (_playerInput.Player_Test.Interact.triggered)
+        {
             Debug.Log("I pressed interact");
+            var PInt = GetComponent<PlayerInteract>();
+            if (PInt != null)
+            {
+                
+                PInt.ButtonPress();
+            }
+        }
     }
 
     /*

@@ -11,6 +11,7 @@ public class GameManager
      * TODO:
      * - Implement state manager
      * - Implement singleton object
+     * - ADD PLAYER SINGLETON REFERENCE
      */
 
     private static GameManager instance;

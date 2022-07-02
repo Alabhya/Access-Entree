@@ -46,17 +46,25 @@ public class PlayerInteract : MonoBehaviour
             current.ActivateButtonUI();
         } // highlighting the current object being observed and activate button UI
 
+        //if (_playerInput.Player_Test.Interact.triggered) 
+
 #if DEBUG
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * sphereCastDistance, Color.yellow);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * sphereCastDistance, Color.yellow);
 #endif
     }
 
     // this function needs to be called from the button object referenced in this class
     public void ButtonPress() {
-        Debug.Log("We pressed the button");
-        current.Interaction();
-        current.SetOutline(false);
-        current.DissableButtonUI();
-        current = null;
+        if (current.CanInteract())
+        {
+            Debug.Log("We pressed the button");
+            current.Interaction();
+            current.SetOutline(false);
+            current.DissableButtonUI();
+            current = null;
+        } else
+        {
+            Debug.Log("Cannot Interact");
+        }
     }
 }

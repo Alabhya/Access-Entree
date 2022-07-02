@@ -127,7 +127,6 @@ public class BuildableObject : InteractionObj
         BeginUpgrade();
     }
 
-
     public override void ActivateButtonUI()
     {
         // TODO: Add resource call for UI
