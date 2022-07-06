@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c288ee7bebbc9c49af84576b5a0e4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToAttachTo: Insert Resource Name Prefab
-  MyResourceName: 2
+  resourceName: DEFAULT
+  value: 0
 --- !u!114 &4065319813743415144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b65c073964b134dbb942a43d2db213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToAttachTo: Insert Resource Name Prefab
-  Prefab: {fileID: 3498996463135649630, guid: 55ca5eff6fde98e46836b7f2b6d5ff38, type: 3}
-  SpawnPosition: {fileID: 1276556336658831279}
-  TypeOfResource: 0
+  buttonUI: {fileID: 2289864004683981994, guid: 7c8ef6935c1751b49b06bc5f90d88a73, type: 3}
+  resource: {fileID: 3498996463135649630, guid: 55ca5eff6fde98e46836b7f2b6d5ff38, type: 3}
+  TypeOfResource: {fileID: 0}
   TimeTillDestroy: 0
 --- !u!64 &7442133180476157556
 MeshCollider:

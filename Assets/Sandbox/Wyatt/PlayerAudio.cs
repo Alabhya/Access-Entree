@@ -28,7 +28,7 @@ public class PlayerAudio : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-            FMODUnity.RuntimeManager.PlayOneShot(jumpKey); 
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Events/Main Character/jump1"); 
         }
 
         /* else if(playerInAir == false)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InventorySystem;
 
 public class ItemDrawDistance : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class ItemDrawDistance : MonoBehaviour
     private Vector3 ItemsPosition;
     private PlayerInteractorResources PlayerInteractorScript;
     private ItemHandler MyItemHandler;
-    private ResourceHandler MyResourceHandler;
+   // private ResourceHandler MyResourceHandler;
     private Vector3 PlayersPosition;
     private Vector3 ReturnPosition;
     private bool Pickup;
@@ -26,7 +27,7 @@ public class ItemDrawDistance : MonoBehaviour
     {
         MyItemHandler = ItemHandler.Instance;
         Player = PlayerInteractorResources.Instance.gameObject;
-        MyResourceHandler = ResourceHandler.Instance;
+        //MyResourceHandler = ResourceHandler.Instance;
         //PlayerInteractorScript = PlayerInteractor.Instance;
         MyResourceType = this.GetComponent<ResourceType>();
     }
@@ -34,26 +35,34 @@ public class ItemDrawDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO: YEEEEEEEEEEEEEEEEET ALL OF THIS (just simplify and optimize)
         PlayersPosition = Player.transform.position;
         ItemsPosition = this.transform.position;
         TimeTillPickupable -= Time.deltaTime;
-        if(TimeTillPickupable <= 0)
+        if (TimeTillPickupable <= 0)
         {
             Pickup = true;
-        } else
+        }
+        else
         {
             Vector3 gravity = GravityStrength * 2 * Vector3.down;
-           // this.GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
+            // this.GetComponent<Rigidbody>().AddForce(gravity, ForceMode.Acceleration);
         }
         //Debug.Log(CalculatePositionX());
         //Debug.Log(CalculatePositionZ());
+
         if (CalculatePositionX() < MaximumDrawDistance && CalculatePositionZ() < MaximumDrawDistance && Pickup)
         {
             transform.position = Vector3.Lerp(this.transform.position, PlayersPosition, 0.1f);
         }
-        if(CalculatePositionX() < DeleteObjectDistance && CalculatePositionZ() < DeleteObjectDistance && Pickup)
+        if (CalculatePositionX() < DeleteObjectDistance && CalculatePositionZ() < DeleteObjectDistance && Pickup)
         {
-            MyResourceHandler.AddResource(MyResourceType);
+            //TODO: CALL UMAR'S SCRIPT FROOM HERE LOOOOOL
+            // add resource to inventory here 
+            //var boi = GetComponent<InventoryItemObject>();
+            //if (boi)
+                //TODO AGAIN: NEED PLAYER REF
+            //GAMEMANAGER.PLAYER.inventoryObj.AddItemInInventory(boi.GetInventoryItem());
             Destroy(this.gameObject);
         }
     }

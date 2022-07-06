@@ -1,0 +1,2 @@
+Please, check out latest API Docs here:
+http://codestage.net/uas_files/maintainer/api
