@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * Player Camera Controller:
+ * - Handles touch input for camera controls.
+ * 
+ * TODO:
+ * - Test play zoom functions
+ * - Begin implementing swipe functions
+ */
+
 public class PlayerCameraController : MonoBehaviour
 {
     private PlayerInput _playerInput;
@@ -59,6 +68,10 @@ public class PlayerCameraController : MonoBehaviour
         }
     }
 
+    /*
+     * Zoom Detect:
+     * - Check if touch input begins.
+     **/
     private IEnumerator ZoomDetect()
     {
         float prevDistance = 0f;

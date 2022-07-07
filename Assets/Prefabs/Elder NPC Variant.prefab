@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
       propertyPath: m_Name
-      value: builder 1 Variant
+      value: Elder NPC Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d5be5f1e06775b945b11ea2b634f386b, type: 3}
       propertyPath: m_Controller
