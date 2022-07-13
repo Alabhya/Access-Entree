@@ -32,6 +32,6 @@ public class StayInBounds : MonoBehaviour
 	private void Respawn()
 	{
 		Debug.Log("Whoopsie doodle: Player out of bounds");
-		StartCoroutine(sTrans.ChangeLocation(player, respawnPoint.transform, null));
+		StartCoroutine(sTrans.ChangeLocation(player, respawnPoint.transform));
 	}
 }

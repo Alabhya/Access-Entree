@@ -28,7 +28,7 @@ public class SceneTransition : MonoBehaviour
 	}
 	
 	//Transport player to provided location
-	public IEnumerator ChangeLocation(GameObject player, Transform newSpot, TransitionTrigger tTrigger)
+	public IEnumerator ChangeLocation(GameObject player, Transform newSpot)
 	{
 		//Prevent player movement
 		player.GetComponent<CharacterController>().enabled = false;
@@ -51,13 +51,7 @@ public class SceneTransition : MonoBehaviour
 		//Allow player to move
 		player.GetComponent<CharacterController>().enabled = true;
 
-		
-		//Turn teleport point back on
-		if(tTrigger)
-		{
-			tTrigger.canUse = true;
-			tTrigger.curCount = 0;
-		}
+		yield return null;
 	}
 	
 }
