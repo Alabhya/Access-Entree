@@ -42,7 +42,9 @@ public class TransitionTrigger : MonoBehaviour
 				if(isLocal)
 				{
 					canUse = false;
-					StartCoroutine(sTrans.ChangeLocation(other.gameObject, newSpot, this));
+					StartCoroutine(sTrans.ChangeLocation(other.gameObject, newSpot));
+					canUse = true;
+					curCount = 0;
 				}
 				//Teleport player to another scene
 				else
