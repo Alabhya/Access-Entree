@@ -20,7 +20,7 @@ using UnityEngine.UI;
 public class CharacterProfileCardFiller : MonoBehaviour
 {
 	//Profile update information
-	public JournalEntryObject profile; //The journal entry object that stores all of hte information about the given character.
+	public JournalEntryObject profile; //The journal entry object that stores all of the information about the given character.
 	
 	//Reference to GUI elements
 	[SerializeField] private TMP_Text nameText; //Where the character's name is placed.
@@ -34,7 +34,7 @@ public class CharacterProfileCardFiller : MonoBehaviour
 	void Start()
     {
         //Make sure profile card is fixed
-		SetProfile(true);
+		//SetProfile(true);
     }
 	
 	//Add like and dislike icons
@@ -70,7 +70,7 @@ public class CharacterProfileCardFiller : MonoBehaviour
 	}
 	
 	//Fill in/update profile information
-	void SetProfile(bool fillList)
+	public void SetProfile(bool fillList)
 	{
 		//Don't do anything if there is no profile (prevents errors)
 		if(profile == null)
