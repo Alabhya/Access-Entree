@@ -39,6 +39,7 @@ public class aScoreEventManager : MonoBehaviour
 	
 	public bool GetEvent(string eventName)
 	{
+		if(eventName == ""){return true;} //Count for no event
 		if(!eventsDict.ContainsKey(eventName))
 		{
 			Debug.LogError("Cannot get "+ eventName + " value. Event does not exist.");
