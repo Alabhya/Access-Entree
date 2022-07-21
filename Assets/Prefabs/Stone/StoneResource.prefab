@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 461162594924091317}
   - component: {fileID: 383973367434788738}
   - component: {fileID: 3779740666037879602}
+  - component: {fileID: 8716293369259602828}
   m_Layer: 6
   m_Name: StoneResource
   m_TagString: Untagged
@@ -190,3 +191,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: stone
   value: 3
+--- !u!114 &8716293369259602828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498996463135649630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c8e71d6f86dad4d91a108121a1803f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItem: {fileID: 11400000, guid: 47bbe0e9f7aa5c540bb23bee94636e6e, type: 2}
+  itemAmount: 1

@@ -17,7 +17,6 @@ public abstract class InteractionObj : MonoBehaviour
         //{
         //    buttonUI.SetActive(false);
         //}
-       // Debug.LogWarning("Howdy friend!");
     }
 
     // This function is called from the UI button that appears when looking at an interation object
