@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea76015847553cc4f829edab8ab136cc, type: 3}
+  m_Name: TestNPC_Test_Dialogue
+  m_EditorClassIdentifier: 
+  dialogueList:
+  - text:
+    - It is dangerous to go alone.
+    charTemplate: {fileID: 0}
+    charPortrait: {fileID: 21300000, guid: 183dac509c835994cbe5ad8424c5a404, type: 3}
+    voice: {fileID: 8300000, guid: 1e520327aff5d2a4da5330e5ae968679, type: 3}
+    textSpeed: 15
+    pauseTime: 0.6
+    typeText: 1
+    postEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - text:
+    - Take this!
+    charTemplate: {fileID: 0}
+    charPortrait: {fileID: 21300000, guid: 183dac509c835994cbe5ad8424c5a404, type: 3}
+    voice: {fileID: 8300000, guid: 1e520327aff5d2a4da5330e5ae968679, type: 3}
+    textSpeed: 30
+    pauseTime: 0.6
+    typeText: 1
+    postEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  responses: []

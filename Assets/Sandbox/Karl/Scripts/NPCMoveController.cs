@@ -9,19 +9,24 @@ using UnityEngine.AI;
  * 
  * - Handles primary NPC movement.
  * - Originally from agentcontroller.cs script
+ * 
+ * TODO:
+ * - Fix rotation bug when NPC is in talking state.
  */
 
 public class NPCMoveController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _npcAgent;
+    [SerializeField] private Transform _playerTransform;
     [SerializeField] private Vector3 _targetDest;
     [SerializeField] private int _walkRadius = 10;
     [SerializeField] private float _npcSpeed = 5f;
     [SerializeField] private float _startAnimTime = 0.3f;
     [SerializeField] private float _stopAnimTime = 0.15f;
     [SerializeField] private float _allowAgentRotation = 0.1f;
+    [SerializeField] private float _deltaVariance = 0.5f;
     [SerializeField] private bool _hasStopped;
-
+    
     private Animator _animator;
     private int _stopCount;
     private float _currSpeed;
@@ -38,16 +43,14 @@ public class NPCMoveController : MonoBehaviour
     private void FixedUpdate()
     {
         if (IsInTalkingState())
+        {
             Stop();                     // Call dialogue method/class for Agent from here
+            transform.LookAt(_playerTransform);
+        }
         else if (_npcAgent != null)
             CheckAgentMovement();
 
-        if (HasReachedDestination())
-        {
-            _npcAgent.SetDestination(transform.position);
-            _hasStopped = true;
-            _stopCount++;
-        }
+        SwitchTargetDestination();
     }
 
     private void CheckAgentMovement()
@@ -57,9 +60,13 @@ public class NPCMoveController : MonoBehaviour
             _animator.SetFloat("Blend", _currSpeed, _startAnimTime, Time.deltaTime);
             UpdateAgentDest();
         }
-        else if (_currSpeed < _allowAgentRotation || HasReachedDestination())
+    }
+
+    private void SwitchTargetDestination()
+    {
+        if (HasReachedDestination())
         {
-            _animator.SetFloat("Blend", _currSpeed, _stopAnimTime, Time.deltaTime);
+            _animator.SetFloat("Blend", 0, _stopAnimTime, Time.deltaTime);
             _npcAgent.SetDestination(transform.position);
             _hasStopped = true;
             _stopCount++;
@@ -114,15 +121,26 @@ public class NPCMoveController : MonoBehaviour
         _npcAgent.SetDestination(newDest);
         _targetDest = newDest;
         _hasStopped = false;
+        _animator.SetFloat("Blend", 0, _stopAnimTime, Time.deltaTime);
     }
 
     private bool HasReachedDestination()
     {
-        return Vector3.Distance(_npcAgent.destination, transform.position) <= float.Epsilon || _hasStopped;
+        return Vector3.Distance(_npcAgent.destination, transform.position) <= _deltaVariance || _hasStopped;
     }
 
     private bool IsInTalkingState()
     {
         return GameManager.Instance.CurrentState == GameManager.GameState.TALKING;
+    }
+
+    public void PlayTalkingAnim()
+    {
+        _animator.SetBool("IsTalking", true);
+    }
+
+    public void StopTalkingAnim()
+    {
+        _animator.SetBool("IsTalking", false);
     }
 }

@@ -63,6 +63,7 @@ public class DialogueUI : MonoBehaviour
 	public void ShowDialogue(DialogueObject dialogueObject, GameObject speaker_ = null, string[] items = null)
 	{
 		//Let system know the dialogue box is open
+		GameManager.Instance.ChangeGameStateTo(GameManager.GameState.TALKING);
 		IsOpen = true;
 		dialogueBox.SetActive(true);
         speaker = speaker_; 
@@ -131,6 +132,7 @@ public class DialogueUI : MonoBehaviour
 		else
 		{
 			CloseDialogueBox();
+			GameManager.Instance.ChangeGameStateTo(GameManager.GameState.NORMAL);
 			//Run closing events if necessary
 			if(postEvents != null && (postDialogue == dialogueObject))
 			{

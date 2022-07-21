@@ -100,13 +100,15 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         // When this object is instantiated, it will invoke event for settingUp Camera with player
-        setUpPlayerCamera.RaiseEvent(gameObject);
+        // setUpPlayerCamera.RaiseEvent(gameObject);
     }
 
     private void Update()
     {
         if (GameManager.Instance.CurrentState == GameManager.GameState.NORMAL)
             HandlePlayerMovement();
+        else
+            ResetPlayerAnimations();
     }
 
     /*
@@ -217,6 +219,11 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(DesiredMoveDirection), DesiredRotationSpeed);
             _controller.Move(DesiredMoveDirection * Time.deltaTime * _playerSpeed);
         }
+    }
+
+    private void ResetPlayerAnimations()
+    {
+        _playerAnim.SetFloat("Blend", _currSpeed, _stopAnimTime, Time.deltaTime);
     }
 
     private void OnEnable()

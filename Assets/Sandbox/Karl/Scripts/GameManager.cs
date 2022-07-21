@@ -80,4 +80,9 @@ public class GameManager
                 break;
         }
     }
+
+    public void ChangeGameStateTo(GameState currentState)
+    {
+        this.CurrentState = currentState;
+    }
 }
